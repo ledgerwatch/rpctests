@@ -112,7 +112,7 @@ do
 	newpid=$(ps aux | grep rpcdaemon | grep $RPCDAEMONPORT | awk '{print $2}')
 done
 
-replay_files $basedir/$rpctestsdir/oe $OEPORT
-replay_files $basedir/$rpctestsdir/geth $GETHPORT
+replay_files $basedir/$rpctestsdir/oe $RPCDAEMONPORT
+replay_files $basedir/$rpctestsdir/geth $RPCDAEMONPORT
 
 echo "Check directory $basedir/$resultsdir/ for replay results"
