@@ -4,6 +4,7 @@
 
 set -e
 
+GOROOT=$HOME/.go
 TARBALL_PATH=$HOME/go.tar.gz
 
 remove_go() {
@@ -21,10 +22,10 @@ download_go() {
 }
 
 install_go() {
-    tar -C /usr/local -xzf $HOME/go.tar.gz
+    tar -C $GOROOT -xzf $HOME/go.tar.gz
 
-    printf "\nexport PATH=$PATH:/usr/local/go/bin\n"
-    export PATH=$PATH:/usr/local/go/bin
+    printf "\nexport PATH=$PATH:$GOROOT/bin\n"
+    export PATH=$PATH:$GOROOT/bin
 
     go version
 
