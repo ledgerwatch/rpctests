@@ -9,23 +9,23 @@ TARBALL_PATH=$HOME/go.tar.gz
 
 remove_go() {
     echo "removing Go..."
-    rm -rf /usr/local/go
+    rm -rf $GOROOT
 }
 
 download_go() {
 
-    echo "required version: "
+    echo "Enter required version: "
     read VERSION
     echo "downloading Go version: $VERSION..."
+    sleep 1
     wget "https://golang.org/dl/go$VERSION.linux-amd64.tar.gz" -O $TARBALL_PATH
-
 }
 
 install_go() {
     tar -C $GOROOT -xzf $HOME/go.tar.gz
 
-    printf "\nexport PATH=$PATH:$GOROOT/bin\n"
-    export PATH=$PATH:$GOROOT/bin
+    printf "\nexport PATH=\$PATH:$GOROOT/go/bin\n" >>~/.profile
+    export PATH=$PATH:$GOROOT/go/bin
 
     go version
 
@@ -33,7 +33,6 @@ install_go() {
     rm -rf $TARBALL_PATH
 }
 
-# remove_go()
+# remove_go
 download_go
 install_go
-
