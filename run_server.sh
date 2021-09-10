@@ -6,7 +6,6 @@ ENTRY_FOLDER=qa_server
 
 S_PORT=8080 # default server port
 
-
 mkdir -p $BIN_DIR
 
 go build -o $BIN_DIR/$EXECUTABLE ./$ENTRY_FOLDER/...

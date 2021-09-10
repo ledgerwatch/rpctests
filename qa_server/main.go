@@ -18,7 +18,7 @@ func main() {
 		_fatal(fmt.Errorf("'-port' flag is not set"))
 	}
 
-	address := fmt.Sprintf("0.0.0.0:%s", *PORT)
+	address := fmt.Sprintf("127.0.0.1:%s", *PORT)
 
 	ln, err := net.Listen("tcp", address)
 	if err != nil {

@@ -14,9 +14,14 @@ remove_go() {
 
 download_go() {
 
+    if [ -d $GOROOT ]; then
+        remove_go
+    fi
+
     echo "Enter required version: "
     read VERSION
     echo "downloading Go version: $VERSION..."
+    echo ""
     sleep 1
     wget "https://golang.org/dl/go$VERSION.linux-amd64.tar.gz" -O $TARBALL_PATH
 }
@@ -33,8 +38,10 @@ install_go() {
 
     echo "removing tarball..."
     rm -rf $TARBALL_PATH
+
+    echo ""
+    echo "re-login or reopen terminal to apply changes..."
 }
 
-# remove_go
 download_go
 install_go
