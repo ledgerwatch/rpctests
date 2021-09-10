@@ -22,6 +22,8 @@ download_go() {
 }
 
 install_go() {
+    mkdir -p $GOROOT
+
     tar -C $GOROOT -xzf $HOME/go.tar.gz
 
     printf "\nexport PATH=\$PATH:$GOROOT/go/bin\n" >>~/.profile
