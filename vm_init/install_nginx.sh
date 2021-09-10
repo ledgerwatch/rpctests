@@ -1,6 +1,7 @@
 #!/bin/sh
 
-sudo apt update && sudo upt install nginx --with-stream
+sudo apt update
+sudo apt install nginx --with-stream
 sudo ufw allow 'Nginx HTTP'
 
 sudo cp ./vm_init/tcp_host.conf /etc/nginx/sites-enabled/
