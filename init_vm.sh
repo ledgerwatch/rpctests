@@ -1,4 +1,7 @@
 #!/bin/sh
 
-./vm_init/install_nginx
-./vm_init/install_go
+echo "installing Nginx..."
+./vm_init/install_nginx.sh
+
+echo "installing Go..."
+./vm_init/install_go.sh

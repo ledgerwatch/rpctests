@@ -36,11 +36,10 @@ install_go() {
 
     go version
 
-    echo "removing tarball..."
     rm -rf $TARBALL_PATH
 
     echo ""
-    echo "re-login or reopen terminal to apply changes..."
+    echo "Go-lang installed. Re-login or reopen terminal to apply changes..."
 }
 
 download_go

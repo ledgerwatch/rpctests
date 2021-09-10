@@ -1,12 +1,15 @@
 #!/bin/sh
 
-sudo apt update
-sudo apt install nginx --with-stream
-sudo ufw allow 'Nginx HTTP'
+# sudo apt update
 
-sudo cp ./vm_init/tcp_host.conf /etc/nginx/sites-enabled/
+THIS_DIR=$(pwd)
 
-sudo nginx -t
-# TODO error check
+VERSION=1.18.0
+TARBALL_PATH=$HOME/nginx.tar.gz
 
-sudo systemctl reload nginx
+wget https://nginx.org/download/nginx-$VERSION.tar.gz -O $TARBALL_PATH
+tar -C $THIS_DIR -xzf $TARBALL_PATH
+
+rm -rf $TARBALL_PATH
+
+$THIS_DIR/nginx-$VERSION/configure --with-stream
