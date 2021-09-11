@@ -20,15 +20,14 @@ fi
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx HTTP'
 
-sudo rm /etc/nginx/sites-ebanbled/default
 
 $CUR_DIR/vm_init/copy_nginx_conf.sh
 
 # PHP and components
 $CUR_DIR/vm_init/install_php.sh
 
-echo "
+echo ""
 
-"
+echo Add "stream" block to nginx.conf!
 
-echo "Add `stream` block to nginx.conf!"
+echo ""
