@@ -23,4 +23,4 @@ fi
 
 echo IP:$IP PORT:$PORT
 
-./$BIN_DIR/$EXECUTABLE -address=127.0.0.1:8080
+./$BIN_DIR/$EXECUTABLE -address=$IP:$PORT

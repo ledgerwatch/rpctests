@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"net"
 )
 
@@ -18,6 +19,8 @@ func main() {
 		_println(is_err, "'-address' flag is not set")
 		return
 	}
+
+	fmt.Println("HAVING ADDRESS: ", address)
 
 	conn, err := net.Dial("tcp", address)
 	if err != nil {
