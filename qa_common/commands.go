@@ -11,7 +11,10 @@ const (
 	PING
 	CLEAR
 	EXIT
-	TEST1
+	START_ERIGON
+	START_RPCDAEMON
+	KILL_ERIGON
+	KILL_RPCDAEMON
 )
 
 var (
@@ -23,42 +26,44 @@ var (
 )
 
 type CommandTable struct {
-	commands     map[string]int
-	Descriptions map[string]string
+	Commands     map[string]int
+	Descriptions map[int]string
 	exec_cmd     map[int]*exec.Cmd
 	exec_file    map[int]string
 }
 
 func NewCommandTable() *CommandTable {
 	var cmds = map[string]int{
-		"help":  HELP,
-		"ping":  PING,
-		"clear": CLEAR,
-		"exit":  EXIT,
-		"quit":  EXIT,
-		"test1": TEST1,
+		"help":            HELP,
+		"ping":            PING,
+		"clear":           CLEAR,
+		"exit":            EXIT,
+		"quit":            EXIT,
+		"start_erigon":    START_ERIGON,
+		"start_rpcdaemon": START_RPCDAEMON,
+		"kill_erigon":     KILL_ERIGON,
+		"kill_rpcdaemon":  KILL_RPCDAEMON,
 	}
 
-	var descriptions = map[string]string{
-		"help":  "print all available commands and color meanings",
-		"ping":  "command for testing communication",
-		"clear": "clear the terminal",
-		"exit":  "quit the program",
-		"test1": "just testing...",
+	var descriptions = map[int]string{
+		HELP:            "print all available commands and color meanings",
+		PING:            "command for testing communication",
+		CLEAR:           "clear the terminal",
+		EXIT:            "quit the program",
+		START_ERIGON:    "start erigon process",
+		START_RPCDAEMON: "start rpcdaemon process",
+		KILL_ERIGON:     "kill erigon process",
+		KILL_RPCDAEMON:  "kill rpcdaemon process",
 	}
 
-	return &CommandTable{commands: cmds, Descriptions: descriptions}
+	return &CommandTable{Commands: cmds, Descriptions: descriptions}
 }
 
 func (ct *CommandTable) AddExecCmd() *CommandTable {
 
-	var exec_file = map[int]string{
-		TEST1: "./run.sh",
-	}
+	var exec_file = map[int]string{}
 
-	var exec_cmd = map[int]*exec.Cmd{
-		TEST1: exec.Command(exec_file[TEST1]),
-	}
+	var exec_cmd = map[int]*exec.Cmd{}
 
 	ct.exec_cmd = exec_cmd
 	ct.exec_file = exec_file
@@ -71,7 +76,7 @@ func (ct *CommandTable) Reset(cmd_int int) {
 }
 
 func (ct *CommandTable) What(command string) int {
-	if val, ok := ct.commands[command]; ok {
+	if val, ok := ct.Commands[command]; ok {
 		return val
 	}
 	return 0

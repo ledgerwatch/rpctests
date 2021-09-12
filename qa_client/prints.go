@@ -75,8 +75,8 @@ func _print_help(ct *qa_common.CommandTable) {
 	fmt.Println()
 
 	fmt.Println("command list:")
-	for k, v := range ct.Descriptions {
-		fmt.Printf("    %-10s - %s\n", k, v)
+	for k, v := range ct.Commands {
+		fmt.Printf("    %-10s - %s\n", k, ct.Descriptions[v])
 	}
 
 	fmt.Println("----------------------------------")

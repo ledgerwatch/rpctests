@@ -12,6 +12,9 @@ import (
 
 var disallowed_commands = []string{
 	"sudo", // disallow commands called with root permission, TODO
+	"htop",
+	"./erigon/build/bin/erigon",
+	"./ergion/build/bin/rpcdaemon",
 }
 
 func check_disallowed(command string) bool {

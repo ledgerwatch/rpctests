@@ -26,6 +26,4 @@ def go_recursive(search_dir: str):
             except:
                 print("There is an exception")
 
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-
 go_recursive(".")

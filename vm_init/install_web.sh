@@ -6,6 +6,12 @@ set -x
 
 CUR_DIR=$(pwd)
 
+# ---- functions ---- #
+# install_go() {}
+# install_gcc() {}
+# install_nginx() {}
+# install_php() {}
+
 sudo apt-get update
 
 # Nginx installation
@@ -20,11 +26,10 @@ fi
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx HTTP'
 
-
-$CUR_DIR/vm_init/copy_nginx_conf.sh
+sudo $CUR_DIR/vm_init/copy_nginx_conf.sh
 
 # PHP and components
-$CUR_DIR/vm_init/install_php.sh
+sudo $CUR_DIR/vm_init/install_php.sh
 
 echo ""
 

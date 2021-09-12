@@ -38,8 +38,10 @@ install_go() {
 
     rm -rf $TARBALL_PATH
 
-    echo ""
-    echo "Go-lang installed. Re-login or reopen terminal to apply changes..."
+    echo "
+    
+        Go-lang installed. Re-login or reopen terminal to apply changes...
+    "
 }
 
 download_go
