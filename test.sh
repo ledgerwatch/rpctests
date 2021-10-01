@@ -19,7 +19,8 @@ HASH="HEAD"
 
 RPCTESTREPO="https://github.com/ledgerwatch/rpctests.git"
 
-DATADIR="/mnt/nvme/data1/"
+# DATADIR="/mnt/nvme/data1/"
+DATADIR="/home/kairat/diskC/goerli/erigon/"
 RPCDAEMONPORT=8548
 GETHPORT=9545
 OEPORT=9546

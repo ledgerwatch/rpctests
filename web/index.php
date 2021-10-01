@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+# /home/user/rpctests/web/
+define('BASE_DIR', dirname(__DIR__) . '/web' . '/');
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include 'includes/head.php'; ?>
 
-    <title>Erigon Test Results</title>
-</head>
+<?php include 'includes/body.php'; ?>
 
-<body>
-    <div id="app">
-        COMPLETE NEW PAGE
-    </div>
-</body>
-
-</html>
+<?php include 'includes/footer.php'; ?>

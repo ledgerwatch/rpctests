@@ -1,0 +1,84 @@
+[INFO] [09-27|18:00:28.663] Build info                               git_branch=devel git_tag=v2021.09.04 git_commit=0d34a5b9c571ab2f88d7c69ade884771cb34cf59
+[INFO] [09-27|18:00:28.663] Starting Erigon on Görli testnet... 
+[INFO] [09-27|18:00:28.664] Maximum peer count                       ETH=100 total=100
+[INFO] [09-27|18:00:28.664] Set global gas cap                       cap=50000000
+[INFO] [09-27|18:00:28.665] Opening Database                         label=chaindata path=/home/kairat/diskC/goerli/erigon/chaindata
+[INFO] [09-27|18:00:28.666] Initialised chain configuration          config="{ChainID: 5 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: 0 EIP155: 0 EIP158: 0 Byzantium: 0 Constantinople: 0 Petersburg: 0 Istanbul: 1561651, Muir Glacier: <nil>, Berlin: 4460644, London: 5062605, Engine: clique}"
+[INFO] [09-27|18:00:28.700] Initialising Ethereum protocol           network=5
+[INFO] [09-27|18:00:28.700] Effective                                prune="--prune="
+[WARN] [09-27|18:00:29.048] Preverified hashes not found for         chain=goerli
+[INFO] [09-27|18:00:29.049] Starting private RPC server              on=localhost:9090
+[INFO] [09-27|18:00:29.049] Loaded local transaction journal         transactions=0 dropped=0
+[INFO] [09-27|18:00:29.049] Regenerated local transaction journal    transactions=0 accounts=0
+[INFO] [09-27|18:00:29.049] transaction pool started 
+[INFO] [09-27|18:00:29.050] [1/18 Headers] Waiting for headers...    from=5573890
+[INFO] [09-27|18:00:29.072] Started P2P networking                   version=65 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30304 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-27|18:00:29.094] Started P2P networking                   version=66 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30303 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-27|18:00:29.708] event subscription channel established with the RPC daemon 
+[INFO] [09-27|18:00:59.050] [1/18 Headers] Wrote block headers       number=5573890 blk/second=0.000 alloc="110.11 MiB" sys="208.54 MiB"
+[INFO] [09-27|18:01:05.909] UnwindTo                                 block=5573889 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-27|18:01:05.978] [1/18 Headers] Processed                 highest inserted=5573894 age=0
+[INFO] [09-27|18:01:05.978] [7/18 Execution] Unwind Execution        from=5573890 to=5573889
+[INFO] [09-27|18:01:07.863] [7/18 Execution] Completed on            block=5573894
+[INFO] [09-27|18:01:07.864] [10/18 HashState] Promoting plain state  from=5234895 to=5573894
+[INFO] [09-27|18:01:07.864] [10/18 HashState] Incremental promotion started from=5234895 to=5573894 codes=true csbucket=AccountChangeSet
+[INFO] [09-27|18:01:37.867] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051bdb1 alloc="113.7 MiB" sys="277.1 MiB"
+[INFO] [09-27|18:02:07.865] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051eb7a alloc="148.0 MiB" sys="277.2 MiB"
+[INFO] [09-27|18:02:28.701] [p2p] GoodPeers                          eth66=2 eth65=1
+[INFO] [09-27|18:02:37.869] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000523068 alloc="117.7 MiB" sys="277.3 MiB"
+[INFO] [09-27|18:03:07.865] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000525432 alloc="150.5 MiB" sys="277.3 MiB"
+[INFO] [09-27|18:03:37.865] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000528823 alloc="133.5 MiB" sys="277.5 MiB"
+[INFO] [09-27|18:04:07.870] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000529f8d alloc="174.6 MiB" sys="277.8 MiB"
+[INFO] [09-27|18:04:28.701] [p2p] GoodPeers                          eth66=4 eth65=6
+[INFO] [09-27|18:04:37.878] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052a4d8 alloc="111.4 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:05:07.867] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052b09e alloc="173.0 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:05:37.867] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052b9c1 alloc="115.8 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:06:07.872] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052c146 alloc="159.2 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:06:28.701] [p2p] GoodPeers                          eth66=6 eth65=8
+[INFO] [09-27|18:06:37.865] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052d4b0 alloc="119.3 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:07:07.871] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000053040a alloc="169.4 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:07:37.868] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000537a69 alloc="153.4 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:08:07.866] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000539cfc alloc="103.3 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:08:28.702] [p2p] GoodPeers                          eth66=7 eth65=8
+[INFO] [09-27|18:08:37.874] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000545e0b alloc="184.7 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:09:25.730] [10/18 HashState] ETL [2/2] Loading      into=HashedCodeHash current key=6e357fcd... alloc="163.3 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:09:55.730] [10/18 HashState] ETL [2/2] Loading      into=HashedCodeHash current key=e41f4ced... alloc="199.3 MiB" sys="344.7 MiB"
+[INFO] [09-27|18:10:02.642] [10/18 HashState] Incremental promotion started from=5234895 to=5573894 codes=false csbucket=AccountChangeSet
+[INFO] [09-27|18:10:28.701] [p2p] GoodPeers                          eth66=7 eth65=8
+[INFO] [09-27|18:10:44.763] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=131d63d9... alloc="294.1 MiB" sys="678.0 MiB"
+[INFO] [09-27|18:11:14.772] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=589d65e2... alloc="346.5 MiB" sys="679.1 MiB"
+[INFO] [09-27|18:11:44.777] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=9eaf8fb2... alloc="400.0 MiB" sys="680.1 MiB"
+[INFO] [09-27|18:12:15.796] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=b8c0466d... alloc="226.7 MiB" sys="681.1 MiB"
+[INFO] [09-27|18:12:28.702] [p2p] GoodPeers                          eth66=9 eth65=8
+[INFO] [09-27|18:12:44.956] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=b8dc3ecc... alloc="257.9 MiB" sys="681.1 MiB"
+[INFO] [09-27|18:13:14.767] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=f24d6201... alloc="329.4 MiB" sys="681.3 MiB"
+[INFO] [09-27|18:13:20.855] [10/18 HashState] Incremental promotion started from=5234895 to=5573894 codes=false csbucket=StorageChangeSet
+[INFO] [09-27|18:13:50.860] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000004fefbb5b2898924805cb3dc0348954c4939648b37549c50000000000000001 alloc="391.4 MiB" sys="681.5 MiB"
+[INFO] [09-27|18:14:20.865] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000501ccf19c14965c9b8b0be687e28897a5ee559ff35f5dc0000000000000001 alloc="164.9 MiB" sys="681.9 MiB"
+[INFO] [09-27|18:14:28.701] [p2p] GoodPeers                          eth66=12 eth65=8
+[INFO] [09-27|18:14:50.862] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000505e222cf48c1765c1645f652239dd70fecffed81400870000000000000001 alloc="196.7 MiB" sys="681.9 MiB"
+[INFO] [09-27|18:15:20.861] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000050dd02be22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="268.5 MiB" sys="681.9 MiB"
+[INFO] [09-27|18:15:50.860] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005183e573c412512e1ca0be3b89b77ab3466da6a1b9d2730000000000000001 alloc="567.9 MiB" sys="814.0 MiB"
+[INFO] [09-27|18:16:20.857] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000051debd59105441977ecd9d805a4f5b060e34676f50f8060000000000000001 alloc="330.7 MiB" sys="815.3 MiB"
+[INFO] [09-27|18:16:28.701] [p2p] GoodPeers                          eth66=14 eth65=8
+[INFO] [09-27|18:16:50.858] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005230c68210f15d1c89f00b5d174404aa9a817215271b530000000000000001 alloc="807.9 MiB" sys="1014.5 MiB"
+[INFO] [09-27|18:17:20.857] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000525f2b07aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="557.1 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:17:50.859] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052603e07aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="608.1 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:18:20.856] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052650307aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="670.5 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:18:28.701] [p2p] GoodPeers                          eth66=15 eth65=10
+[INFO] [09-27|18:18:50.859] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052704407aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="764.7 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:19:20.865] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000527a03687fb596f3892904f879118e2113e1eee8746c2e0000000000000001 alloc="589.8 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:19:50.856] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000529182887855d03c2b4a91691452f2bc5731caefe655890000000000000001 alloc="785.8 MiB" sys="1.1 GiB"
+[INFO] [09-27|18:20:26.620] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf779453472 alloc="1.1 GiB" sys="1.9 GiB"
+[INFO] [09-27|18:20:28.701] [p2p] GoodPeers                          eth66=17 eth65=11
+[INFO] [09-27|18:20:30.028] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052ad50807547f22124577758c79a3f3929a180eba39dc30000000000000001 alloc="1.1 GiB" sys="1.9 GiB"
+[INFO] [09-27|18:20:50.856] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052c56fbe22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="1.6 GiB" sys="1.9 GiB"
+[INFO] [09-27|18:21:12.479] Got interrupt, shutting down... 
+[INFO] [09-27|18:21:12.479] event subscription channel closed with the RPC daemon 
+[INFO] [09-27|18:21:12.521] [10/18 HashState] etl: temp files removed total size="268.5 MB"
+[INFO] [09-27|18:21:13.480] Transaction pool stopped 
+[INFO] [09-27|18:21:13.856] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth66 updated=0 deleted=3422
+[INFO] [09-27|18:21:13.874] database closed                          label=sentry
+[INFO] [09-27|18:21:14.517] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth65 updated=0 deleted=3445
+[INFO] [09-27|18:21:14.517] database closed                          label=sentry
+[INFO] [09-27|18:21:14.636] database closed                          label=chaindata

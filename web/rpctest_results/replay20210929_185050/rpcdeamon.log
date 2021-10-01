@@ -1,0 +1,27 @@
+[INFO] [09-29|18:51:02.050] DB schemas compatible                    reader=3.0.0 database=3.0.0
+[INFO] [09-29|18:51:02.053] rpc filters: subscribing to Erigon events 
+[INFO] [09-29|18:51:02.057] HTTP endpoint opened                     url=localhost:8548 ws=false ws.compression=false
+[WARN] [09-29|18:51:03.964] Served                                   conn=127.0.0.1:40054 method=debug_traceTransaction reqid=2 t=2.586775ms err="transaction 0x1e156e6bca27cc6af42314a9db61b5f74532213a014e938e6aef8926fb4804e0 not found"
+[DBUG] [09-29|18:51:03.964] Served                                   conn=127.0.0.1:40054 t=2.738518ms method=debug_traceTransaction reqid=2 params="[\"0x1e156e6bca27cc6af42314a9db61b5f74532213a014e938e6aef8926fb4804e0\"]"
+[DBUG] [09-29|18:51:03.964] Served                                   conn=127.0.0.1:40052 t=3.276292ms method=trace_replayTransaction reqid=2 params="[\"0xc2d018922e1d372a8e5cc6c9e11d66ad06dc97e2618061cd33d6ef100d1eca9f\", [\"trace\", \"stateDiff\"]]"
+[WARN] [09-29|18:51:04.158] Served                                   conn=127.0.0.1:40056 method=trace_call reqid=3 t=16.938336ms err="block 8999999(0000000000000000000000000000000000000000000000000000000000000000) not found"
+[DBUG] [09-29|18:51:04.158] Served                                   conn=127.0.0.1:40056 t=17.067344ms method=trace_call reqid=3 params="[{\"from\":\"0xea193cb28cf6150b4cbaf0cfe7b39241e28091a7\",\"to\":\"0xf5bec430576ff1b82e44ddb5a1c93f6f9d0884f3\",\"gas\":\"0x28b0a\",\"gasPrice\":\"0xba43b7400\",\"value\":\"0xae99ac0251e400\"},[\"trace\", \"stateDiff\"],\"0x89543f\"]"
+[DBUG] [09-29|18:51:04.584] Served                                   conn=127.0.0.1:40058 t=282.638275ms method=eth_getTransactionReceipt reqid=3 params="[\"0xc2d018922e1d372a8e5cc6c9e11d66ad06dc97e2618061cd33d6ef100d1eca9f\"]"
+[DBUG] [09-29|18:51:04.585] Served                                   conn=127.0.0.1:40050 t=624.202148ms method=eth_getLogs reqid=3 params="[{\"fromBlock\": \"0x895440\", \"toBlock\": \"0x8954a4\", \"address\": \"0x080bf510fcbf18b91105470639e9561022937712\"}]"
+[WARN] [09-29|18:51:04.796] Served                                   conn=127.0.0.1:40070 method=trace_block reqid=3 t=298.828µs err="could not find block 0000000000000000000000000000000000000000000000000000000000000000 9000000"
+[DBUG] [09-29|18:51:04.796] Served                                   conn=127.0.0.1:40070 t=417.5µs method=trace_block reqid=3 params="[\"0x895440\"]"
+[DBUG] [09-29|18:51:05.281] Served                                   conn=127.0.0.1:40072 t=15.620588ms method=trace_filter reqid=3 params="[{\"fromBlock\":\"0x895440\", \"toBlock\": \"0x8954a4\", \"fromAddress\": [\"0x79af413c728d519ab45866aaf017fcba1d38f6b9\"]}]"
+[INFO] [09-29|18:51:09.185] interfaces compatible                    remote_db= client=4.0.0 server=4.0.0
+[INFO] [09-29|18:51:09.186] interfaces compatible                    remote_service=eth_backend client=2.1.0 server=2.1.0
+[INFO] [09-29|18:51:09.186] interfaces compatible                    remote_service=mining client=1.0.0 server=1.0.0
+[INFO] [09-29|18:51:09.187] interfaces compatible                    remote_service=tx_pool client=1.0.0 server=1.0.0
+[INFO] [09-29|21:38:38.942] rpcdaemon: the subscription channel was closed 
+[INFO] [09-29|21:38:38.957] rpcdaemon: the subscription channel was closed 
+[WARN] [09-29|21:38:39.900] rpc filters: error subscribing to pending transactions err="rpc error: code = Unavailable desc = closing transport due to: connection error: desc = \"error reading from server: EOF\", received prior goaway: code: NO_ERROR, debug data: "
+[WARN] [09-29|21:38:39.901] rpc filters: error subscribing to pending logs err="rpc error: code = Unavailable desc = closing transport due to: connection error: desc = \"error reading from server: EOF\", received prior goaway: code: NO_ERROR, debug data: "
+[INFO] [09-29|21:39:05.741] Got interrupt, shutting down...          sig=terminated
+[INFO] [09-29|21:39:05.742] Exiting... 
+[INFO] [09-29|21:39:05.770] Got interrupt, shutting down... 
+[DBUG] [09-29|21:39:05.794] RPC server shutting down 
+[INFO] [09-29|21:39:05.812] HTTP endpoint closed                     url=localhost:8548
+[INFO] [09-29|21:39:05.844] database closed                          label=chaindata

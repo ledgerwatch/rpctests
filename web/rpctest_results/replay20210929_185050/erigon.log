@@ -1,0 +1,863 @@
+[INFO] [09-29|18:51:01.228] Build info                               git_branch=devel git_tag=v2021.09.04 git_commit=0d34a5b9c571ab2f88d7c69ade884771cb34cf59
+[INFO] [09-29|18:51:01.233] Starting Erigon on Görli testnet... 
+[INFO] [09-29|18:51:01.241] Maximum peer count                       ETH=100 total=100
+[INFO] [09-29|18:51:01.244] Set global gas cap                       cap=50000000
+[INFO] [09-29|18:51:01.256] Opening Database                         label=chaindata path=/home/kairat/diskC/goerli/erigon/chaindata
+[INFO] [09-29|18:51:01.268] Initialised chain configuration          config="{ChainID: 5 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: 0 EIP155: 0 EIP158: 0 Byzantium: 0 Constantinople: 0 Petersburg: 0 Istanbul: 1561651, Muir Glacier: <nil>, Berlin: 4460644, London: 5062605, Engine: clique}"
+[INFO] [09-29|18:51:01.330] Initialising Ethereum protocol           network=5
+[INFO] [09-29|18:51:01.330] Effective                                prune="--prune="
+[WARN] [09-29|18:51:07.887] Preverified hashes not found for         chain=goerli
+[INFO] [09-29|18:51:07.888] Starting private RPC server              on=localhost:9090
+[INFO] [09-29|18:51:07.914] Loaded local transaction journal         transactions=0 dropped=0
+[INFO] [09-29|18:51:07.914] Regenerated local transaction journal    transactions=0 accounts=0
+[INFO] [09-29|18:51:07.914] transaction pool started 
+[INFO] [09-29|18:51:07.914] [1/18 Headers] Waiting for headers...    from=5573894
+[INFO] [09-29|18:51:08.146] Started P2P networking                   version=65 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30304 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-29|18:51:08.154] Started P2P networking                   version=66 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30303 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-29|18:51:09.178] event subscription channel established with the RPC daemon 
+[INFO] [09-29|18:51:37.922] [1/18 Headers] Inserting headers         progress=5578141
+[INFO] [09-29|18:52:07.915] [1/18 Headers] Inserting headers         progress=5584381
+[INFO] [09-29|18:52:19.345] [1/18 Headers] Processed                 highest inserted=5585613 age=1m3s
+[INFO] [09-29|18:52:19.345] [1/18 Headers] DONE                      in=1m11.431099134s
+[INFO] [09-29|18:53:01.332] [p2p] GoodPeers                          eth66=5 eth65=3
+[INFO] [09-29|18:53:06.030] [4/18 Bodies] Processing bodies...       from=5573894 to=5585613
+[INFO] [09-29|18:53:41.926] [4/18 Bodies] Processed                  highest=5585613
+[INFO] [09-29|18:53:41.938] [6/18 Senders] Started                   from=5573894 to=5585613
+[INFO] [09-29|18:53:42.717] [7/18 Execution] Blocks execution        from=5573894 to=5585613
+[INFO] [09-29|18:54:12.721] [7/18 Execution] Executed blocks         number=5574606 blk/s=23.730 tx/s=86.354 Mgas/s=33.798 batch="2.34 MiB" alloc="167.32 MiB" sys="477.35 MiB"
+[INFO] [09-29|18:54:42.760] [7/18 Execution] Executed blocks         number=5575189 blk/s=19.408 tx/s=78.798 Mgas/s=15.086 batch="2.79 MiB" alloc="185.88 MiB" sys="477.35 MiB"
+[INFO] [09-29|18:55:01.332] [p2p] GoodPeers                          eth66=5 eth65=4
+[INFO] [09-29|18:55:12.772] [7/18 Execution] Executed blocks         number=5576165 blk/s=32.520 tx/s=169.163 Mgas/s=30.257 batch="4.13 MiB" alloc="155.65 MiB" sys="477.35 MiB"
+[INFO] [09-29|18:55:42.793] [7/18 Execution] Executed blocks         number=5577451 blk/s=42.838 tx/s=208.026 Mgas/s=42.216 batch="5.64 MiB" alloc="114.79 MiB" sys="477.60 MiB"
+[INFO] [09-29|18:56:12.735] [7/18 Execution] Executed blocks         number=5578925 blk/s=49.228 tx/s=264.845 Mgas/s=54.203 batch="7.54 MiB" alloc="134.04 MiB" sys="477.60 MiB"
+[INFO] [09-29|18:56:42.744] [7/18 Execution] Executed blocks         number=5580835 blk/s=63.646 tx/s=323.263 Mgas/s=48.806 batch="8.99 MiB" alloc="155.22 MiB" sys="477.60 MiB"
+[INFO] [09-29|18:57:01.332] [p2p] GoodPeers                          eth66=7 eth65=5
+[INFO] [09-29|18:57:12.771] [7/18 Execution] Executed blocks         number=5582812 blk/s=65.841 tx/s=357.079 Mgas/s=79.440 batch="13.49 MiB" alloc="145.39 MiB" sys="477.85 MiB"
+[INFO] [09-29|18:57:42.749] [7/18 Execution] Executed blocks         number=5585009 blk/s=73.289 tx/s=397.199 Mgas/s=71.248 batch="15.99 MiB" alloc="183.14 MiB" sys="477.85 MiB"
+[INFO] [09-29|18:58:11.682] [7/18 Execution] Completed on            block=5585613
+[INFO] [09-29|18:58:11.683] [7/18 Execution] DONE                    in=4m28.966124182s
+[INFO] [09-29|18:58:11.683] [10/18 HashState] Promoting plain state  from=5234895 to=5585613
+[INFO] [09-29|18:58:11.683] [10/18 HashState] Incremental promotion started from=5234895 to=5585613 codes=true csbucket=AccountChangeSet
+[INFO] [09-29|18:58:41.690] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000004feb2f alloc="241.6 MiB" sys="477.9 MiB"
+[INFO] [09-29|18:59:01.332] [p2p] GoodPeers                          eth66=9 eth65=6
+[INFO] [09-29|18:59:11.701] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000004ffc8c alloc="123.4 MiB" sys="477.9 MiB"
+[INFO] [09-29|18:59:41.689] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000005003f6 alloc="161.2 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:00:11.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000500ed1 alloc="102.5 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:00:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000501065 alloc="134.0 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:01:01.332] [p2p] GoodPeers                          eth66=13 eth65=7
+[INFO] [09-29|19:01:11.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000501154 alloc="173.6 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:01:41.695] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000501678 alloc="111.1 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:02:11.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000502738 alloc="146.4 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:02:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000502ae6 alloc="184.9 MiB" sys="477.9 MiB"
+[INFO] [09-29|19:03:01.332] [p2p] GoodPeers                          eth66=13 eth65=9
+[INFO] [09-29|19:03:11.698] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000005037d8 alloc="158.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:03:41.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000504318 alloc="178.0 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:04:11.720] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000504aa4 alloc="170.4 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:04:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000505758 alloc="118.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:05:01.331] [p2p] GoodPeers                          eth66=14 eth65=9
+[INFO] [09-29|19:05:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000505875 alloc="158.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:05:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000505b42 alloc="189.1 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:06:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000505e76 alloc="110.5 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:06:41.690] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000506e03 alloc="151.6 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:07:01.332] [p2p] GoodPeers                          eth66=15 eth65=12
+[INFO] [09-29|19:07:11.692] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000507d1e alloc="181.2 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:07:41.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000508bc3 alloc="120.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:08:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000509c5f alloc="154.5 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:08:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050b606 alloc="191.2 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:09:01.332] [p2p] GoodPeers                          eth66=18 eth65=11
+[INFO] [09-29|19:09:11.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050c4e8 alloc="133.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:09:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050c5a7 alloc="166.1 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:10:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050ca59 alloc="196.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:10:41.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050d71b alloc="129.1 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:11:01.331] [p2p] GoodPeers                          eth66=19 eth65=12
+[INFO] [09-29|19:11:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050e097 alloc="177.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:11:41.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050e6da alloc="116.4 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:12:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050f251 alloc="151.2 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:12:41.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050f290 alloc="180.6 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:13:01.332] [p2p] GoodPeers                          eth66=18 eth65=14
+[INFO] [09-29|19:13:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000050fa7b alloc="116.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:13:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000510ec3 alloc="153.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:14:11.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000512815 alloc="191.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:14:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000513c6c alloc="134.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:15:01.332] [p2p] GoodPeers                          eth66=18 eth65=14
+[INFO] [09-29|19:15:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000514ff5 alloc="180.1 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:15:41.701] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051633c alloc="126.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:16:11.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000517900 alloc="179.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:16:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000005184e9 alloc="214.4 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:17:01.332] [p2p] GoodPeers                          eth66=20 eth65=14
+[INFO] [09-29|19:17:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000519393 alloc="146.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:17:41.691] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051aab4 alloc="186.4 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:18:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051b736 alloc="223.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:18:41.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051c132 alloc="150.8 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:19:01.331] [p2p] GoodPeers                          eth66=22 eth65=16
+[INFO] [09-29|19:19:11.689] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051d66c alloc="186.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:19:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000051ee78 alloc="125.7 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:20:11.689] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052037c alloc="161.2 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:20:41.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000521303 alloc="201.5 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:21:01.332] [p2p] GoodPeers                          eth66=22 eth65=17
+[INFO] [09-29|19:21:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000522c0a alloc="133.6 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:21:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052465e alloc="209.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:22:11.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000524992 alloc="135.0 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:22:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000005249a4 alloc="184.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:23:01.332] [p2p] GoodPeers                          eth66=22 eth65=18
+[INFO] [09-29|19:23:11.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000525431 alloc="217.0 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:23:41.690] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000526af0 alloc="168.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:24:11.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000528265 alloc="205.8 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:24:41.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000528844 alloc="244.2 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:25:01.331] [p2p] GoodPeers                          eth66=22 eth65=19
+[INFO] [09-29|19:25:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000529075 alloc="153.8 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:25:41.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052a1bd alloc="185.0 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:26:11.691] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052a4e7 alloc="213.3 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:26:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052ad16 alloc="244.9 MiB" sys="478.1 MiB"
+[INFO] [09-29|19:27:01.332] [p2p] GoodPeers                          eth66=22 eth65=19
+[INFO] [09-29|19:27:11.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052b555 alloc="144.6 MiB" sys="478.2 MiB"
+[INFO] [09-29|19:27:41.684] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052b911 alloc="182.8 MiB" sys="478.2 MiB"
+[INFO] [09-29|19:28:11.689] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052bafe alloc="211.3 MiB" sys="478.2 MiB"
+[INFO] [09-29|19:28:41.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052c023 alloc="133.8 MiB" sys="478.3 MiB"
+[INFO] [09-29|19:29:01.331] [p2p] GoodPeers                          eth66=22 eth65=19
+[INFO] [09-29|19:29:11.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052c539 alloc="160.0 MiB" sys="478.3 MiB"
+[INFO] [09-29|19:29:41.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052c963 alloc="180.1 MiB" sys="478.3 MiB"
+[INFO] [09-29|19:30:11.689] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052cdf5 alloc="215.0 MiB" sys="478.3 MiB"
+[INFO] [09-29|19:30:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052e38d alloc="135.9 MiB" sys="478.4 MiB"
+[INFO] [09-29|19:31:01.331] [p2p] GoodPeers                          eth66=22 eth65=18
+[INFO] [09-29|19:31:11.686] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052eba7 alloc="166.4 MiB" sys="478.4 MiB"
+[INFO] [09-29|19:31:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000052ffa0 alloc="206.3 MiB" sys="478.4 MiB"
+[INFO] [09-29|19:32:11.685] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=00000000005348fb alloc="144.1 MiB" sys="478.4 MiB"
+[INFO] [09-29|19:32:41.688] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=0000000000538464 alloc="200.9 MiB" sys="478.4 MiB"
+[INFO] [09-29|19:33:01.332] [p2p] GoodPeers                          eth66=22 eth65=18
+[INFO] [09-29|19:33:11.691] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000053c9fe alloc="130.1 MiB" sys="478.5 MiB"
+[INFO] [09-29|19:33:41.687] [10/18 HashState] ETL [1/2] Extracting   from=AccountChangeSet current key=000000000054c943 alloc="226.0 MiB" sys="478.7 MiB"
+[INFO] [09-29|19:34:18.393] [10/18 HashState] ETL [2/2] Loading      into=HashedCodeHash current key=6979a2d3... alloc="229.4 MiB" sys="478.9 MiB"
+[INFO] [09-29|19:34:48.384] [10/18 HashState] ETL [2/2] Loading      into=HashedCodeHash current key=d8724c92... alloc="165.2 MiB" sys="478.9 MiB"
+[INFO] [09-29|19:34:59.160] [10/18 HashState] Incremental promotion started from=5234895 to=5585613 codes=false csbucket=AccountChangeSet
+[INFO] [09-29|19:35:01.332] [p2p] GoodPeers                          eth66=23 eth65=18
+[INFO] [09-29|19:35:40.161] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=12ba8dba... alloc="376.9 MiB" sys="680.1 MiB"
+[INFO] [09-29|19:36:10.165] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=5460efb0... alloc="261.6 MiB" sys="680.9 MiB"
+[INFO] [09-29|19:36:40.160] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=9a14eae1... alloc="311.3 MiB" sys="681.0 MiB"
+[INFO] [09-29|19:37:01.332] [p2p] GoodPeers                          eth66=24 eth65=19
+[INFO] [09-29|19:37:10.162] [10/18 HashState] ETL [2/2] Loading      into=HashedAccount current key=e14126a7... alloc="363.2 MiB" sys="681.6 MiB"
+[INFO] [09-29|19:37:24.674] [10/18 HashState] Incremental promotion started from=5234895 to=5585613 codes=false csbucket=StorageChangeSet
+[INFO] [09-29|19:37:54.684] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000004fe77e15b1281f4e58215b2c3243d864bdf8b9dddc0da20000000000000001 alloc="429.6 MiB" sys="682.5 MiB"
+[INFO] [09-29|19:38:24.680] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000004ffb7b32dd2c0d5b2e9b8a9d2a7d8d9f699c72348075b70000000000000001 alloc="141.4 MiB" sys="683.0 MiB"
+[INFO] [09-29|19:38:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000501e595d3c0f4ca5ee99f8e8f59ff9a5fab04f6a7e007f0000000000000001 alloc="158.2 MiB" sys="683.1 MiB"
+[INFO] [09-29|19:39:01.332] [p2p] GoodPeers                          eth66=24 eth65=19
+[INFO] [09-29|19:39:24.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000504760aa6ce64b8c7aee2fa652ea4d240bbffcb7d98d1b0000000000000001 alloc="213.5 MiB" sys="683.1 MiB"
+[INFO] [09-29|19:39:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000050855d781bae0001a6a9c66faba286a2fc9341b078c60a0000000000000001 alloc="215.7 MiB" sys="683.1 MiB"
+[INFO] [09-29|19:40:24.691] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000050db0930b3106ba36d387ec93715d7aeb1b209eadb28f20000000000000001 alloc="296.2 MiB" sys="749.1 MiB"
+[INFO] [09-29|19:40:54.676] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000051321cbe22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="349.0 MiB" sys="749.1 MiB"
+[INFO] [09-29|19:41:01.331] [p2p] GoodPeers                          eth66=25 eth65=19
+[INFO] [09-29|19:41:24.674] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000051841a73c412512e1ca0be3b89b77ab3466da6a1b9d2730000000000000001 alloc="582.7 MiB" sys="881.3 MiB"
+[INFO] [09-29|19:41:54.676] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000051bbbef84b46d5ac1cefae1bed66861efc2526b721fc580000000000000001 alloc="353.3 MiB" sys="882.0 MiB"
+[INFO] [09-29|19:42:24.687] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005212508e76489db58558b5761a07ce3423bc5b9f8d93cd0000000000000001 alloc="597.5 MiB" sys="1.1 GiB"
+[INFO] [09-29|19:42:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052468761ac3178bae3341e6d4580dd3446d72cb8aaffcd0000000000000001 alloc="946.3 MiB" sys="1.1 GiB"
+[INFO] [09-29|19:43:01.331] [p2p] GoodPeers                          eth66=25 eth65=19
+[INFO] [09-29|19:43:24.677] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000525ff407aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="573.6 MiB" sys="1.2 GiB"
+[INFO] [09-29|19:43:54.677] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052647707aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="624.2 MiB" sys="1.2 GiB"
+[INFO] [09-29|19:44:24.679] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052709707aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="723.2 MiB" sys="1.2 GiB"
+[INFO] [09-29|19:44:54.678] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005288a473c412512e1ca0be3b89b77ab3466da6a1b9d2730000000000000001 alloc="560.7 MiB" sys="1.2 GiB"
+[INFO] [09-29|19:45:01.332] [p2p] GoodPeers                          eth66=26 eth65=18
+[INFO] [09-29|19:45:24.689] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052a68c30d9ed9054681c56bf3cff638b4f3109ed06339a0000000000000001 alloc="860.1 MiB" sys="1.2 GiB"
+[INFO] [09-29|19:45:39.371] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf957842721 alloc="1.3 GiB" sys="1.8 GiB"
+[INFO] [09-29|19:45:54.674] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052b852be22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="1.6 GiB" sys="1.8 GiB"
+[INFO] [09-29|19:46:24.679] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052d2f107aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="520.9 MiB" sys="1.9 GiB"
+[INFO] [09-29|19:46:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000052fcb5be22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="757.6 MiB" sys="2.1 GiB"
+[INFO] [09-29|19:47:01.332] [p2p] GoodPeers                          eth66=27 eth65=19
+[INFO] [09-29|19:47:24.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000533fc359d8a4dd62b8d1ab8263b3e03f34075bc01ab5cc0000000000000001 alloc="1.0 GiB" sys="2.1 GiB"
+[INFO] [09-29|19:47:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005360335e6229f2d4d977d20a50219e521de6dd694d45cc0000000000000001 alloc="817.4 MiB" sys="2.1 GiB"
+[INFO] [09-29|19:48:24.679] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000536b8180b151a2ca3a770349e8c52646eabd8ef9a07a890000000000000001 alloc="906.9 MiB" sys="2.1 GiB"
+[INFO] [09-29|19:48:41.644] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf013760012 alloc="1.7 GiB" sys="2.3 GiB"
+[INFO] [09-29|19:48:54.675] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005376ee80b151a2ca3a770349e8c52646eabd8ef9a07a890000000000000001 alloc="265.3 MiB" sys="2.3 GiB"
+[INFO] [09-29|19:49:01.331] [p2p] GoodPeers                          eth66=27 eth65=19
+[INFO] [09-29|19:49:24.674] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000053b3dab895f40503d79dfddc5e2b99dc22b374ac55e7730000000000000001 alloc="467.5 MiB" sys="2.3 GiB"
+[INFO] [09-29|19:49:54.676] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=000000000053f2d64316321162e0767602126e7b1bb6640d4c94dbaf0000000000000001 alloc="682.8 MiB" sys="2.3 GiB"
+[INFO] [09-29|19:50:24.680] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=0000000000548241be22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="1.0 GiB" sys="2.3 GiB"
+[INFO] [09-29|19:50:54.676] [10/18 HashState] ETL [1/2] Extracting   from=StorageChangeSet current key=00000000005507fb2890ba17efe978480615e330ecb65333b880928e0000000000000001 alloc="788.2 MiB" sys="2.3 GiB"
+[INFO] [09-29|19:51:01.332] [p2p] GoodPeers                          eth66=27 eth65=21
+[INFO] [09-29|19:51:07.915] Regenerated local transaction journal    transactions=0 accounts=0
+[INFO] [09-29|19:51:18.037] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf880324091 alloc="1.3 GiB" sys="2.4 GiB"
+[INFO] [09-29|19:51:50.806] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=213db049... alloc="191.7 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:52:20.804] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=3e0d733a... alloc="158.0 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:52:51.105] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=607f887e... alloc="147.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:53:01.332] [p2p] GoodPeers                          eth66=27 eth65=21
+[INFO] [09-29|19:53:20.800] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=7b5389c2... alloc="175.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:53:50.804] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=7c4c71a3... alloc="118.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:54:20.802] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=91d7344b... alloc="135.4 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:54:51.626] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=91d7344b... alloc="180.6 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:55:01.332] [p2p] GoodPeers                          eth66=27 eth65=21
+[INFO] [09-29|19:55:20.807] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=94400802... alloc="120.4 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:55:52.653] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=ad1c6cec... alloc="185.6 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:56:24.340] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=ad3bcada... alloc="207.0 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:56:50.800] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=c7a6197e... alloc="150.1 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:57:01.331] [p2p] GoodPeers                          eth66=29 eth65=22
+[INFO] [09-29|19:57:20.797] [10/18 HashState] ETL [2/2] Loading      into=HashedStorage current key=d916ab8f... alloc="208.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|19:57:42.189] [10/18 HashState] etl: temp files removed total size="756.1 MB"
+[INFO] [09-29|19:59:01.331] [p2p] GoodPeers                          eth66=31 eth65=24
+[INFO] [09-29|19:59:05.959] [10/18 HashState] DONE                   in=1h0m54.276065078s
+[INFO] [09-29|19:59:05.998] [11/18 IntermediateHashes] Generating intermediate hashes from=5234895 to=5585613
+[INFO] [09-29|19:59:36.013] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=00000000005001ee alloc="196.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:00:06.015] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000500edb alloc="128.6 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:00:36.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000501111 alloc="145.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:01:01.332] [p2p] GoodPeers                          eth66=32 eth65=27
+[INFO] [09-29|20:01:06.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050136d alloc="162.9 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:01:36.017] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000502ab7 alloc="186.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:02:06.020] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=00000000005036f5 alloc="129.9 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:02:36.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000505786 alloc="154.8 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:03:01.332] [p2p] GoodPeers                          eth66=33 eth65=29
+[INFO] [09-29|20:03:06.016] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000505b3c alloc="178.8 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:03:36.012] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000505b49 alloc="185.7 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:04:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000507c90 alloc="133.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:04:36.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000508bff alloc="145.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:05:01.332] [p2p] GoodPeers                          eth66=33 eth65=29
+[INFO] [09-29|20:05:06.014] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050b52c alloc="163.0 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:05:36.014] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050c4ed alloc="190.1 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:06:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050c614 alloc="136.7 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:06:36.009] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050df9e alloc="157.9 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:07:01.332] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|20:07:06.012] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050e3c9 alloc="176.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:07:36.013] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050f256 alloc="196.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:08:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000050f53b alloc="134.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:08:36.013] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000511293 alloc="158.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:09:01.332] [p2p] GoodPeers                          eth66=33 eth65=33
+[INFO] [09-29|20:09:06.009] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000513d30 alloc="187.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:09:36.013] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000516f81 alloc="228.6 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:10:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000051ad64 alloc="191.6 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:10:36.019] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000051d99b alloc="135.8 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:11:01.332] [p2p] GoodPeers                          eth66=28 eth65=26
+[INFO] [09-29|20:11:06.012] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000522ab3 alloc="198.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:11:36.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000524953 alloc="231.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:12:06.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=00000000005249a3 alloc="247.1 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:12:36.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000526a77 alloc="166.9 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:13:01.332] [p2p] GoodPeers                          eth66=31 eth65=29
+[INFO] [09-29|20:13:06.014] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=00000000005286b6 alloc="212.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:13:36.016] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=0000000000529c3f alloc="254.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:14:06.019] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052a4c4 alloc="162.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:14:36.015] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052afee alloc="187.4 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:15:01.332] [p2p] GoodPeers                          eth66=31 eth65=30
+[INFO] [09-29|20:15:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052b831 alloc="259.8 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:15:36.018] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052bad5 alloc="199.7 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:16:06.013] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052bf0f alloc="226.9 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:16:36.014] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052c3dd alloc="248.7 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:17:01.332] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:17:06.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052c7fd alloc="268.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:17:36.009] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052cd57 alloc="178.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:18:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052e64b alloc="223.3 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:18:36.011] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000052ebce alloc="246.1 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:19:01.332] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:19:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000053574c alloc="315.0 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:19:36.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=00000000005394ef alloc="282.2 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:20:06.010] [11/18 IntermediateHashes] ETL [1/2] Extracting from=AccountChangeSet current key=000000000054df91 alloc="263.1 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:20:52.261] [11/18 IntermediateHashes] ETL [1/2] Extracting from=StorageChangeSet current key=000000000051d665be22ac13ad6af062843eb33adfccfee6bbb4481b0000000000000001 alloc="603.5 MiB" sys="2.4 GiB"
+[INFO] [09-29|20:21:01.332] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:21:30.835] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf558166302 alloc="2.0 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:21:34.178] [11/18 IntermediateHashes] ETL [1/2] Extracting from=StorageChangeSet current key=000000000052bd3e07aaec0b237ccf56b03a7c43c1c7a783da5606420000000000000001 alloc="2.0 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:21:52.259] [11/18 IntermediateHashes] ETL [1/2] Extracting from=StorageChangeSet current key=00000000005340d93151b7dd9f6e806d2709153765925c373af470890000000000000001 alloc="717.6 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:22:18.680] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf955771877 alloc="2.0 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:22:22.260] [11/18 IntermediateHashes] ETL [1/2] Extracting from=StorageChangeSet current key=00000000005383ce80b151a2ca3a770349e8c52646eabd8ef9a07a890000000000000001 alloc="2.0 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:22:52.873] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf066388992 alloc="693.1 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:23:01.331] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:23:02.828] [11/18 IntermediateHashes] etl: temp files removed total size="654.8 MB"
+[INFO] [09-29|20:23:32.927] [11/18 IntermediateHashes] Calculating Merkle root current key=097d5477...
+[INFO] [09-29|20:24:06.190] [11/18 IntermediateHashes] Calculating Merkle root current key=127f3db9...
+[INFO] [09-29|20:24:45.172] [11/18 IntermediateHashes] Calculating Merkle root current key=18c45ce0...
+[INFO] [09-29|20:25:01.332] [p2p] GoodPeers                          eth66=32 eth65=31
+[INFO] [09-29|20:25:02.923] [11/18 IntermediateHashes] Calculating Merkle root current key=21ca2229...
+[INFO] [09-29|20:25:32.919] [11/18 IntermediateHashes] Calculating Merkle root current key=34fc4679...
+[INFO] [09-29|20:26:02.923] [11/18 IntermediateHashes] Calculating Merkle root current key=401bf5a4...
+[INFO] [09-29|20:26:32.924] [11/18 IntermediateHashes] Calculating Merkle root current key=511d0c8f...
+[INFO] [09-29|20:27:01.332] [p2p] GoodPeers                          eth66=32 eth65=31
+[INFO] [09-29|20:27:02.923] [11/18 IntermediateHashes] Calculating Merkle root current key=60ce76d8...
+[INFO] [09-29|20:27:32.919] [11/18 IntermediateHashes] Calculating Merkle root current key=758f2116...
+[INFO] [09-29|20:28:02.920] [11/18 IntermediateHashes] Calculating Merkle root current key=7ca8621b...
+[INFO] [09-29|20:28:36.034] [11/18 IntermediateHashes] Calculating Merkle root current key=8deadbb7...
+[INFO] [09-29|20:29:01.331] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:29:03.386] [11/18 IntermediateHashes] Calculating Merkle root current key=91d7344b...
+[INFO] [09-29|20:29:34.664] [11/18 IntermediateHashes] Calculating Merkle root current key=a63896eb...
+[INFO] [09-29|20:30:21.431] [11/18 IntermediateHashes] Calculating Merkle root current key=ad1a9a1d...
+[INFO] [09-29|20:30:32.926] [11/18 IntermediateHashes] Calculating Merkle root current key=b139b4b2...
+[INFO] [09-29|20:31:01.331] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:31:02.938] [11/18 IntermediateHashes] Calculating Merkle root current key=c2e00cef...
+[INFO] [09-29|20:31:32.918] [11/18 IntermediateHashes] Calculating Merkle root current key=d610f6ae...
+[INFO] [09-29|20:32:02.925] [11/18 IntermediateHashes] Calculating Merkle root current key=e51f0a70...
+[INFO] [09-29|20:32:32.920] [11/18 IntermediateHashes] Calculating Merkle root current key=ef73c4a2...
+[INFO] [09-29|20:33:01.332] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:33:02.923] [11/18 IntermediateHashes] Calculating Merkle root current key=fa89f1d5...
+[INFO] [09-29|20:34:56.123] [11/18 IntermediateHashes] DONE          in=35m50.164172517s
+[INFO] [09-29|20:35:01.331] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:35:26.148] [12/18 CallTraces] Progress              number=5419904 blk/second=6166.933 alloc="398.25 MiB" sys="3.22 GiB"
+[INFO] [09-29|20:35:56.393] [12/18 CallTraces] Progress              number=5575089 blk/second=5172.833 alloc="658.54 MiB" sys="3.22 GiB"
+[INFO] [09-29|20:36:29.603] [12/18 CallTraces] ETL [2/2] Loading     into=CallFromIndex current key=3b401da8... alloc="567.8 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:36:59.601] [12/18 CallTraces] ETL [2/2] Loading     into=CallFromIndex current key=7e255f73... alloc="333.8 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:37:01.332] [p2p] GoodPeers                          eth66=31 eth65=31
+[INFO] [09-29|20:37:29.594] [12/18 CallTraces] ETL [2/2] Loading     into=CallFromIndex current key=b8bc5816... alloc="506.7 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:37:59.608] [12/18 CallTraces] ETL [2/2] Loading     into=CallFromIndex current key=f7430b2b... alloc="541.4 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:38:34.877] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=308e0d61... alloc="560.9 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:39:01.331] [p2p] GoodPeers                          eth66=31 eth65=32
+[INFO] [09-29|20:39:07.038] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=4b5c7c19... alloc="347.0 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:39:34.865] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=6ce2372c... alloc="414.8 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:40:04.869] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=9c948680... alloc="599.1 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:40:35.632] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=c23e3621... alloc="346.6 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:41:01.332] [p2p] GoodPeers                          eth66=31 eth65=32
+[INFO] [09-29|20:41:04.865] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=f2a90c03... alloc="399.0 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:41:35.082] [12/18 CallTraces] ETL [2/2] Loading     into=CallToIndex current key=fd8d15b8... alloc="421.2 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:43:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:43:03.916] [12/18 CallTraces] DONE                  in=8m7.782106906s
+[INFO] [09-29|20:43:33.918] [13/18 AccountHistoryIndex] Progress     number=5421787 alloc="291.5 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:44:32.392] [13/18 AccountHistoryIndex] ETL [2/2] Loading into=AccountHistory current key=3623ae4d... alloc="344.2 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:45:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:45:02.394] [13/18 AccountHistoryIndex] ETL [2/2] Loading into=AccountHistory current key=67e040c6... alloc="408.0 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:45:32.395] [13/18 AccountHistoryIndex] ETL [2/2] Loading into=AccountHistory current key=99cad4ce... alloc="559.1 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:46:02.391] [13/18 AccountHistoryIndex] ETL [2/2] Loading into=AccountHistory current key=cddc7554... alloc="433.9 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:46:32.397] [13/18 AccountHistoryIndex] ETL [2/2] Loading into=AccountHistory current key=fd904d68... alloc="303.5 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:47:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:47:59.190] [13/18 AccountHistoryIndex] DONE         in=4m55.273210697s
+[INFO] [09-29|20:48:29.192] [14/18 StorageHistoryIndex] Progress     number=5372857 alloc="863.7 MiB" sys="3.2 GiB"
+[INFO] [09-29|20:48:59.192] [14/18 StorageHistoryIndex] Progress     number=5424810 alloc="1.7 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:49:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:49:10.155] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf685322079 alloc="2.6 GiB" sys="3.2 GiB"
+[INFO] [09-29|20:49:29.508] [14/18 StorageHistoryIndex] Progress     number=5456336 alloc="817.8 MiB" sys="4.0 GiB"
+[INFO] [09-29|20:49:59.046] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf023568690 alloc="2.8 GiB" sys="4.3 GiB"
+[INFO] [09-29|20:50:03.598] [14/18 StorageHistoryIndex] Progress     number=5486434 alloc="3.5 GiB" sys="4.4 GiB"
+[INFO] [09-29|20:50:29.424] Flushed buffer file                      name=/home/kairat/diskC/goerli/erigon/etl-temp/tg-sync-sortable-buf830378729 alloc="1.2 GiB" sys="4.4 GiB"
+[INFO] [09-29|20:51:01.331] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:51:02.241] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=15b1281f... alloc="201.7 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:51:08.015] Regenerated local transaction journal    transactions=0 accounts=0
+[INFO] [09-29|20:51:32.240] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=15b1281f... alloc="166.3 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:52:02.244] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=2890ba17... alloc="134.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:52:32.242] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=36eebaa1... alloc="197.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:53:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:53:02.283] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=5e6229f2... alloc="200.8 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:53:32.238] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=731ea2d9... alloc="152.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:54:02.238] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=9487b0b2... alloc="170.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:54:32.242] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=aa6ce64b... alloc="216.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:55:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:55:03.994] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=bbcf71d5... alloc="210.7 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:55:32.239] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=be22ac13... alloc="225.4 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:56:02.341] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=c62aa047... alloc="192.8 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:56:32.252] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=ef3020ae... alloc="196.8 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:57:01.332] [p2p] GoodPeers                          eth66=32 eth65=31
+[INFO] [09-29|20:57:02.240] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=f74a5ca6... alloc="141.5 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:57:32.239] [14/18 StorageHistoryIndex] ETL [2/2] Loading into=StorageHistory current key=f74a5ca6... alloc="133.5 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:57:49.808] [14/18 StorageHistoryIndex] etl: temp files removed total size="760.7 MB"
+[INFO] [09-29|20:58:04.779] [14/18 StorageHistoryIndex] DONE         in=10m5.588801053s
+[INFO] [09-29|20:58:34.780] [15/18 LogIndex] Progress                number=5366413 alloc="251.3 MiB" sys="4.4 GiB"
+[INFO] [09-29|20:59:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|20:59:04.780] [15/18 LogIndex] Progress                number=5441543 alloc="414.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:00:05.303] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=0000000000000000000000001e77e2e708ddc2a8405c8f7f1318e4a3a08237c0ffffffff alloc="285.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:00:35.303] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=000000000000000000000000456bcdc20b8df973f54980db6b225c9e5ebfa64affffffff alloc="325.8 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:01:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:01:05.297] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=0000000000000000000000007217cba1cb3501ac0ed8ad6c35b6a6d681c665a9ffffffff alloc="254.9 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:01:35.296] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=0000000000000000000000009fd297e15e3e1b9c872914d7232d380bc27e8313ffffffff alloc="373.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:02:05.296] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=000000000000000000000000ce66fb3d340b79b21f6ad7d62ee9f8698f4a6157ffffffff alloc="252.2 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:02:35.297] [15/18 LogIndex] ETL [2/2] Loading       into=LogTopicIndex current key=000000000000000000000000fb834596d217fccdd1aa96c7f1f9250a980f6e9effffffff alloc="453.9 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:03:01.331] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:03:26.200] [15/18 LogIndex] ETL [2/2] Loading       into=LogAddressIndex current key=7e229109... alloc="308.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:03:56.200] [15/18 LogIndex] ETL [2/2] Loading       into=LogAddressIndex current key=f7eb1d77... alloc="284.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:04:47.579] [15/18 LogIndex] DONE                    in=6m42.800758845s
+[INFO] [09-29|21:05:01.331] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:05:17.582] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5310675 alloc="230.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:05:47.583] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5352883 alloc="270.2 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:06:17.581] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5386473 alloc="330.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:06:47.581] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5418679 alloc="537.4 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:07:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:07:17.592] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5433997 alloc="524.5 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:07:47.581] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5451448 alloc="610.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:08:17.583] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5468218 alloc="549.2 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:08:47.586] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5483480 alloc="759.2 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:09:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:09:17.581] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5521014 alloc="998.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:09:47.582] [16/18 TxLookup] ETL [1/2] Extracting    from=CanonicalHeader block=5574352 alloc="567.4 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:10:50.405] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=15d99f50... alloc="770.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:11:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:11:20.405] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=29c198ce... alloc="812.3 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:11:50.406] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=3c3df0ef... alloc="479.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:12:20.407] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=4ee7e70d... alloc="520.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:12:50.411] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=65000655... alloc="576.9 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:13:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:13:20.808] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=6ee9d2a2... alloc="601.9 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:13:52.372] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=6ef50cd7... alloc="466.4 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:14:20.405] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=74648f6a... alloc="485.8 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:14:50.407] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=8af92be6... alloc="538.1 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:15:01.331] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:15:21.904] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=8b46aa21... alloc="550.5 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:15:50.406] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=8bdc2d23... alloc="466.5 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:16:20.412] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=a2d06447... alloc="514.7 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:16:50.408] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=b5063e65... alloc="553.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:17:01.332] [p2p] GoodPeers                          eth66=32 eth65=32
+[INFO] [09-29|21:17:20.411] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=cb3ca5ae... alloc="602.2 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:17:50.405] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=de1f393c... alloc="484.0 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:18:20.412] [16/18 TxLookup] ETL [2/2] Loading       into=BlockTransactionLookup current key=f1d8eb1a... alloc="526.6 MiB" sys="4.4 GiB"
+[INFO] [09-29|21:18:55.491] [16/18 TxLookup] DONE                    in=14m7.911056174s
+[INFO] [09-29|21:19:01.331] [p2p] GoodPeers                          eth66=33 eth65=32
+[INFO] [09-29|21:21:01.332] [p2p] GoodPeers                          eth66=33 eth65=32
+[INFO] [09-29|21:23:01.332] [p2p] GoodPeers                          eth66=33 eth65=32
+[INFO] [09-29|21:24:14.179] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:24:15.164] [17/18 TxPool] DONE                      in=5m19.672600844s
+[INFO] [09-29|21:24:15.469] Timings (slower than 10ms)               Prune CallTraces=72ms Prune IntermediateHashes=49ms Prune Execution=57ms
+[INFO] [09-29|21:24:15.499] Update current block for the RPC API     from=5234896 to=5585613
+[INFO] [09-29|21:24:37.002] [1/18 Headers] Waiting for headers...    from=5585613
+[INFO] [09-29|21:24:37.088] UnwindTo                                 block=5585612 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:24:37.089] [1/18 Headers] Processed                 highest inserted=5585618 age=2h32m6s
+[INFO] [09-29|21:24:38.593] [10/18 HashState] Unwinding started      from=5585613 to=5585612 storage=false codes=true
+[INFO] [09-29|21:24:39.106] [10/18 HashState] Unwinding started      from=5585613 to=5585612 storage=false codes=false
+[INFO] [09-29|21:24:39.507] [10/18 HashState] Unwinding started      from=5585613 to=5585612 storage=true codes=false
+[INFO] [09-29|21:24:39.799] [11/18 IntermediateHashes] Unwinding of trie hashes from=5585613 to=5585612 csbucket=AccountChangeSet
+[INFO] [09-29|21:24:39.995] [11/18 IntermediateHashes] Unwinding of trie hashes from=5585613 to=5585612 csbucket=StorageChangeSet
+[INFO] [09-29|21:24:41.330] [11/18 IntermediateHashes] Trie root     hash=0xed82e84b36e2c9220f749f05740fc04d1d6aabbe6303c69012a7064edbe1a32a
+[INFO] [09-29|21:24:41.611] [7/18 Execution] Unwind Execution        from=5585613 to=5585612
+[INFO] [09-29|21:24:41.714] [17/18 TxPool] Injecting txs into the pool number=7
+[INFO] [09-29|21:24:41.737] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:24:41.737] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:24:44.311] [7/18 Execution] Completed on            block=5585618
+[INFO] [09-29|21:24:48.062] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:24:48.062] Timings (slower than 10ms)               Unwind TxLookup=62ms Unwind LogIndex=504ms Unwind StorageHistoryIndex=454ms Unwind AccountHistoryIndex=454ms Unwind CallTraces=26ms Unwind HashState=1.205s Unwind IntermediateHashes=1.811s Unwind Execution=78ms Unwind TxPool=48ms
+[INFO] [09-29|21:24:48.062] Tables                                   freelist="2.45 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.04 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:24:52.905] Commit cycle                             in=4.842685899s
+[INFO] [09-29|21:24:52.905] Update current block for the RPC API     from=5585613 to=5585618
+[INFO] [09-29|21:24:52.906] [1/18 Headers] Waiting for headers...    from=5585618
+[INFO] [09-29|21:24:58.144] UnwindTo                                 block=5585617 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:24:58.144] [1/18 Headers] Processed                 highest inserted=5586227 age=12s
+[INFO] [09-29|21:24:58.288] [10/18 HashState] Unwinding started      from=5585618 to=5585617 storage=false codes=true
+[INFO] [09-29|21:24:58.288] [10/18 HashState] Unwinding started      from=5585618 to=5585617 storage=false codes=false
+[INFO] [09-29|21:24:58.289] [10/18 HashState] Unwinding started      from=5585618 to=5585617 storage=true codes=false
+[INFO] [09-29|21:24:58.301] [11/18 IntermediateHashes] Unwinding of trie hashes from=5585618 to=5585617 csbucket=AccountChangeSet
+[INFO] [09-29|21:24:58.301] [11/18 IntermediateHashes] Unwinding of trie hashes from=5585618 to=5585617 csbucket=StorageChangeSet
+[INFO] [09-29|21:24:58.304] [11/18 IntermediateHashes] Trie root     hash=0xfd06d2d239f94fd63dc730800f29148a93823ce86315c4240cc6013a2ff4a132
+[INFO] [09-29|21:24:58.305] [7/18 Execution] Unwind Execution        from=5585618 to=5585617
+[INFO] [09-29|21:24:58.306] [17/18 TxPool] Injecting txs into the pool number=1
+[INFO] [09-29|21:24:58.306] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:24:58.306] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:25:01.332] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:25:09.389] [4/18 Bodies] Processing bodies...       from=5585617 to=5586227
+[INFO] [09-29|21:25:11.954] [4/18 Bodies] Processed                  highest=5586227
+[INFO] [09-29|21:25:11.954] [6/18 Senders] Started                   from=5585617 to=5586227
+[INFO] [09-29|21:25:12.829] [7/18 Execution] Blocks execution        from=5585617 to=5586227
+[INFO] [09-29|21:25:41.428] [7/18 Execution] Completed on            block=5586227
+[INFO] [09-29|21:25:41.428] [10/18 HashState] Promoting plain state  from=5585617 to=5586227
+[INFO] [09-29|21:25:41.428] [10/18 HashState] Incremental promotion started from=5585617 to=5586227 codes=true csbucket=AccountChangeSet
+[INFO] [09-29|21:25:44.888] [10/18 HashState] Incremental promotion started from=5585617 to=5586227 codes=false csbucket=AccountChangeSet
+[INFO] [09-29|21:25:48.888] [10/18 HashState] Incremental promotion started from=5585617 to=5586227 codes=false csbucket=StorageChangeSet
+[INFO] [09-29|21:25:53.984] [11/18 IntermediateHashes] Generating intermediate hashes from=5585617 to=5586227
+[INFO] [09-29|21:26:58.492] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:26:58.492] Timings (slower than 10ms)               Unwind LogIndex=42ms Unwind StorageHistoryIndex=75ms Unwind AccountHistoryIndex=25ms Unwind HashState=12ms
+[INFO] [09-29|21:26:58.492] Tables                                   freelist="2.45 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.04 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:27:01.332] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:27:24.085] Commit cycle                             in=25.592522998s
+[INFO] [09-29|21:27:24.085] Update current block for the RPC API     from=5585618 to=5586227
+[INFO] [09-29|21:27:24.093] [1/18 Headers] Waiting for headers...    from=5586227
+[INFO] [09-29|21:27:24.151] UnwindTo                                 block=5586226 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:27:24.151] [1/18 Headers] Processed                 highest inserted=5586237 age=8s
+[INFO] [09-29|21:27:24.250] [10/18 HashState] Unwinding started      from=5586227 to=5586226 storage=false codes=true
+[INFO] [09-29|21:27:24.251] [10/18 HashState] Unwinding started      from=5586227 to=5586226 storage=false codes=false
+[INFO] [09-29|21:27:24.251] [10/18 HashState] Unwinding started      from=5586227 to=5586226 storage=true codes=false
+[INFO] [09-29|21:27:24.251] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586227 to=5586226 csbucket=AccountChangeSet
+[INFO] [09-29|21:27:24.251] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586227 to=5586226 csbucket=StorageChangeSet
+[INFO] [09-29|21:27:24.253] [11/18 IntermediateHashes] Trie root     hash=0x2a4b5da6af29b72266344a4e0ebceaabcf498f1fc7ac2dd4175beadbb1da41f2
+[INFO] [09-29|21:27:24.253] [7/18 Execution] Unwind Execution        from=5586227 to=5586226
+[INFO] [09-29|21:27:24.254] [17/18 TxPool] Injecting txs into the pool number=1
+[INFO] [09-29|21:27:24.254] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:27:24.254] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:25.378] [7/18 Execution] Completed on            block=5586237
+[INFO] [09-29|21:27:27.015] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:27.015] Timings (slower than 10ms)               Unwind LogIndex=75ms Unwind AccountHistoryIndex=22ms
+[INFO] [09-29|21:27:27.016] Tables                                   freelist="2.43 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.04 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:27:27.205] Commit cycle                             in=189.69165ms
+[INFO] [09-29|21:27:27.206] Update current block for the RPC API     from=5586227 to=5586237
+[INFO] [09-29|21:27:27.206] [1/18 Headers] Waiting for headers...    from=5586237
+[INFO] [09-29|21:27:31.330] [1/18 Headers] Processed                 highest inserted=5586238 age=0
+[INFO] [09-29|21:27:31.751] [7/18 Execution] Completed on            block=5586238
+[INFO] [09-29|21:27:33.126] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:33.225] Commit cycle                             in=99.206224ms
+[INFO] [09-29|21:27:33.226] Update current block for the RPC API     from=5586238 to=5586238
+[INFO] [09-29|21:27:33.226] [1/18 Headers] Waiting for headers...    from=5586238
+[INFO] [09-29|21:27:33.753] UnwindTo                                 block=5586237 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:27:33.754] [1/18 Headers] Processed                 highest inserted=5586238 age=2s
+[INFO] [09-29|21:27:34.134] [10/18 HashState] Unwinding started      from=5586238 to=5586237 storage=false codes=true
+[INFO] [09-29|21:27:34.134] [10/18 HashState] Unwinding started      from=5586238 to=5586237 storage=false codes=false
+[INFO] [09-29|21:27:34.135] [10/18 HashState] Unwinding started      from=5586238 to=5586237 storage=true codes=false
+[INFO] [09-29|21:27:34.144] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586238 to=5586237 csbucket=AccountChangeSet
+[INFO] [09-29|21:27:34.145] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586238 to=5586237 csbucket=StorageChangeSet
+[INFO] [09-29|21:27:34.149] [11/18 IntermediateHashes] Trie root     hash=0x519009d01e7936f722927fc52e65561cc8355bfb6a80d011fbdde0cd6ce0a439
+[INFO] [09-29|21:27:34.158] [7/18 Execution] Unwind Execution        from=5586238 to=5586237
+[INFO] [09-29|21:27:34.159] [17/18 TxPool] Injecting txs into the pool number=16
+[INFO] [09-29|21:27:34.161] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:27:34.161] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:34.264] [7/18 Execution] Completed on            block=5586238
+[INFO] [09-29|21:27:34.269] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:34.269] Timings (slower than 10ms)               Unwind LogIndex=112ms Unwind StorageHistoryIndex=159ms Unwind AccountHistoryIndex=107ms Unwind HashState=10ms Unwind IntermediateHashes=13ms
+[INFO] [09-29|21:27:34.269] Tables                                   freelist="2.43 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.04 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:27:34.362] Commit cycle                             in=92.419654ms
+[INFO] [09-29|21:27:34.362] Update current block for the RPC API     from=5586238 to=5586238
+[INFO] [09-29|21:27:34.362] [1/18 Headers] Waiting for headers...    from=5586238
+[INFO] [09-29|21:27:46.239] [1/18 Headers] Processed                 highest inserted=5586239 age=0
+[INFO] [09-29|21:27:46.612] [7/18 Execution] Completed on            block=5586239
+[INFO] [09-29|21:27:47.711] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:27:47.842] Commit cycle                             in=131.269665ms
+[INFO] [09-29|21:27:47.843] Update current block for the RPC API     from=5586239 to=5586239
+[INFO] [09-29|21:27:47.843] [1/18 Headers] Waiting for headers...    from=5586239
+[INFO] [09-29|21:28:01.633] [1/18 Headers] Processed                 highest inserted=5586240 age=0
+[INFO] [09-29|21:28:01.917] [7/18 Execution] Completed on            block=5586240
+[INFO] [09-29|21:28:02.732] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:28:02.838] Commit cycle                             in=106.11147ms
+[INFO] [09-29|21:28:02.838] Update current block for the RPC API     from=5586240 to=5586240
+[INFO] [09-29|21:28:02.839] [1/18 Headers] Waiting for headers...    from=5586240
+[INFO] [09-29|21:28:16.073] [1/18 Headers] Processed                 highest inserted=5586241 age=0
+[INFO] [09-29|21:28:16.498] [7/18 Execution] Completed on            block=5586241
+[INFO] [09-29|21:28:17.425] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:28:17.538] Commit cycle                             in=112.827775ms
+[INFO] [09-29|21:28:17.538] Update current block for the RPC API     from=5586241 to=5586241
+[INFO] [09-29|21:28:17.539] [1/18 Headers] Waiting for headers...    from=5586241
+[INFO] [09-29|21:28:31.080] [1/18 Headers] Processed                 highest inserted=5586242 age=0
+[INFO] [09-29|21:28:31.384] [7/18 Execution] Completed on            block=5586242
+[INFO] [09-29|21:28:32.272] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:28:32.394] Commit cycle                             in=121.863986ms
+[INFO] [09-29|21:28:32.394] Update current block for the RPC API     from=5586242 to=5586242
+[INFO] [09-29|21:28:32.395] [1/18 Headers] Waiting for headers...    from=5586242
+[INFO] [09-29|21:28:46.885] [1/18 Headers] Processed                 highest inserted=5586243 age=0
+[INFO] [09-29|21:28:47.018] [7/18 Execution] Completed on            block=5586243
+[INFO] [09-29|21:28:47.364] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:28:47.440] Commit cycle                             in=75.574851ms
+[INFO] [09-29|21:28:47.440] Update current block for the RPC API     from=5586243 to=5586243
+[INFO] [09-29|21:28:47.440] [1/18 Headers] Waiting for headers...    from=5586243
+[INFO] [09-29|21:29:01.050] [1/18 Headers] Processed                 highest inserted=5586244 age=0
+[INFO] [09-29|21:29:01.331] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:29:01.585] [7/18 Execution] Completed on            block=5586244
+[INFO] [09-29|21:29:03.514] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:03.687] Commit cycle                             in=173.048114ms
+[INFO] [09-29|21:29:03.688] Update current block for the RPC API     from=5586244 to=5586244
+[INFO] [09-29|21:29:03.688] [1/18 Headers] Waiting for headers...    from=5586244
+[INFO] [09-29|21:29:16.187] [1/18 Headers] Processed                 highest inserted=5586245 age=0
+[INFO] [09-29|21:29:16.473] [7/18 Execution] Completed on            block=5586245
+[INFO] [09-29|21:29:17.361] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:17.481] Commit cycle                             in=120.157501ms
+[INFO] [09-29|21:29:17.481] Update current block for the RPC API     from=5586245 to=5586245
+[INFO] [09-29|21:29:17.482] [1/18 Headers] Waiting for headers...    from=5586245
+[INFO] [09-29|21:29:31.132] [1/18 Headers] Processed                 highest inserted=5586246 age=0
+[INFO] [09-29|21:29:31.151] [7/18 Execution] Completed on            block=5586246
+[INFO] [09-29|21:29:31.180] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:31.266] Commit cycle                             in=86.449157ms
+[INFO] [09-29|21:29:31.267] Update current block for the RPC API     from=5586246 to=5586246
+[INFO] [09-29|21:29:31.267] [1/18 Headers] Waiting for headers...    from=5586246
+[INFO] [09-29|21:29:47.194] [1/18 Headers] Processed                 highest inserted=5586247 age=1s
+[INFO] [09-29|21:29:47.521] [7/18 Execution] Completed on            block=5586247
+[INFO] [09-29|21:29:49.371] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:49.499] Commit cycle                             in=127.742422ms
+[INFO] [09-29|21:29:49.499] Update current block for the RPC API     from=5586247 to=5586247
+[INFO] [09-29|21:29:49.500] [1/18 Headers] Waiting for headers...    from=5586247
+[INFO] [09-29|21:29:49.503] UnwindTo                                 block=5586246 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:29:49.503] [1/18 Headers] Processed                 highest inserted=5586247 age=3s
+[INFO] [09-29|21:29:49.872] [10/18 HashState] Unwinding started      from=5586247 to=5586246 storage=false codes=true
+[INFO] [09-29|21:29:49.873] [10/18 HashState] Unwinding started      from=5586247 to=5586246 storage=false codes=false
+[INFO] [09-29|21:29:49.873] [10/18 HashState] Unwinding started      from=5586247 to=5586246 storage=true codes=false
+[INFO] [09-29|21:29:49.884] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586247 to=5586246 csbucket=AccountChangeSet
+[INFO] [09-29|21:29:49.885] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586247 to=5586246 csbucket=StorageChangeSet
+[INFO] [09-29|21:29:49.897] [11/18 IntermediateHashes] Trie root     hash=0x482343b7c0cb214bafea73c7ce514fb5847e808489a2f1ddee285e2d5e73eab8
+[INFO] [09-29|21:29:49.916] [7/18 Execution] Unwind Execution        from=5586247 to=5586246
+[INFO] [09-29|21:29:49.916] [17/18 TxPool] Injecting txs into the pool number=22
+[INFO] [09-29|21:29:49.917] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:29:49.917] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:49.966] [7/18 Execution] Completed on            block=5586247
+[INFO] [09-29|21:29:49.971] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:29:49.971] Timings (slower than 10ms)               Unwind LogIndex=122ms Unwind StorageHistoryIndex=155ms Unwind AccountHistoryIndex=90ms Unwind HashState=12ms Unwind IntermediateHashes=31ms
+[INFO] [09-29|21:29:49.971] Tables                                   freelist="2.45 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:29:50.084] Commit cycle                             in=112.524479ms
+[INFO] [09-29|21:29:50.084] Update current block for the RPC API     from=5586247 to=5586247
+[INFO] [09-29|21:29:50.084] [1/18 Headers] Waiting for headers...    from=5586247
+[INFO] [09-29|21:30:01.773] [1/18 Headers] Processed                 highest inserted=5586248 age=0
+[INFO] [09-29|21:30:01.803] [7/18 Execution] Completed on            block=5586248
+[INFO] [09-29|21:30:01.806] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:01.835] Commit cycle                             in=28.232968ms
+[INFO] [09-29|21:30:01.835] Update current block for the RPC API     from=5586248 to=5586248
+[INFO] [09-29|21:30:01.836] [1/18 Headers] Waiting for headers...    from=5586248
+[INFO] [09-29|21:30:16.094] [1/18 Headers] Processed                 highest inserted=5586249 age=0
+[INFO] [09-29|21:30:16.274] [7/18 Execution] Completed on            block=5586249
+[INFO] [09-29|21:30:16.922] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:17.045] Commit cycle                             in=123.378516ms
+[INFO] [09-29|21:30:17.046] Update current block for the RPC API     from=5586249 to=5586249
+[INFO] [09-29|21:30:17.046] [1/18 Headers] Waiting for headers...    from=5586249
+[INFO] [09-29|21:30:17.049] UnwindTo                                 block=5586248 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:30:17.050] [1/18 Headers] Processed                 highest inserted=5586249 age=1s
+[INFO] [09-29|21:30:17.216] [10/18 HashState] Unwinding started      from=5586249 to=5586248 storage=false codes=true
+[INFO] [09-29|21:30:17.216] [10/18 HashState] Unwinding started      from=5586249 to=5586248 storage=false codes=false
+[INFO] [09-29|21:30:17.217] [10/18 HashState] Unwinding started      from=5586249 to=5586248 storage=true codes=false
+[INFO] [09-29|21:30:17.218] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586249 to=5586248 csbucket=AccountChangeSet
+[INFO] [09-29|21:30:17.219] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586249 to=5586248 csbucket=StorageChangeSet
+[INFO] [09-29|21:30:17.227] [11/18 IntermediateHashes] Trie root     hash=0xfdd67dd8044bfe4f5d8ba1b8fc22a070fd4694ab7ec14371251ec94dabe5047f
+[INFO] [09-29|21:30:17.229] [7/18 Execution] Unwind Execution        from=5586249 to=5586248
+[INFO] [09-29|21:30:17.230] [17/18 TxPool] Injecting txs into the pool number=15
+[INFO] [09-29|21:30:17.232] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:30:17.232] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:17.645] [7/18 Execution] Completed on            block=5586249
+[INFO] [09-29|21:30:18.890] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:18.891] Timings (slower than 10ms)               Unwind LogIndex=47ms Unwind StorageHistoryIndex=87ms Unwind AccountHistoryIndex=31ms Unwind IntermediateHashes=10ms
+[INFO] [09-29|21:30:18.891] Tables                                   freelist="2.45 MiB" PlainState="6.12 GiB" AccountChangeSet="3.65 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:30:19.038] Commit cycle                             in=147.286667ms
+[INFO] [09-29|21:30:19.039] Update current block for the RPC API     from=5586249 to=5586249
+[INFO] [09-29|21:30:19.039] [1/18 Headers] Waiting for headers...    from=5586249
+[INFO] [09-29|21:30:31.038] [1/18 Headers] Processed                 highest inserted=5586250 age=0
+[INFO] [09-29|21:30:31.292] [7/18 Execution] Completed on            block=5586250
+[INFO] [09-29|21:30:32.363] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:32.478] Commit cycle                             in=114.852722ms
+[INFO] [09-29|21:30:32.478] Update current block for the RPC API     from=5586250 to=5586250
+[INFO] [09-29|21:30:32.478] [1/18 Headers] Waiting for headers...    from=5586250
+[INFO] [09-29|21:30:46.157] [1/18 Headers] Processed                 highest inserted=5586251 age=0
+[INFO] [09-29|21:30:46.315] [7/18 Execution] Completed on            block=5586251
+[INFO] [09-29|21:30:46.799] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:30:46.897] Commit cycle                             in=97.956953ms
+[INFO] [09-29|21:30:46.898] Update current block for the RPC API     from=5586251 to=5586251
+[INFO] [09-29|21:30:46.898] [1/18 Headers] Waiting for headers...    from=5586251
+[INFO] [09-29|21:31:01.083] [1/18 Headers] Processed                 highest inserted=5586252 age=0
+[INFO] [09-29|21:31:01.168] [7/18 Execution] Completed on            block=5586252
+[INFO] [09-29|21:31:01.331] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:31:01.437] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:31:01.523] Commit cycle                             in=85.33842ms
+[INFO] [09-29|21:31:01.523] Update current block for the RPC API     from=5586252 to=5586252
+[INFO] [09-29|21:31:01.523] [1/18 Headers] Waiting for headers...    from=5586252
+[INFO] [09-29|21:31:17.368] [1/18 Headers] Processed                 highest inserted=5586253 age=1s
+[INFO] [09-29|21:31:17.416] [7/18 Execution] Completed on            block=5586253
+[INFO] [09-29|21:31:17.568] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:31:17.631] Commit cycle                             in=62.580885ms
+[INFO] [09-29|21:31:17.631] Update current block for the RPC API     from=5586253 to=5586253
+[INFO] [09-29|21:31:17.631] [1/18 Headers] Waiting for headers...    from=5586253
+[INFO] [09-29|21:31:32.209] [1/18 Headers] Processed                 highest inserted=5586254 age=1s
+[INFO] [09-29|21:31:32.495] [7/18 Execution] Completed on            block=5586254
+[INFO] [09-29|21:31:33.896] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:31:34.027] Commit cycle                             in=129.825892ms
+[INFO] [09-29|21:31:34.027] Update current block for the RPC API     from=5586254 to=5586254
+[INFO] [09-29|21:31:34.027] [1/18 Headers] Waiting for headers...    from=5586254
+[INFO] [09-29|21:31:48.163] [1/18 Headers] Processed                 highest inserted=5586255 age=2s
+[INFO] [09-29|21:31:48.383] [7/18 Execution] Completed on            block=5586255
+[INFO] [09-29|21:31:49.597] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:31:49.698] Commit cycle                             in=100.229292ms
+[INFO] [09-29|21:31:49.698] Update current block for the RPC API     from=5586255 to=5586255
+[INFO] [09-29|21:31:49.699] [1/18 Headers] Waiting for headers...    from=5586255
+[INFO] [09-29|21:32:01.263] [1/18 Headers] Processed                 highest inserted=5586256 age=0
+[INFO] [09-29|21:32:01.358] [7/18 Execution] Completed on            block=5586256
+[INFO] [09-29|21:32:01.723] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:32:01.845] Commit cycle                             in=121.271689ms
+[INFO] [09-29|21:32:01.845] Update current block for the RPC API     from=5586256 to=5586256
+[INFO] [09-29|21:32:01.845] [1/18 Headers] Waiting for headers...    from=5586256
+[INFO] [09-29|21:32:16.546] UnwindTo                                 block=5586255 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:32:16.546] [1/18 Headers] Processed                 highest inserted=5586257 age=0
+[INFO] [09-29|21:32:16.885] [10/18 HashState] Unwinding started      from=5586256 to=5586255 storage=false codes=true
+[INFO] [09-29|21:32:16.885] [10/18 HashState] Unwinding started      from=5586256 to=5586255 storage=false codes=false
+[INFO] [09-29|21:32:16.886] [10/18 HashState] Unwinding started      from=5586256 to=5586255 storage=true codes=false
+[INFO] [09-29|21:32:16.892] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586256 to=5586255 csbucket=AccountChangeSet
+[INFO] [09-29|21:32:16.893] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586256 to=5586255 csbucket=StorageChangeSet
+[INFO] [09-29|21:32:16.906] [11/18 IntermediateHashes] Trie root     hash=0x406bf2c785af10be4064c2435a2aebf4d7afc6c576a94ff82fcb08cf16fc8639
+[INFO] [09-29|21:32:16.909] [7/18 Execution] Unwind Execution        from=5586256 to=5586255
+[INFO] [09-29|21:32:16.911] [17/18 TxPool] Injecting txs into the pool number=7
+[INFO] [09-29|21:32:16.912] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:32:16.913] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:32:17.100] [7/18 Execution] Completed on            block=5586257
+[INFO] [09-29|21:32:17.191] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:32:17.191] Timings (slower than 10ms)               Unwind LogIndex=26ms Unwind StorageHistoryIndex=236ms Unwind AccountHistoryIndex=75ms Unwind IntermediateHashes=16ms
+[INFO] [09-29|21:32:17.191] Tables                                   freelist="2.46 MiB" PlainState="6.12 GiB" AccountChangeSet="3.66 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:32:17.351] Commit cycle                             in=159.774436ms
+[INFO] [09-29|21:32:17.352] Update current block for the RPC API     from=5586256 to=5586257
+[INFO] [09-29|21:32:17.352] [1/18 Headers] Waiting for headers...    from=5586257
+[INFO] [09-29|21:32:32.739] [1/18 Headers] Processed                 highest inserted=5586258 age=1s
+[INFO] [09-29|21:32:32.818] [7/18 Execution] Completed on            block=5586258
+[INFO] [09-29|21:32:32.997] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:32:33.064] Commit cycle                             in=66.139166ms
+[INFO] [09-29|21:32:33.064] Update current block for the RPC API     from=5586258 to=5586258
+[INFO] [09-29|21:32:33.064] [1/18 Headers] Waiting for headers...    from=5586258
+[INFO] [09-29|21:32:46.836] [1/18 Headers] Processed                 highest inserted=5586259 age=0
+[INFO] [09-29|21:32:46.871] [7/18 Execution] Completed on            block=5586259
+[INFO] [09-29|21:32:46.967] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:32:47.039] Commit cycle                             in=71.073616ms
+[INFO] [09-29|21:32:47.039] Update current block for the RPC API     from=5586259 to=5586259
+[INFO] [09-29|21:32:47.039] [1/18 Headers] Waiting for headers...    from=5586259
+[INFO] [09-29|21:33:01.331] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:33:02.906] [1/18 Headers] Processed                 highest inserted=5586260 age=1s
+[INFO] [09-29|21:33:02.925] [7/18 Execution] Completed on            block=5586260
+[INFO] [09-29|21:33:02.926] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:33:02.965] Commit cycle                             in=38.944798ms
+[INFO] [09-29|21:33:02.965] Update current block for the RPC API     from=5586260 to=5586260
+[INFO] [09-29|21:33:02.966] [1/18 Headers] Waiting for headers...    from=5586260
+[INFO] [09-29|21:33:17.229] [1/18 Headers] Processed                 highest inserted=5586261 age=1s
+[INFO] [09-29|21:33:17.260] [7/18 Execution] Completed on            block=5586261
+[INFO] [09-29|21:33:17.347] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:33:17.443] Commit cycle                             in=95.659194ms
+[INFO] [09-29|21:33:17.443] Update current block for the RPC API     from=5586261 to=5586261
+[INFO] [09-29|21:33:17.443] [1/18 Headers] Waiting for headers...    from=5586261
+[INFO] [09-29|21:33:31.079] UnwindTo                                 block=5586260 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:33:31.079] [1/18 Headers] Processed                 highest inserted=5586262 age=0
+[INFO] [09-29|21:33:31.128] [10/18 HashState] Unwinding started      from=5586261 to=5586260 storage=false codes=true
+[INFO] [09-29|21:33:31.128] [10/18 HashState] Unwinding started      from=5586261 to=5586260 storage=false codes=false
+[INFO] [09-29|21:33:31.129] [10/18 HashState] Unwinding started      from=5586261 to=5586260 storage=true codes=false
+[INFO] [09-29|21:33:31.130] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586261 to=5586260 csbucket=AccountChangeSet
+[INFO] [09-29|21:33:31.130] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586261 to=5586260 csbucket=StorageChangeSet
+[INFO] [09-29|21:33:31.134] [11/18 IntermediateHashes] Trie root     hash=0x1d8cd54dcc0cd23a28779d3d668aaeab34ea2ae97677a1786589eb3de6da071d
+[INFO] [09-29|21:33:31.134] [7/18 Execution] Unwind Execution        from=5586261 to=5586260
+[INFO] [09-29|21:33:31.135] [17/18 TxPool] Injecting txs into the pool number=4
+[INFO] [09-29|21:33:31.135] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:33:31.135] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:33:31.193] [7/18 Execution] Completed on            block=5586262
+[INFO] [09-29|21:33:31.288] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:33:31.288] Timings (slower than 10ms)               Unwind LogIndex=42ms
+[INFO] [09-29|21:33:31.289] Tables                                   freelist="2.46 MiB" PlainState="6.12 GiB" AccountChangeSet="3.66 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.63 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:33:31.376] Commit cycle                             in=87.685796ms
+[INFO] [09-29|21:33:31.377] Update current block for the RPC API     from=5586261 to=5586262
+[INFO] [09-29|21:33:31.377] [1/18 Headers] Waiting for headers...    from=5586262
+[INFO] [09-29|21:33:46.506] [1/18 Headers] Processed                 highest inserted=5586263 age=0
+[INFO] [09-29|21:33:46.530] [7/18 Execution] Completed on            block=5586263
+[INFO] [09-29|21:33:46.619] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:33:46.694] Commit cycle                             in=74.32686ms
+[INFO] [09-29|21:33:46.694] Update current block for the RPC API     from=5586263 to=5586263
+[INFO] [09-29|21:33:46.694] [1/18 Headers] Waiting for headers...    from=5586263
+[INFO] [09-29|21:34:01.084] [1/18 Headers] Processed                 highest inserted=5586264 age=0
+[INFO] [09-29|21:34:01.113] [7/18 Execution] Completed on            block=5586264
+[INFO] [09-29|21:34:01.117] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:01.154] Commit cycle                             in=37.347129ms
+[INFO] [09-29|21:34:01.155] Update current block for the RPC API     from=5586264 to=5586264
+[INFO] [09-29|21:34:01.155] [1/18 Headers] Waiting for headers...    from=5586264
+[INFO] [09-29|21:34:16.195] [1/18 Headers] Processed                 highest inserted=5586265 age=0
+[INFO] [09-29|21:34:16.270] [7/18 Execution] Completed on            block=5586265
+[INFO] [09-29|21:34:16.580] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:16.686] Commit cycle                             in=105.342246ms
+[INFO] [09-29|21:34:16.686] Update current block for the RPC API     from=5586265 to=5586265
+[INFO] [09-29|21:34:16.686] [1/18 Headers] Waiting for headers...    from=5586265
+[INFO] [09-29|21:34:17.310] UnwindTo                                 block=5586264 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:34:17.310] [1/18 Headers] Processed                 highest inserted=5586265 age=1s
+[INFO] [09-29|21:34:17.647] [10/18 HashState] Unwinding started      from=5586265 to=5586264 storage=false codes=true
+[INFO] [09-29|21:34:17.647] [10/18 HashState] Unwinding started      from=5586265 to=5586264 storage=false codes=false
+[INFO] [09-29|21:34:17.648] [10/18 HashState] Unwinding started      from=5586265 to=5586264 storage=true codes=false
+[INFO] [09-29|21:34:17.658] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586265 to=5586264 csbucket=AccountChangeSet
+[INFO] [09-29|21:34:17.658] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586265 to=5586264 csbucket=StorageChangeSet
+[INFO] [09-29|21:34:17.665] [11/18 IntermediateHashes] Trie root     hash=0x0863b51985cc721bddbbb435abdaf9f1c7a8706face2fb495ce658b9b234c0b5
+[INFO] [09-29|21:34:17.667] [7/18 Execution] Unwind Execution        from=5586265 to=5586264
+[INFO] [09-29|21:34:17.697] [17/18 TxPool] Injecting txs into the pool number=10
+[INFO] [09-29|21:34:17.698] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:34:17.698] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:17.735] [7/18 Execution] Completed on            block=5586265
+[INFO] [09-29|21:34:17.751] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:17.751] Timings (slower than 10ms)               Unwind LogIndex=141ms Unwind StorageHistoryIndex=109ms Unwind AccountHistoryIndex=84ms Unwind HashState=10ms Unwind Execution=29ms
+[INFO] [09-29|21:34:17.751] Tables                                   freelist="2.47 MiB" PlainState="6.12 GiB" AccountChangeSet="3.66 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.64 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:34:17.830] Commit cycle                             in=78.956331ms
+[INFO] [09-29|21:34:17.831] Update current block for the RPC API     from=5586265 to=5586265
+[INFO] [09-29|21:34:17.831] [1/18 Headers] Waiting for headers...    from=5586265
+[INFO] [09-29|21:34:31.172] [1/18 Headers] Processed                 highest inserted=5586266 age=0
+[INFO] [09-29|21:34:31.204] [7/18 Execution] Completed on            block=5586266
+[INFO] [09-29|21:34:31.235] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:31.286] Commit cycle                             in=51.154384ms
+[INFO] [09-29|21:34:31.287] Update current block for the RPC API     from=5586266 to=5586266
+[INFO] [09-29|21:34:31.287] [1/18 Headers] Waiting for headers...    from=5586266
+[INFO] [09-29|21:34:46.022] [1/18 Headers] Processed                 highest inserted=5586267 age=0
+[INFO] [09-29|21:34:46.122] [7/18 Execution] Completed on            block=5586267
+[INFO] [09-29|21:34:46.191] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:34:46.258] Commit cycle                             in=66.668216ms
+[INFO] [09-29|21:34:46.258] Update current block for the RPC API     from=5586267 to=5586267
+[INFO] [09-29|21:34:46.258] [1/18 Headers] Waiting for headers...    from=5586267
+[INFO] [09-29|21:35:01.012] [1/18 Headers] Processed                 highest inserted=5586268 age=0
+[INFO] [09-29|21:35:01.046] [7/18 Execution] Completed on            block=5586268
+[INFO] [09-29|21:35:01.062] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:35:01.106] Commit cycle                             in=43.697152ms
+[INFO] [09-29|21:35:01.106] Update current block for the RPC API     from=5586268 to=5586268
+[INFO] [09-29|21:35:01.106] [1/18 Headers] Waiting for headers...    from=5586268
+[INFO] [09-29|21:35:01.332] [p2p] GoodPeers                          eth66=33 eth65=31
+[INFO] [09-29|21:35:16.088] [1/18 Headers] Processed                 highest inserted=5586269 age=0
+[INFO] [09-29|21:35:16.135] [7/18 Execution] Completed on            block=5586269
+[INFO] [09-29|21:35:16.163] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:35:16.209] Commit cycle                             in=45.307703ms
+[INFO] [09-29|21:35:16.209] Update current block for the RPC API     from=5586269 to=5586269
+[INFO] [09-29|21:35:16.209] [1/18 Headers] Waiting for headers...    from=5586269
+[INFO] [09-29|21:35:31.077] [1/18 Headers] Processed                 highest inserted=5586270 age=0
+[INFO] [09-29|21:35:31.142] [7/18 Execution] Completed on            block=5586270
+[INFO] [09-29|21:35:31.211] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:35:31.287] Commit cycle                             in=75.974868ms
+[INFO] [09-29|21:35:31.287] Update current block for the RPC API     from=5586270 to=5586270
+[INFO] [09-29|21:35:31.288] [1/18 Headers] Waiting for headers...    from=5586270
+[INFO] [09-29|21:35:46.308] [1/18 Headers] Processed                 highest inserted=5586271 age=0
+[INFO] [09-29|21:35:46.387] [7/18 Execution] Completed on            block=5586271
+[INFO] [09-29|21:35:46.511] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:35:46.571] Commit cycle                             in=59.918499ms
+[INFO] [09-29|21:35:46.572] Update current block for the RPC API     from=5586271 to=5586271
+[INFO] [09-29|21:35:46.572] [1/18 Headers] Waiting for headers...    from=5586271
+[INFO] [09-29|21:36:01.241] [1/18 Headers] Processed                 highest inserted=5586272 age=0
+[INFO] [09-29|21:36:01.362] [7/18 Execution] Completed on            block=5586272
+[INFO] [09-29|21:36:01.821] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:36:01.897] Commit cycle                             in=75.178382ms
+[INFO] [09-29|21:36:01.899] Update current block for the RPC API     from=5586272 to=5586272
+[INFO] [09-29|21:36:01.899] [1/18 Headers] Waiting for headers...    from=5586272
+[INFO] [09-29|21:36:16.154] [1/18 Headers] Processed                 highest inserted=5586273 age=0
+[INFO] [09-29|21:36:16.316] [7/18 Execution] Completed on            block=5586273
+[INFO] [09-29|21:36:16.703] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:36:16.860] Commit cycle                             in=156.330106ms
+[INFO] [09-29|21:36:16.860] Update current block for the RPC API     from=5586273 to=5586273
+[INFO] [09-29|21:36:16.861] [1/18 Headers] Waiting for headers...    from=5586273
+[INFO] [09-29|21:36:32.381] [1/18 Headers] Processed                 highest inserted=5586274 age=1s
+[INFO] [09-29|21:36:32.478] [7/18 Execution] Completed on            block=5586274
+[INFO] [09-29|21:36:32.813] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:36:32.902] Commit cycle                             in=88.837321ms
+[INFO] [09-29|21:36:32.902] Update current block for the RPC API     from=5586274 to=5586274
+[INFO] [09-29|21:36:32.903] [1/18 Headers] Waiting for headers...    from=5586274
+[INFO] [09-29|21:36:46.276] [1/18 Headers] Processed                 highest inserted=5586275 age=0
+[INFO] [09-29|21:36:46.293] [7/18 Execution] Completed on            block=5586275
+[INFO] [09-29|21:36:46.296] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:36:46.325] Commit cycle                             in=28.394789ms
+[INFO] [09-29|21:36:46.325] Update current block for the RPC API     from=5586275 to=5586275
+[INFO] [09-29|21:36:46.326] [1/18 Headers] Waiting for headers...    from=5586275
+[INFO] [09-29|21:37:01.332] [p2p] GoodPeers                          eth66=32 eth65=31
+[INFO] [09-29|21:37:01.859] [1/18 Headers] Processed                 highest inserted=5586276 age=0
+[INFO] [09-29|21:37:01.958] [7/18 Execution] Completed on            block=5586276
+[INFO] [09-29|21:37:02.081] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:37:02.161] Commit cycle                             in=79.737332ms
+[INFO] [09-29|21:37:02.161] Update current block for the RPC API     from=5586276 to=5586276
+[INFO] [09-29|21:37:02.162] [1/18 Headers] Waiting for headers...    from=5586276
+[INFO] [09-29|21:37:16.028] UnwindTo                                 block=5586275 bad_block_hash=0x0000000000000000000000000000000000000000000000000000000000000000
+[INFO] [09-29|21:37:16.028] [1/18 Headers] Processed                 highest inserted=5586277 age=0
+[INFO] [09-29|21:37:16.053] [10/18 HashState] Unwinding started      from=5586276 to=5586275 storage=false codes=true
+[INFO] [09-29|21:37:16.053] [10/18 HashState] Unwinding started      from=5586276 to=5586275 storage=false codes=false
+[INFO] [09-29|21:37:16.053] [10/18 HashState] Unwinding started      from=5586276 to=5586275 storage=true codes=false
+[INFO] [09-29|21:37:16.059] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586276 to=5586275 csbucket=AccountChangeSet
+[INFO] [09-29|21:37:16.059] [11/18 IntermediateHashes] Unwinding of trie hashes from=5586276 to=5586275 csbucket=StorageChangeSet
+[INFO] [09-29|21:37:16.060] [11/18 IntermediateHashes] Trie root     hash=0x68e918238d569dd7376432bc0ce8e8a9aa2b2dea007f3570c9bf5835d35fbf4f
+[INFO] [09-29|21:37:16.061] [7/18 Execution] Unwind Execution        from=5586276 to=5586275
+[INFO] [09-29|21:37:16.061] [17/18 TxPool] Injecting txs into the pool number=8
+[INFO] [09-29|21:37:16.061] [17/18 TxPool] Injection complete 
+[INFO] [09-29|21:37:16.061] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:37:16.121] [7/18 Execution] Completed on            block=5586277
+[INFO] [09-29|21:37:16.170] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:37:16.171] Timings (slower than 10ms)               Unwind AccountHistoryIndex=22ms
+[INFO] [09-29|21:37:16.171] Tables                                   freelist="2.48 MiB" PlainState="6.12 GiB" AccountChangeSet="3.66 GiB" StorageChangeSet="10.05 GiB" BlockTransaction="20.64 GiB" TransactionLog="13.51 GiB"
+[INFO] [09-29|21:37:16.268] Commit cycle                             in=96.978724ms
+[INFO] [09-29|21:37:16.268] Update current block for the RPC API     from=5586276 to=5586277
+[INFO] [09-29|21:37:16.268] [1/18 Headers] Waiting for headers...    from=5586277
+[INFO] [09-29|21:37:31.214] [1/18 Headers] Processed                 highest inserted=5586278 age=0
+[INFO] [09-29|21:37:31.257] [7/18 Execution] Completed on            block=5586278
+[INFO] [09-29|21:37:31.294] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:37:31.354] Commit cycle                             in=60.459819ms
+[INFO] [09-29|21:37:31.355] Update current block for the RPC API     from=5586278 to=5586278
+[INFO] [09-29|21:37:31.355] [1/18 Headers] Waiting for headers...    from=5586278
+[INFO] [09-29|21:37:46.582] [1/18 Headers] Processed                 highest inserted=5586279 age=0
+[INFO] [09-29|21:37:46.613] [7/18 Execution] Completed on            block=5586279
+[INFO] [09-29|21:37:46.616] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:37:46.647] Commit cycle                             in=30.625183ms
+[INFO] [09-29|21:37:46.647] Update current block for the RPC API     from=5586279 to=5586279
+[INFO] [09-29|21:37:46.648] [1/18 Headers] Waiting for headers...    from=5586279
+[INFO] [09-29|21:38:01.129] [1/18 Headers] Processed                 highest inserted=5586280 age=0
+[INFO] [09-29|21:38:01.271] [7/18 Execution] Completed on            block=5586280
+[INFO] [09-29|21:38:01.557] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:38:01.618] Commit cycle                             in=60.915728ms
+[INFO] [09-29|21:38:01.619] Update current block for the RPC API     from=5586280 to=5586280
+[INFO] [09-29|21:38:01.619] [1/18 Headers] Waiting for headers...    from=5586280
+[INFO] [09-29|21:38:17.450] [1/18 Headers] Processed                 highest inserted=5586281 age=1s
+[INFO] [09-29|21:38:17.494] [7/18 Execution] Completed on            block=5586281
+[INFO] [09-29|21:38:17.708] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:38:17.767] Commit cycle                             in=58.52026ms
+[INFO] [09-29|21:38:17.767] Update current block for the RPC API     from=5586281 to=5586281
+[INFO] [09-29|21:38:17.768] [1/18 Headers] Waiting for headers...    from=5586281
+[INFO] [09-29|21:38:31.539] [1/18 Headers] Processed                 highest inserted=5586282 age=0
+[INFO] [09-29|21:38:31.574] [7/18 Execution] Completed on            block=5586282
+[INFO] [09-29|21:38:31.576] [17/18 TxPool] Transaction stats         pending=0 queued=0
+[INFO] [09-29|21:38:31.610] Commit cycle                             in=34.343688ms
+[INFO] [09-29|21:38:31.610] Update current block for the RPC API     from=5586282 to=5586282
+[INFO] [09-29|21:38:31.611] [1/18 Headers] Waiting for headers...    from=5586282
+[INFO] [09-29|21:38:38.887] Got interrupt, shutting down... 
+[INFO] [09-29|21:38:38.897] event subscription channel closed with the RPC daemon 
+[INFO] [09-29|21:38:39.900] Transaction pool stopped 
+[INFO] [09-29|21:38:40.208] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth66 updated=6026 deleted=10212
+[INFO] [09-29|21:38:40.219] database closed                          label=sentry
+[INFO] [09-29|21:38:40.779] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth65 updated=0 deleted=3212
+[INFO] [09-29|21:38:40.997] database closed                          label=sentry
+[INFO] [09-29|21:38:41.250] database closed                          label=chaindata

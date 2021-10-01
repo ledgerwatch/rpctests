@@ -7,3 +7,5 @@ echo "installing Nginx..."
 
 echo "installing Go..."
 ./vm_init/install_go.sh
+
+

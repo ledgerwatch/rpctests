@@ -1,0 +1,29 @@
+[INFO] [09-27|17:58:26.567] Build info                               git_branch=devel git_tag=v2021.09.04 git_commit=0d34a5b9c571ab2f88d7c69ade884771cb34cf59
+[INFO] [09-27|17:58:26.567] Starting Erigon on Ethereum mainnet... 
+[INFO] [09-27|17:58:26.568] Maximum peer count                       ETH=100 total=100
+[INFO] [09-27|17:58:26.568] Set global gas cap                       cap=50000000
+[INFO] [09-27|17:58:26.601] Opening Database                         label=chaindata path=/home/kairat/diskC/goerli/erigon/chaindata
+[INFO] [09-27|17:58:26.602] Re-Opening DB in exclusive mode to apply migrations 
+[INFO] [09-27|17:58:26.602] database closed                          label=chaindata
+[INFO] [09-27|17:58:26.603] Apply migration                          name=set_prune_type
+[INFO] [09-27|17:58:26.629] Applied migration                        name=set_prune_type
+[INFO] [09-27|17:58:26.629] Updated DB schema to                     version=3.0.0
+[INFO] [09-27|17:58:26.629] database closed                          label=chaindata
+[INFO] [09-27|17:58:26.654] Initialised chain configuration          config="{ChainID: 5 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: 0 EIP155: 0 EIP158: 0 Byzantium: 0 Constantinople: 0 Petersburg: 0 Istanbul: 1561651, Muir Glacier: <nil>, Berlin: 4460644, London: 5062605, Engine: clique}"
+[INFO] [09-27|17:58:26.687] Initialising Ethereum protocol           network=1
+[INFO] [09-27|17:58:26.687] Effective                                prune="--prune="
+[WARN] [09-27|17:58:27.060] Preverified hashes not found for         chain=goerli
+[INFO] [09-27|17:58:27.061] Starting private RPC server              on=localhost:9090
+[INFO] [09-27|17:58:27.061] Loaded local transaction journal         transactions=0 dropped=0
+[INFO] [09-27|17:58:27.061] Regenerated local transaction journal    transactions=0 accounts=0
+[INFO] [09-27|17:58:27.061] transaction pool started 
+[INFO] [09-27|17:58:27.061] [1/18 Headers] Waiting for headers...    from=5573831
+[INFO] [09-27|17:58:27.085] Started P2P networking                   version=65 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30304 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-27|17:58:27.111] Started P2P networking                   version=66 self=enode://fccdfa8f0deedfe39ce954de71314b00beb216c35f7e8af73d7d869ea7944d1542e55fb82e084c18a3404b3bfc96a437afeaff0d5679a53c83c958fc474dc960@127.0.0.1:30303 name=erigon/v2021.09.5-alpha-0d34a5b9/linux-amd64/go1.16.6
+[INFO] [09-27|17:58:41.791] Got interrupt, shutting down... 
+[INFO] [09-27|17:58:41.791] Transaction pool stopped 
+[INFO] [09-27|17:58:42.828] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth66 updated=0 deleted=64
+[INFO] [09-27|17:58:42.828] database closed                          label=sentry
+[INFO] [09-27|17:58:43.374] Successfully update p2p node database    path=/home/kairat/diskC/goerli/erigon/nodes/eth65 updated=0 deleted=58
+[INFO] [09-27|17:58:43.374] database closed                          label=sentry
+[INFO] [09-27|17:58:43.377] database closed                          label=chaindata

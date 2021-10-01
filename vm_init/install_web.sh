@@ -19,7 +19,8 @@ if [ -z $(which nginx) ]; then
     sudo apt-get install nginx
 fi
 
-if [ "$r" = "Status: inactive" ]; then
+ufw_status=$(sudo ufw status)
+if [ "$ufw_status" = "Status: inactive" ]; then
     sudo ufw enable
 fi
 

@@ -44,6 +44,7 @@ func handle_connection(conn net.Conn) {
 		// e.g cd erigon && git checkout <branch>
 		// e.g cd erigon && git fetch origin
 		// etc
+
 		cmd := exec.Command("bash", "-c", data)
 		var output []byte
 		if output, err = cmd.CombinedOutput(); err != nil {

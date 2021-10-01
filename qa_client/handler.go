@@ -10,22 +10,6 @@ import (
 	"github.com/racytech/qa_server/qa_common"
 )
 
-var disallowed_commands = []string{
-	"sudo", // disallow commands called with root permission, TODO
-	"htop",
-	"./erigon/build/bin/erigon",
-	"./ergion/build/bin/rpcdaemon",
-}
-
-func check_disallowed(command string) bool {
-	for _, d_command := range disallowed_commands {
-		if d_command == command {
-			return true
-		}
-	}
-	return false
-}
-
 func handle_connection(conn net.Conn) {
 
 	cmd_table := qa_common.NewCommandTable()
@@ -33,6 +17,7 @@ func handle_connection(conn net.Conn) {
 	_println(is_ok, "Connected to the server. Print 'help' to see available list of operations.")
 
 	arrow_state := is_ok
+	qa_common.Read_qa_scripts()
 	for {
 
 		reader := bufio.NewReader(os.Stdin)
@@ -57,13 +42,24 @@ func handle_connection(conn net.Conn) {
 				}
 			}
 
-			all_input := strings.Split(command, " ") // ["mkdir", "some_folder"]
+			// e.g ["sudo", "apt", "install", "some_software"]
+			all_input := strings.Split(command, " ")
+			fmt.Println(all_input)
+			// check the first command in command sequence
+			// e.g in command 'sudo apt install some_software'
+			// check if first entry-'sudo' is disallowed
+			is_disallowed := qa_common.Check_disallowed(all_input[0])
 
-			is_disallowed := check_disallowed(all_input[0])
 			if is_disallowed {
 				_println(is_err, fmt.Sprintf("'%s' is disallowed command", all_input[0]))
 				arrow_state = is_err
 				continue
+			}
+
+			// check if command is to execute a script
+			if val, ok := qa_common.Valid_scripts[all_input[0]]; ok {
+				all_input[0] = val
+				command = strings.Join(all_input, " ")
 			}
 
 			_, err := fmt.Fprintf(conn, command+"\n")
