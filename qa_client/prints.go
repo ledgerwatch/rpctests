@@ -19,7 +19,7 @@ var (
 	yellow     = "\033[33m"
 	blue       = "\033[34m"
 
-	server = blue + ">>> " + init_color
+	// server = blue + ">>> " + init_color
 )
 
 var colors = map[string]string{
@@ -49,9 +49,9 @@ func _print_response(kind string, msg string) {
 	fmt.Println(msg)
 }
 
-func _print_err_resp() {
-	fmt.Print(red + "ERROR: " + init_color)
-}
+// func _print_err_resp() {
+// 	fmt.Print(red + "ERROR: " + init_color)
+// }
 
 func _print_clear() {
 	cmd := exec.Command("clear")
@@ -76,7 +76,7 @@ func _print_help(ct *qa_common.CommandTable) {
 
 	fmt.Println("command list:")
 	for k, v := range ct.Commands {
-		fmt.Printf("    %-10s - %s\n", k, ct.Descriptions[v])
+		fmt.Printf("    %-20s - %s\n", k, ct.Descriptions[v])
 	}
 
 	fmt.Println("----------------------------------")

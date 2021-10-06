@@ -11,6 +11,8 @@ const (
 	CLEAR
 	EXIT
 	RPCTEST_REPLAY
+	KILL_ERIGON
+	KILL_RPCDAEMON
 )
 
 const SCRIPTS_PATH = "./qa_scripts/"
@@ -25,11 +27,13 @@ type CommandTable struct {
 func NewCommandTable() *CommandTable {
 
 	var cmds = map[string]int{
-		"help":                HELP,
-		"clear":               CLEAR,
-		"exit":                EXIT,
-		"quit":                EXIT,
-		"./rpctest_replay.sh": RPCTEST_REPLAY,
+		"help":           HELP,
+		"clear":          CLEAR,
+		"exit":           EXIT,
+		"quit":           EXIT,
+		"rpctest_replay": RPCTEST_REPLAY,
+		"kill_erigon":    KILL_ERIGON,
+		"kill_rpcdaemon": KILL_RPCDAEMON,
 	}
 
 	var descriptions = map[int]string{
@@ -37,6 +41,8 @@ func NewCommandTable() *CommandTable {
 		CLEAR:          "clear the terminal",
 		EXIT:           "quit the program",
 		RPCTEST_REPLAY: "run rpc replay tests",
+		KILL_ERIGON:    "kill Erigon process",
+		KILL_RPCDAEMON: "kill RPC daemon process",
 	}
 
 	return &CommandTable{Commands: cmds, Descriptions: descriptions}

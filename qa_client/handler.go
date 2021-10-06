@@ -17,7 +17,7 @@ func handle_connection(conn net.Conn) {
 	_println(is_ok, "Connected to the server. Print 'help' to see available list of operations.")
 
 	arrow_state := is_ok
-	qa_common.Read_qa_scripts()
+	qa_common.Read_qa_scripts() // prepare all scripts in qa_scripts directory
 	for {
 
 		reader := bufio.NewReader(os.Stdin)
@@ -56,11 +56,12 @@ func handle_connection(conn net.Conn) {
 				continue
 			}
 
-			// check if command is to execute a script
-			if val, ok := qa_common.Valid_scripts[all_input[0]]; ok {
-				all_input[0] = val
-				command = strings.Join(all_input, " ")
-			}
+			// // check if command is to execute a script
+			// if val, ok := qa_common.Valid_scripts[all_input[0]]; ok {
+			// 	all_input[0] = val
+			// 	command = strings.Join(all_input, " ")
+			// 	fmt.Println(command)
+			// }
 
 			_, err := fmt.Fprintf(conn, command+"\n")
 			if err != nil {

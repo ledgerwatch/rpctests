@@ -20,8 +20,8 @@ ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 BRANCH=$1
 HASH="HEAD"
 
-DATADIR="/home/kairat/diskC/goerli/erigon/" # change this
-CHAIN="goerli"                              # change this
+DATADIR="/home/kairat/diskC/dir_1" # change this
+CHAIN="goerli"                     # change this
 
 RPCDAEMONPORT=8548
 GETHPORT=9545
@@ -119,9 +119,11 @@ make erigon
 make rpcdaemon
 make rpctest
 
+echo $RESULTS_DIR
+
 # START ERIGON
 
-nohup ./build/bin/erigon --datadir="$DATADIR" --chain="$CHAIN" --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
+nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
 
 erigon_pid=""
 until [ ! -z "$erigon_pid" ]; do

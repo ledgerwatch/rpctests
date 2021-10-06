@@ -9,12 +9,13 @@
 
         function resolve_page()
         {
-            // $uri = $_SERVER["REQUEST_URI"];
             global $uri;
-            // echo $uri;
 
-            $result = '404.php';
 
+            $result = '404.php'; # 404 for all routes by default 
+
+            # if any of the uris matched valid routes
+            # render the page corresponding to a given route
             $valid_routes = [
                 '/^\/$/' => 'root.php',
                 '/^\/rpc_test_results\/?$/' => 'rpc_test_results.php',

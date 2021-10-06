@@ -7,3 +7,4 @@ gen_conf.py
 run.sh
 erigon_replay
 trash_scripts
+ssl/certs

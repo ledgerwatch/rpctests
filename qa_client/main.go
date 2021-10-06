@@ -1,8 +1,8 @@
 package main
 
 import (
+	"crypto/tls"
 	"flag"
-	"net"
 )
 
 var (
@@ -18,12 +18,20 @@ func main() {
 		_println(is_err, "'-address' flag is not set")
 		return
 	}
-
-	conn, err := net.Dial("tcp", address)
+	cert, err := tls.LoadX509KeyPair("./ssl/certs/tls.crt", "./ssl/certs/tls.key")
 	if err != nil {
 		_println(is_err, err.Error())
 		return
 	}
+
+	config := tls.Config{Certificates: []tls.Certificate{cert}, InsecureSkipVerify: true}
+	conn, err := tls.Dial("tcp", address, &config)
+
+	if err != nil {
+		_println(is_err, err.Error())
+		return
+	}
+
 	defer conn.Close()
 
 	handle_connection(conn)

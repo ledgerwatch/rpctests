@@ -48,6 +48,8 @@ func Read_qa_scripts() {
 			continue
 		} else {
 			file_name := item.Name()
+			// take len(file_name)-3 from file_name
+			// e.g file_name = "kill_erigon.sh", take "kill_erigon" from that
 			command := file_name[:len(file_name)-3]
 
 			Valid_scripts[command] = SCRIPT_DIR + file_name
