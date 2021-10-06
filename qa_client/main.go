@@ -18,6 +18,7 @@ func main() {
 		_println(is_err, "'-address' flag is not set")
 		return
 	}
+
 	cert, err := tls.LoadX509KeyPair("./ssl/certs/tls.crt", "./ssl/certs/tls.key")
 	if err != nil {
 		_println(is_err, err.Error())
