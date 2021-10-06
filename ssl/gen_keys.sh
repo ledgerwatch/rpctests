@@ -8,9 +8,14 @@ mkdir -p $CERTS
 
 cd $CERTS
 
-# touch tls.crt && touch tls.key
-if [ ! -e tls.crt ] && [ ! -e tls.key ]; then
-    openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out tls.crt -keyout tls.key
-fi
+openssl ecparam -name prime256v1 -genkey -noout -out CA-key.pem
+openssl req -x509 -new -nodes -key CA-key.pem -sha256 -days 3650 -out CA-cert.pem
 
-openssl x509 -enddate -noout -in tls.crt
+openssl ecparam -name prime256v1 -genkey -noout -out server-key.pem # server
+openssl ecparam -name prime256v1 -genkey -noout -out client-key.pem # client
+
+openssl req -new -key server-key.pem -out server.csr
+openssl x509 -req -in server.csr -CA CA-cert.pem -CAkey CA-key.pem -CAcreateserial -out server.crt -days 3650 -sha256 # server crt
+
+openssl req -new -key client-key.pem -out client.csr
+openssl x509 -req -in client.csr -CA CA-cert.pem -CAkey CA-key.pem -CAcreateserial -out client.crt -days 3650 -sha256 # client crt

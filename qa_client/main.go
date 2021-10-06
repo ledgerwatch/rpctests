@@ -19,7 +19,7 @@ func main() {
 		return
 	}
 
-	cert, err := tls.LoadX509KeyPair("./ssl/certs/tls.crt", "./ssl/certs/tls.key")
+	cert, err := tls.LoadX509KeyPair("./ssl/certs/client.crt", "./ssl/certs/client-key.pem")
 	if err != nil {
 		_println(is_err, err.Error())
 		return
