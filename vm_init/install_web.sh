@@ -26,6 +26,7 @@ fi
 
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 12345 # open port for client
 
 sudo $CUR_DIR/vm_init/copy_nginx_conf.sh
 
