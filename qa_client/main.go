@@ -3,6 +3,8 @@ package main
 import (
 	"crypto/tls"
 	"flag"
+	"fmt"
+	"log"
 )
 
 var (
@@ -21,15 +23,16 @@ func main() {
 
 	cert, err := tls.LoadX509KeyPair("./ssl/certs/client.crt", "./ssl/certs/client-key.pem")
 	if err != nil {
+
 		_println(is_err, err.Error())
 		return
 	}
 
 	config := tls.Config{Certificates: []tls.Certificate{cert}, InsecureSkipVerify: true}
 	conn, err := tls.Dial("tcp", address, &config)
-
+	fmt.Println(config)
 	if err != nil {
-		_println(is_err, err.Error())
+		log.Fatal(err)
 		return
 	}
 

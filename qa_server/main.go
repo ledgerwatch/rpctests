@@ -1,10 +1,11 @@
 package main
 
 import (
+	"crypto/rand"
+	"crypto/tls"
 	"flag"
 	"fmt"
 	"log"
-	"net"
 )
 
 var (
@@ -20,7 +21,15 @@ func main() {
 
 	address := fmt.Sprintf("0.0.0.0:%s", *PORT)
 
-	ln, err := net.Listen("tcp", address)
+	cert, err := tls.LoadX509KeyPair("./ssl/certs/server.crt", "./ssl/certs/server-key.pem")
+	if err != nil {
+		_fatal(err)
+	}
+	config := tls.Config{Certificates: []tls.Certificate{cert}}
+	config.Rand = rand.Reader
+	ln, err := tls.Listen("tcp", address, &config)
+
+	// ln, err := net.Listen("tcp", address)
 	if err != nil {
 		_fatal(err)
 	}
