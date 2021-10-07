@@ -44,7 +44,7 @@ func handle_connection(conn net.Conn) {
 
 			// e.g ["sudo", "apt", "install", "some_software"]
 			all_input := strings.Split(command, " ")
-			fmt.Println(all_input)
+
 			// check the first command in command sequence
 			// e.g in command 'sudo apt install some_software'
 			// check if first entry-'sudo' is disallowed
