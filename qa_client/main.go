@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/tls"
 	"flag"
-	"fmt"
 	"log"
 )
 
@@ -30,7 +29,7 @@ func main() {
 
 	config := tls.Config{Certificates: []tls.Certificate{cert}, InsecureSkipVerify: true}
 	conn, err := tls.Dial("tcp", address, &config)
-	fmt.Println(config)
+
 	if err != nil {
 		log.Fatal(err)
 		return
