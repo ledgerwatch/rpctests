@@ -16,6 +16,7 @@ func handle_connection(conn net.Conn) {
 
 	defer conn.Close()
 
+	qa_common.Read_qa_scripts()
 	for {
 
 		data, err := bufio.NewReader(conn).ReadString('\n')
@@ -30,96 +31,77 @@ func handle_connection(conn net.Conn) {
 
 		all_input := strings.Split(data, " ")
 
-		qa_common.Read_qa_scripts()
-		// check if command is to execute a script
+		is_script := false
+		script_name := ""  // e.g "./qa_scripts/some_script.sh"
+		command_name := "" // only for cli provided scripts ("made up" comands)
+		// check if command is to execute a cli provided script
 		if val, ok := qa_common.Valid_scripts[all_input[0]]; ok {
-			// command to execute a script
-			var args []string
-			if len(all_input) > 1 {
-				args = all_input[1:]
-			}
-			cmd := exec.Command(val, args...)
+			is_script = true
+			script_name = val
+			command_name = all_input[0] // kill_erigon, rpctest_replay
+			// all_input[0] = val
+			// data = strings.Join(all_input, " ")
 
-			if err != nil {
-				conn.Write(qa_common.NewResponse([]byte(err.Error()), qa_common.ERROR))
-				continue
-			}
+			// data_bytes = append(data_bytes, []byte("Data after:"+data+"\n")...)
 
-			cmd.Stdout = os.Stdout
-			// // cmd.Stderr = i
-			err = cmd.Start()
-			if err != nil {
-				conn.Write(qa_common.NewResponse([]byte(err.Error()), qa_common.ERROR))
-				continue
-			}
-			// bytes, err := ioutil.ReadAll(stdout)
-			// if err != nil {
-			// 	conn.Write(qa_common.NewResponse([]byte(err.Error()), qa_common.ERROR))
-			// 	continue
-			// }
-			// cmd.Wait()
-			conn.Write(qa_common.NewResponse([]byte(fmt.Sprintf("%s - command has started, not waiting...", data)), qa_common.OK))
-		} else {
-			// non script command
-			cmd := exec.Command("bash", "-c", data)
-			var output []byte
-			if output, err = cmd.CombinedOutput(); err != nil {
-				err_bytes := []byte(err.Error())
-				if output != nil {
-					output = append(output, err_bytes...)
-					conn.Write(
-						qa_common.NewResponse(output, qa_common.ERROR))
-				} else {
-					conn.Write(
-						qa_common.NewResponse(err_bytes, qa_common.ERROR))
-				}
-
-			} else {
-				conn.Write(qa_common.NewResponse(output, qa_common.OK))
-			}
+			// conn.Write(
+			// 	qa_common.NewResponse(data_bytes, qa_common.ERROR))
+			// continue
 		}
 
-		// if is_script {
-		// 	fmt.Println(all_input, "IS SCRIPT")
-		// } else {
+		if is_script {
+			// now instead of having ["rpctest_replay", "arg"]
+			// there is ["./qa_scripts/rpctest_replay.sh", "arg"]
+			all_input[0] = script_name
+			data = strings.Join(all_input, " ")
+			fmt.Println(data, command_name, len(all_input))
+			if command_name == "rpctest_replay" {
+				fmt.Println("GOT HERE")
+				if len(all_input) >= 2 {
+					cmd := exec.Command(all_input[0], all_input[1])
 
-		// }
+					cmd.Stdout = os.Stdout
 
-		// TODO double check for disallowed operations
+					err := cmd.Start()
+					if err != nil {
+						resp := qa_common.NewResponse([]byte(err.Error()), qa_common.ERROR)
+						conn.Write(resp)
+					} else {
+						cmd.Wait()
+						msg := "Started \"rpctest replay\". Check log files."
+						resp := qa_common.NewResponse([]byte(msg), qa_common.OK)
+						conn.Write(resp)
 
-		// if command is to run erigon or rpcdaemon
-		//   check if erigon or rpcdaemon already running
-		//   if erigon or rpcdaemon already running
-		//	 ask if its required to shut it down
-		//	 if its required, send signal to shut the process down
-		//   else dont do anything, continue to listen for commands
-		//
-		// 	 else (if erigon or rpcdaemon not running)
-		//   execute the script in separate thread, with receiving chan
-		//	 let the user know that commands is started or failed
-		//   continue to listen for commands
+					}
 
-		// if command is not related to erigon or rpcdaemon
-		// e.g cd erigon && git checkout <branch>
-		// e.g cd erigon && git fetch origin
-		// etc
+				} else {
+					resp := qa_common.NewResponse([]byte("Branch to checkout is not provided. Exiting..."), qa_common.ERROR)
+					conn.Write(resp)
+				}
 
-		// cmd := exec.Command("bash", "-c", data)
-		// var output []byte
-		// if output, err = cmd.CombinedOutput(); err != nil {
-		// 	err_bytes := []byte(err.Error())
-		// 	if output != nil {
-		// 		output = append(output, err_bytes...)
-		// 		conn.Write(
-		// 			qa_common.NewResponse(output, qa_common.ERROR))
-		// 	} else {
-		// 		conn.Write(
-		// 			qa_common.NewResponse(err_bytes, qa_common.ERROR))
-		// 	}
+				continue
+			}
 
-		// } else {
-		// 	conn.Write(qa_common.NewResponse(output, qa_common.OK))
-		// }
+			// other scripts that require special execution can go here
+		}
+
+		cmd := exec.Command("bash", "-c", data)
+
+		var output []byte
+		if output, err = cmd.CombinedOutput(); err != nil {
+			err_bytes := []byte(err.Error())
+			if output != nil {
+				output = append(output, err_bytes...)
+				conn.Write(
+					qa_common.NewResponse(output, qa_common.ERROR))
+			} else {
+				conn.Write(
+					qa_common.NewResponse(err_bytes, qa_common.ERROR))
+			}
+
+		} else {
+			conn.Write(qa_common.NewResponse(output, qa_common.OK))
+		}
 
 	}
 

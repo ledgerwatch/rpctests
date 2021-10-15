@@ -8,3 +8,13 @@ run.sh
 erigon_replay
 trash_scripts
 ssl/certs
+qa_pl
+run_pl.sh
+
+# local test results
+/web/rpctest_results
+
+# python files
+**/__pycache__
+qa_client/*.py
+qa_server/*.py

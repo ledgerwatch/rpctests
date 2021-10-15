@@ -36,6 +36,7 @@ var responses = map[byte]string{
 	qa_common.CONN_CLOSED: is_err,
 }
 
+// prints arrow of a given kind of color followed by message + "\n"
 func _println(kind string, msg string) {
 	fmt.Println(colors[kind]+">>>"+init_color, msg)
 }

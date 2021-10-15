@@ -20,8 +20,8 @@ ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 BRANCH=$1
 HASH="HEAD"
 
-DATADIR="/home/kairat/diskC/dir_1" # change this
-CHAIN="goerli"                     # change this
+DATADIR="/home/kairat/diskC/goerli" # change this
+CHAIN="goerli"                      # change this
 
 RPCDAEMONPORT=8548
 GETHPORT=9545
@@ -97,6 +97,18 @@ kill_erigon() {
     fi
 }
 
+start_erigon() {
+    nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
+
+    # nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 &
+}
+
+start_rpcdaemon() {
+    nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 >>$RESULTS_DIR/rpcdeamon.log &
+
+    # nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" &
+}
+
 # ---------- end functions ----------
 
 if [ -z "$BRANCH" ]; then
@@ -122,8 +134,7 @@ make rpctest
 echo $RESULTS_DIR
 
 # START ERIGON
-
-nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
+start_erigon
 
 erigon_pid=""
 until [ ! -z "$erigon_pid" ]; do
@@ -132,7 +143,8 @@ until [ ! -z "$erigon_pid" ]; do
     erigon_pid=$(ps aux | grep ./build/bin/erigon | grep datadir | awk '{print $2}')
 done
 
-nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 >>$RESULTS_DIR/rpcdeamon.log &
+# START RPCDAEMON
+start_rpcdaemon
 
 rpcdaemon_pid=""
 until [ ! -z "$rpcdaemon_pid" ]; do

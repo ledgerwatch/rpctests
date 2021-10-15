@@ -20,21 +20,24 @@ var Valid_scripts = map[string]string{}
 // script execution and execution of binary files are disallowed by default
 func Check_disallowed(command string) bool {
 
-	path_arr := strings.Split(command, "/")
 	// command is path to a script or executable
 	// e.g /erigon_dir/build/bin/erigon
 	// /some/path/to/script.sh
 	// ./script.sh
+	path_arr := strings.Split(command, "/")
+
 	if len(path_arr) > 1 {
 		return true
 	}
 
+	// if command is in the list of disallowed_commands
 	for _, d_command := range disallowed_commands {
 		if d_command == command {
 			return true
 		}
 	}
 
+	// command is allowed to execute
 	return false
 }
 

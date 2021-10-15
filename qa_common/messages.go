@@ -3,18 +3,21 @@ package qa_common
 /* server and a client communication rules */
 
 const (
-	ERROR byte = 128 + iota
+	ERROR byte = 128 + iota // general error ocured during any operation
 	OK
 	WARN
 	CONN_CLOSED
-
-	END_OF_MESSAGE byte = 255
+	STDOUT      // std output of the cmd execution
+	STDERR      // std err of the cmd execution
+	END_OF_LINE // flag indicating end of the line
+	EOF         // end of entire message
+	END_OF_MESSAGE
 )
 
 func NewResponse(bytes []byte, kind byte) []byte {
 	// first byte: type of message - ERROR, OK, WARN, etc
 	// msg[first:last-1] = message itself
-	// last byte: end of the message
+	// last byte: end of the line
 	msg_size := len(bytes) + 2
 	msg := make([]byte, msg_size)
 
@@ -27,6 +30,9 @@ func NewResponse(bytes []byte, kind byte) []byte {
 	return msg
 }
 
-func DecodeResponse(resp string) (byte, string) {
-	return resp[0], resp[1 : len(resp)-1]
+func DecodeResponse(resp []byte) (byte, string) {
+	if len(resp) > 2 {
+		return resp[0], string(resp[1 : len(resp)-1])
+	}
+	return resp[0], ""
 }
