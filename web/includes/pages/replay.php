@@ -50,14 +50,30 @@ if (!is_dir($replay_path)) : ?>
 
                     $file = $replay_path . '/' . $file_name;
                     $f = fopen($file, 'r');
+
+                    $linecount = 0;
                     if ($f) {
-                        $contents = [];
                         while (($line = fgets($f)) !== false) {
-                            array_push($contents, $line);
+                            $linecount++;
                         }
                     }
 
                     fclose($f);
+
+
+                    $spl_file = new SplFileObject($file);
+                    $contents = [];
+
+                    $max_lines = 100; // read last 100 lines only
+                    $start_line =
+                        $linecount > $max_lines ?
+                        $linecount - $max_lines : 0;
+                    // echo $file, $linecount,  $start_line . "\n";
+                    for ($i = $start_line; $i < $linecount; $i++) {
+                        $spl_file->seek($i);
+                        array_push($contents, $spl_file->current() . "\n");
+                    }
+
                     $pseudo_links[$file_name] = $contents;
                 }
             }

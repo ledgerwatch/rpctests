@@ -148,7 +148,7 @@ function decorate_line(line, p_tag) {
         // }
         let info_match = line.match(LOG_EMPH);
         if (info_match) {
-            console.log(info_match);
+
             for (let i = 0; i < info_match.length; i++) {
 
                 let word = info_match[i]
