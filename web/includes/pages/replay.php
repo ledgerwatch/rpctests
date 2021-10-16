@@ -53,8 +53,9 @@ if (!is_dir($replay_path)) : ?>
 
                     $linecount = 0;
                     if ($f) {
-                        while (($line = fgets($f)) !== false) {
-                            $linecount++;
+                        while (!feof($f)) {
+                            $line = fgets($f, 1024 * 1024);
+                            $linecount += substr_count($line, PHP_EOL);
                         }
                     }
 
