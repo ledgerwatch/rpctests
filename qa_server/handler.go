@@ -7,11 +7,15 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 
 	"github.com/racytech/qa_server/qa_common"
 )
 
 func handle_connection(conn net.Conn) {
+
+	conn.SetDeadline(time.Time{}) // zero value?
+
 	defer conn.Write(qa_common.NewResponse([]byte("connection closed"), qa_common.CONN_CLOSED))
 
 	defer conn.Close()

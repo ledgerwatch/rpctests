@@ -27,6 +27,15 @@ RPCDAEMONPORT=8548
 GETHPORT=9545
 OEPORT=9546
 
+# TODO
+# RPCTESTS_REPO=https://github.com/ledgerwatch/rpctests
+# RPCTESTS_BRANCH=dynamic arg
+# RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
+# checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
+# and then
+# replay_files $RPCTESTS_DIR/oe
+# replay_files $RPCTESTS_DIR/oe
+
 # ---------- functions ----------
 checkout_branch() {
     # $1 - repo
@@ -92,26 +101,17 @@ replay_files() {
             # REDIRECT TO TEMP FILE
             nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$temp_file &
 
-            # echo $!
-            wait $!      # wait till last executed process finishes
-            exit_code=$? # grap the code
-            # echo "  ---------------->     EXIT CODE             $exit_code"
+            wait $!      # wait untill last executed process finishes
+            exit_code=$? # grab the code
 
             echo $exit_code >>$RESULTS_DIR/$eachfile
 
             tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile
 
             rm $temp_file
-            # GRAB LAST n LINES FROM TEMP FILE
-            # WRITE IT TO ACTUAL FILE
 
-            # pids+=($rpctest_pid)
         done
 
-        # wait ${pids[@]}
-        # exit_code=$?
-
-        # echo "  ---------------->     EXIT CODE             $exit_code"
     fi
 }
 
@@ -146,14 +146,10 @@ kill_erigon() {
 }
 
 start_erigon() {
-    # nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
-
     nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
 }
 
 start_rpcdaemon() {
-    # nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 >>$RESULTS_DIR/rpcdeamon.log &
-
     nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$RESULTS_DIR/rpcdaemon.log" "$RESULTS_DIR/_rpcdaemon.log" "20") &
 }
 
