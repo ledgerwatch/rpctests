@@ -54,6 +54,29 @@ checkout_branch() {
     fi
 }
 
+limit_lines() {
+
+    file_name=$1
+    file_out=$2
+    limit=$3
+
+    touch $file_name
+    touch $file_out
+
+    while IFS='' read -r line; do
+        line_count=$(wc -l <"$file_name")
+        if [ $line_count -gt $limit ]; then
+            sed 1d $file_name >$file_out
+            {
+                cat $file_out
+                printf '%s\n' "$line"
+            } >$file_name
+        else
+            echo $line >>$file_name
+        fi
+    done
+}
+
 replay_files() {
     # $1 - dir with files
     # $2 - port for geth or oe
@@ -62,7 +85,9 @@ replay_files() {
         cd $1
         for eachfile in *.txt; do
             echo "Replaying file $eachfile"
-            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$RESULTS_DIR/$eachfile &
+            # nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$RESULTS_DIR/$eachfile &
+
+            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 | $(limit_lines "$RESULTS_DIR/$eachfile" "$RESULTS_DIR/_$eachfile" 20) &
         done
     fi
 }
@@ -98,15 +123,15 @@ kill_erigon() {
 }
 
 start_erigon() {
-    nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
+    # nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 >>$RESULTS_DIR/erigon.log &
 
-    # nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 &
+    nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
 }
 
 start_rpcdaemon() {
-    nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 >>$RESULTS_DIR/rpcdeamon.log &
+    # nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 >>$RESULTS_DIR/rpcdeamon.log &
 
-    # nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" &
+    nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$RPCDAEMONPORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$RESULTS_DIR/rpcdaemon.log" "$RESULTS_DIR/_rpcdaemon.log" "20") &
 }
 
 # ---------- end functions ----------

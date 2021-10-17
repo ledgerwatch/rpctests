@@ -43,38 +43,26 @@ if (!is_dir($replay_path)) : ?>
 
             foreach (new DirectoryIterator($replay_path) as $fileInfo) {
                 $file_name = $fileInfo->getFilename();
+
+
+
                 if (
                     !$fileInfo->isDot() &&
-                    $file_name !== 'erigon_branch.txt'
+                    $file_name !== 'erigon_branch.txt' &&
+                    substr($file_name, 0, 1) !== "_"
                 ) {
 
                     $file = $replay_path . '/' . $file_name;
                     $f = fopen($file, 'r');
-
-                    $linecount = 0;
+                    $contents = [];
                     if ($f) {
-                        while (!feof($f)) {
-                            $line = fgets($f, 1024 * 1024);
-                            $linecount += substr_count($line, PHP_EOL);
+
+                        while (($line = fgets($f)) !== false) {
+                            array_push($contents, $line);
                         }
                     }
 
                     fclose($f);
-
-
-                    $spl_file = new SplFileObject($file);
-                    $contents = [];
-
-                    $max_lines = 100; // read last 100 lines only
-                    $start_line =
-                        $linecount > $max_lines ?
-                        $linecount - $max_lines : 0;
-                    // echo $file, $linecount,  $start_line . "\n";
-                    for ($i = $start_line; $i < $linecount; $i++) {
-                        $spl_file->seek($i);
-                        array_push($contents, $spl_file->current() . "\n");
-                    }
-
                     $pseudo_links[$file_name] = $contents;
                 }
             }
