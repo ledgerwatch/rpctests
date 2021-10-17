@@ -418,6 +418,35 @@ li a {
     color:var(--blue-40);
 }
 
+#dynamic-tabs > li {
+    position: relative;
+}
+
+#dynamic-tabs > li.test-success::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    position: absolute;
+    background: var(--system-green-70);
+    left: 4px;
+    top: 0;
+}
+
+#dynamic-tabs > li.test-fail::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    position: absolute;
+    background: var(--system-red-70);
+    left: 4px;
+    top: 0;
+    /* right: 0; */
+}
+
 
 #dynamic-content {
     border-radius: var(--corner-radius-small);

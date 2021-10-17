@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 # script expects 1 argument: branch name from erigon repo
 # kills rpcdaemon process if it is running
@@ -83,12 +83,35 @@ replay_files() {
     if [ -d "$1" ]; then
         echo "Replaying files from $1"
         cd $1
+
         for eachfile in *.txt; do
             echo "Replaying file $eachfile"
-            # nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$RESULTS_DIR/$eachfile &
 
-            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 | $(limit_lines "$RESULTS_DIR/$eachfile" "$RESULTS_DIR/_$eachfile" 20) &
+            temp_file=$RESULTS_DIR/_temp.txt
+
+            # REDIRECT TO TEMP FILE
+            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$temp_file &
+
+            # echo $!
+            wait $!      # wait till last executed process finishes
+            exit_code=$? # grap the code
+            # echo "  ---------------->     EXIT CODE             $exit_code"
+
+            echo $exit_code >>$RESULTS_DIR/$eachfile
+
+            tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile
+
+            rm $temp_file
+            # GRAB LAST n LINES FROM TEMP FILE
+            # WRITE IT TO ACTUAL FILE
+
+            # pids+=($rpctest_pid)
         done
+
+        # wait ${pids[@]}
+        # exit_code=$?
+
+        # echo "  ---------------->     EXIT CODE             $exit_code"
     fi
 }
 

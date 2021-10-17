@@ -1,24 +1,25 @@
 let global_map = {};
 let tabs_flags = {};
 
-function switch_tabs() {
-
-}
 /**
  *  
  * @param {String} name
  * @param {HTMLUListElement} ul
  * @param {HTMLDivElement} tab_content
+ * @param {Number | null} exit_code
 */
-function make_li(name, ul, tab_content) {
+function make_li(file_name, ul, tab_content, exit_code) {
     let li = document.createElement('li');
     let anchor = document.createElement('a');
 
-    li.id = name
+    li.id = file_name
 
+    if (exit_code !== null) {
+        li.classList.add(exit_code === 0 ? "test-success" : "test-fail")
+    }
 
     anchor.className = "pseudo-link"
-    anchor.innerHTML = name;
+    anchor.innerHTML = file_name;
 
     anchor.onclick = function () {
         for (const child of ul.getElementsByTagName('li')) {
@@ -26,7 +27,7 @@ function make_li(name, ul, tab_content) {
         }
 
         for (const child of tab_content.getElementsByClassName('content-tab')) {
-            if (child.classList.contains(name)) {
+            if (child.classList.contains(file_name)) {
                 child.style.display = "block";
             } else {
                 child.style.display = "none";
@@ -41,15 +42,28 @@ function make_li(name, ul, tab_content) {
     return li;
 }
 
-function make_content(name, content) {
+/**
+ * 
+ * @param {String} file_name 
+ * @param {Array.<String>} content 
+ * @returns 
+ */
+function make_content(file_name, content) {
     let div = document.createElement('div');
 
     div.className = 'content-tab';
-    div.classList.add(name);
+    div.classList.add(file_name);
 
-    let lines = "";
-    for (const line of content) {
+    let is_txt = file_name.substr(file_name.length - 3, 3) === "txt";
 
+    let i = 0;
+    let exit_code = null;
+    if (is_txt) {
+        exit_code = +content[i++]; // exit code == 0 ?
+    }
+
+    for (; i < content.length; i++) {
+        let line = content[i];
 
         if (line === "\n") {
             let br = document.createElement("br");
@@ -60,20 +74,18 @@ function make_content(name, content) {
             p.innerHTML = decorate_line(line, p);
             div.appendChild(p);
         }
-
-        // lines += line;
-
     }
+
 
     div.style.display = "none";
     // div.innerHTML = lines;
-    return div;
+    return [div, exit_code];
 }
 
 function handle_files_content(map) {
 
     if (!map) {
-        throw "Expected map of file_name => file_content"
+        throw "Expected map of type {'file_name': 'file_content'}"
     }
 
     global_map = map;
@@ -81,10 +93,12 @@ function handle_files_content(map) {
     let tab_content = document.getElementById('dynamic-content');
     let ul = document.getElementById('dynamic-tabs');
 
-    for (const [key, value] of Object.entries(map)) {
-        tabs_flags[key] = false;
-        tab_content.appendChild(make_content(key, value));
-        ul.appendChild(make_li(key, ul, tab_content));
+    // go over file_name
+    for (const [file_name, content] of Object.entries(map)) {
+        tabs_flags[file_name] = false;
+        let [terminal, exit_code] = make_content(file_name, content)
+        tab_content.appendChild(terminal);
+        ul.appendChild(make_li(file_name, ul, tab_content, exit_code));
     }
 }
 
