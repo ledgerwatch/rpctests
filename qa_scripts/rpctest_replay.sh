@@ -20,8 +20,9 @@ ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 BRANCH=$1
 HASH="HEAD"
 
-DATADIR="/home/kairat/diskC/goerli" # change this
-CHAIN="goerli"                      # change this
+# DATADIR="/mnt/nvme/data1" # (gcp usage)
+DATADIR="/home/kairat/diskC/goerli" # (local usage) change this
+CHAIN="goerli"                      # (local usage) change this
 
 RPCDAEMONPORT=8548
 GETHPORT=9545
@@ -146,7 +147,11 @@ kill_erigon() {
 }
 
 start_erigon() {
+    # local usage
     nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
+
+    # for use in gcp
+    # nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
 }
 
 start_rpcdaemon() {

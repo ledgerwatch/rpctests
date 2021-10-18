@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"net"
 	"os"
 	"os/exec"
@@ -58,7 +59,10 @@ func handle_connection(conn net.Conn) {
 			// there is ["./qa_scripts/rpctest_replay.sh", "arg"]
 			all_input[0] = script_name
 			data = strings.Join(all_input, " ")
-			fmt.Println(data, command_name, len(all_input))
+			// fmt.Println(data, command_name, len(all_input))
+
+			log.Printf("Received command to execute script: %v", all_input)
+
 			if command_name == "rpctest_replay" {
 				fmt.Println("GOT HERE")
 				if len(all_input) >= 2 {
