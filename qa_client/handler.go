@@ -6,11 +6,14 @@ import (
 	"net"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/racytech/qa_server/qa_common"
 )
 
 func handle_connection(conn net.Conn) {
+
+	conn.SetDeadline(time.Time{})
 
 	cmd_table := qa_common.NewCommandTable()
 

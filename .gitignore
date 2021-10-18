@@ -7,7 +7,7 @@ gen_conf.py
 run.sh
 erigon_replay
 trash_scripts
-ssl/certs
+
 qa_pl
 run_pl.sh
 
@@ -18,3 +18,8 @@ run_pl.sh
 **/__pycache__
 qa_client/*.py
 qa_server/*.py
+
+# certs directory for tls connection
+ssl/certs
+# certs directory for https connection
+ssl/https

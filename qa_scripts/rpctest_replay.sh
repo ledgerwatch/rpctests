@@ -33,8 +33,8 @@ OEPORT=9546
 # RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
 # checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
 # and then
-# replay_files $RPCTESTS_DIR/oe
-# replay_files $RPCTESTS_DIR/oe
+# replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
+# replay_files $RPCTESTS_DIR/geth $RPCDAEMONPORT
 
 # ---------- functions ----------
 checkout_branch() {
