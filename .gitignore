@@ -6,6 +6,7 @@ scripting.sh
 gen_conf.py
 run.sh
 erigon_replay
+ledgerwatch_rpctests
 trash_scripts
 
 qa_pl
@@ -21,5 +22,10 @@ qa_server/*.py
 
 # certs directory for tls connection
 ssl/certs
+ssl/_certs
 # certs directory for https connection
 ssl/https
+
+server_out.log
+
+qa_scripts/_rpctest_replay.sh

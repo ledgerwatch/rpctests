@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"net"
 	"os"
@@ -64,7 +63,7 @@ func handle_connection(conn net.Conn) {
 			log.Printf("Received command to execute script: %v", all_input)
 
 			if command_name == "rpctest_replay" {
-				fmt.Println("GOT HERE")
+
 				if len(all_input) >= 2 {
 					cmd := exec.Command(all_input[0], all_input[1])
 

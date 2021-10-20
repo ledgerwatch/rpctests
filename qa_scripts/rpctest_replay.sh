@@ -20,20 +20,25 @@ ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 BRANCH=$1
 HASH="HEAD"
 
-# DATADIR="/mnt/nvme/data1" # (gcp usage)
-DATADIR="/home/kairat/diskC/goerli" # (local usage) change this
-CHAIN="goerli"                      # (local usage) change this
+DATADIR="/mnt/nvme/data1" # (gcp usage)
 
 RPCDAEMONPORT=8548
 GETHPORT=9545
 OEPORT=9546
 
 # TODO
-# RPCTESTS_REPO=https://github.com/ledgerwatch/rpctests
+RPCTESTS_REPO="https://github.com/ledgerwatch/rpctests.git"
+if [ -z "$2" ]; then
+    RPCTESTS_BRANCH=main
+    echo "rpctest branch set to: main"
+else
+    RPCTESTS_BRANC=$2
+    echo "rpctest branch set to: $2"
+fi
 # RPCTESTS_BRANCH=dynamic arg
-# RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
-# checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
-# and then
+RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
+# at the end of a file
+# checkout to $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
 # replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
 # replay_files $RPCTESTS_DIR/geth $RPCDAEMONPORT
 
@@ -49,6 +54,7 @@ checkout_branch() {
         echo "Upgrading repository ..."
         git fetch origin
         git checkout --force "$2"
+        git pull # ?
         git reset --hard "$3"
         cd ..
     else
@@ -59,12 +65,17 @@ checkout_branch() {
         git remote add origin "$1"
         git fetch origin
         git checkout --force "$2"
+        git pull # ?
         git reset --hard "$3"
         cd ..
     fi
 }
 
 limit_lines() {
+
+    # limits redirected output lines to arg $3
+    # usage example:
+    # command_that_continuously_outputs | limit_lines "file_to_write" "file_helper" "number_of_lines_limit"
 
     file_name=$1
     file_out=$2
@@ -100,7 +111,7 @@ replay_files() {
             temp_file=$RESULTS_DIR/_temp.txt
 
             # REDIRECT TO TEMP FILE
-            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile 2>&1 >>$temp_file &
+            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile >$temp_file 2>$temp_file &
 
             wait $!      # wait untill last executed process finishes
             exit_code=$? # grab the code
@@ -147,11 +158,7 @@ kill_erigon() {
 }
 
 start_erigon() {
-    # local usage
-    nohup ./build/bin/erigon --datadir $DATADIR --chain $CHAIN --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
-
-    # for use in gcp
-    # nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
+    nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
 }
 
 start_rpcdaemon() {
@@ -202,5 +209,10 @@ until [ ! -z "$rpcdaemon_pid" ]; do
     rpcdaemon_pid=$(ps aux | grep rpcdaemon | grep $RPCDAEMONPORT | awk '{print $2}')
 done
 
-replay_files $BASE/oe $RPCDAEMONPORT
-replay_files $BASE/geth $RPCDAEMONPORT
+# replay_files $BASE/oe $RPCDAEMONPORT
+# replay_files $BASE/geth $RPCDAEMONPORT
+
+checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
+
+replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
+replay_files $RPCTESTS_DIR/geth $RPCDAEMONPORT
