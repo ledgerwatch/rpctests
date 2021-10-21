@@ -20,7 +20,7 @@ ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 BRANCH=$1
 HASH="HEAD"
 
-DATADIR="/mnt/nvme/data1" # (gcp usage)
+DATADIR="/mnt/nvme/data1"
 
 RPCDAEMONPORT=8548
 GETHPORT=9545
@@ -179,6 +179,8 @@ kill_process "rpcdaemon" $RPCDAEMONPORT
 mkdir -p $RESULTS_DIR
 
 # checkout_branch $ERIGONREPO $BRANCH $HASH $basedir/$erigondir
+echo ""
+echo "Getting Erigon branch..."
 checkout_branch $ERIGONREPO $BRANCH $HASH $ERIGON_DIR
 echo $BRANCH >>$RESULTS_DIR/erigon_branch.txt
 
@@ -212,6 +214,8 @@ done
 # replay_files $BASE/oe $RPCDAEMONPORT
 # replay_files $BASE/geth $RPCDAEMONPORT
 
+echo ""
+echo "Getting rpctest branch..."
 checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
 
 replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
