@@ -26,7 +26,6 @@ RPCDAEMONPORT=8548
 GETHPORT=9545
 OEPORT=9546
 
-# TODO
 RPCTESTS_REPO="https://github.com/ledgerwatch/rpctests.git"
 if [ -z "$2" ]; then
     RPCTESTS_BRANCH=main
@@ -35,7 +34,7 @@ else
     RPCTESTS_BRANC=$2
     echo "rpctest branch set to: $2"
 fi
-# RPCTESTS_BRANCH=dynamic arg
+
 RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
 # at the end of a file
 # checkout to $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
@@ -78,7 +77,7 @@ limit_lines() {
     # command_that_continuously_outputs | limit_lines "file_to_write" "file_helper" "number_of_lines_limit"
 
     file_name=$1
-    file_out=$2 
+    file_out=$2
     limit=$3
 
     touch $file_name
