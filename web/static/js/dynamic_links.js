@@ -136,7 +136,7 @@ function decorate_line(line) {
         time_span.classList.add('log-time');
 
         let info_match = line.match(LOG_INFO);
-        console.log(info_match)
+
         if (info_match) {
 
             for (let i = 0; i < info_match.length; i++) {
