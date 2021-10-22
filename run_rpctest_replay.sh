@@ -2,8 +2,8 @@
 
 # this script allows to run rpc tests in the background process
 # the goal:
-#       to keep erigon running after terminal window is closed
-#       testing without running a server
+#       - to keep erigon running after terminal window is closed
+#       - testing without running a server
 
 echo "This command will restart Erigon and RPCdaemon. Do you wish to continue? [y/n] (default 'y')"
 read ANSWER

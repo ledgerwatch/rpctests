@@ -36,10 +36,6 @@ elif [ ! -z "$MODE" ]; then
     fi
 fi
 
-mkdir -p $BIN_DIR
-
-go build -o $BIN_DIR/$EXECUTABLE ./$ENTRY_FOLDER/...
-
 PORT=8080
 server_pid=$(lsof -n -i :$PORT | grep LISTEN | awk '{print $2}')
 
@@ -56,15 +52,20 @@ if [ ! -z "$server_pid" ]; then
     else
         if [ ! "$ANSWER" = "n" ]; then
             echo "Unknown input: $ANSWER, guessing this means 'n'"
+            exit 1
         fi
         echo "Not killing process with PID: $server_pid"
-        exit 1
+        exit 0
     fi
 
 else
 
     echo "There is no process that is using port: $PORT... we good to go"
 fi
+
+mkdir -p $BIN_DIR
+
+go build -o $BIN_DIR/$EXECUTABLE ./$ENTRY_FOLDER/...
 
 SERVER_LOG=server_out.log
 echo "Starting server in background process... see $SERVER_LOG for logs"

@@ -1,14 +1,25 @@
 <?php
 
+/**
+ * This page handles contents of a replayYYYYMMDD_HHMMSS(replay) directory.
+ * note: $replay variable is set in 'body.php'
+ * 
+ * Goal of this logic:
+ *  Pass map data structure as a json object to javascript.
+ *  map type: { string => []string }. In this case it is
+ *  { file_name => file_content }
+ * 
+ * Logic: 
+ *  1. read every file in replay directory (except those we dont need)
+ *  2. map file_name to file_content
+ *  3. pass this map to javascript
+ */
+
+
 include BASE_DIR . '/includes/components/navbar.php';
 
 # first check if directory exist
 $replay_path = BASE_DIR . 'rpctest_results/' . $replay;
-
-$rx_date_time = '/^replay(\d{8})\_(\d{6})\/?$/';
-preg_match($rx_date_time, $replay, $matches);
-assert(count($matches) >= 3);
-$timestamp = strtotime(implode(" ", array_slice($matches, 1)));
 
 if (!is_dir($replay_path)) : ?>
     <div class="section">
@@ -18,8 +29,16 @@ if (!is_dir($replay_path)) : ?>
 
 <?php else :
 
+    # take YYYYMMDD and HHMMSS out of 'replayYYYYMMDD_HHMMSS'
+    # and make a Unix timestamp out of it, so we can format it 
+    # however we want
+    $rx_date_time = '/^replay(\d{8})\_(\d{6})\/?$/';
+    preg_match($rx_date_time, $replay, $matches);
+    assert(count($matches) >= 3);
+    $timestamp = strtotime(implode(" ", array_slice($matches, 1))); 
 
-    # 1. open erigon_branch.txt to get branch name
+    # open erigon_branch.txt to get branch name, so we can display
+    # what branch was tested
     $erigon_branch = $replay_path . '/erigon_branch.txt';
     $f = fopen($erigon_branch, 'r');
     $branch = fgets($f);
@@ -41,22 +60,21 @@ if (!is_dir($replay_path)) : ?>
             <?php
             $pseudo_links = [];
 
+            # go over each file in replay directory
             foreach (new DirectoryIterator($replay_path) as $fileInfo) {
                 $file_name = $fileInfo->getFilename();
-
-
 
                 if (
                     !$fileInfo->isDot() &&
                     $file_name !== 'erigon_branch.txt' &&
-                    substr($file_name, 0, 1) !== "_"
-                ) {
+                    substr($file_name, 0, 1) !== "_" 
+                    # we dont need files starting with "_" (they are helper files)
+                ) { 
 
-                    $file = $replay_path . '/' . $file_name;
+                    $file = $replay_path . '/' . $file_name; 
                     $f = fopen($file, 'r');
                     $contents = [];
                     if ($f) {
-
                         while (($line = fgets($f)) !== false) {
                             array_push($contents, $line);
                         }
@@ -72,9 +90,7 @@ if (!is_dir($replay_path)) : ?>
 
     </nav>
 
-    <div id="dynamic-content" class="section">
-
-    </div>
+    <div id="dynamic-content" class="section"></div>
 
     <script src="/static/js/dynamic_links.js"></script>
 

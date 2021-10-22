@@ -78,7 +78,7 @@ limit_lines() {
     # command_that_continuously_outputs | limit_lines "file_to_write" "file_helper" "number_of_lines_limit"
 
     file_name=$1
-    file_out=$2
+    file_out=$2 
     limit=$3
 
     touch $file_name
