@@ -6,7 +6,7 @@
 # note that erigon repo is cloned into dir "erigon_replay" not to overwrite existing "erigon" dir
 # compiles rpctest and rpcdaemon
 # runs rpcdaemon
-# runs replay for recordFiles from rpctests/geth and rpctests/oe folders agains geth/oe respectively
+# runs replay for recordFiles from rpctests/queries folder
 # results are stored in directory replay<Date_Time> per each file that was run with replay
 
 BASE=$(pwd)
@@ -23,8 +23,6 @@ HASH="HEAD"
 DATADIR="/mnt/nvme/data1"
 
 RPCDAEMONPORT=8548
-GETHPORT=9545
-OEPORT=9546
 
 RPCTESTS_REPO="https://github.com/ledgerwatch/rpctests.git"
 if [ -z "$2" ]; then
@@ -38,8 +36,7 @@ fi
 RPCTESTS_DIR=$BASE/ledgerwatch_rpctests
 # at the end of a file
 # checkout to $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
-# replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
-# replay_files $RPCTESTS_DIR/geth $RPCDAEMONPORT
+# replay_files $RPCTESTS_DIR/queries $RPCDAEMONPORT
 
 # ---------- functions ----------
 checkout_branch() {
@@ -217,5 +214,4 @@ echo ""
 echo "Getting rpctest branch..."
 checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
 
-replay_files $RPCTESTS_DIR/oe $RPCDAEMONPORT
-replay_files $RPCTESTS_DIR/geth $RPCDAEMONPORT
+replay_files $RPCTESTS_DIR/queries $RPCDAEMONPORT
