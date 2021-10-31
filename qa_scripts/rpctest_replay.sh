@@ -9,7 +9,7 @@
 # runs replay for recordFiles from rpctests/queries folder
 # results are stored in directory replay<Date_Time> per each file that was run with replay
 
-BASE=$(pwd)
+BASE=$(pwd) 
 ERIGON_DIR=$BASE/erigon_replay
 WEB_DIR=$BASE/web
 RPCTEST_RESULTS_DIR=$WEB_DIR/rpctest_results
@@ -106,7 +106,7 @@ replay_files() {
 
             temp_file=$RESULTS_DIR/_temp.txt
 
-            # REDIRECT TO TEMP FILE
+            # redirect output to temp file
             nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile >$temp_file 2>$temp_file &
 
             wait $!      # wait untill last executed process finishes
@@ -207,11 +207,4 @@ until [ ! -z "$rpcdaemon_pid" ]; do
     rpcdaemon_pid=$(ps aux | grep rpcdaemon | grep $RPCDAEMONPORT | awk '{print $2}')
 done
 
-# replay_files $BASE/oe $RPCDAEMONPORT
-# replay_files $BASE/geth $RPCDAEMONPORT
-
-echo ""
-echo "Getting rpctest branch..."
-checkout_branch $RPCTESTS_REPO $RPCTESTS_BRANCH $HASH $RPCTESTS_DIR
-
-replay_files $RPCTESTS_DIR/queries $RPCDAEMONPORT
+replay_files $BASE/queries $RPCDAEMONPORT
