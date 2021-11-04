@@ -58,5 +58,6 @@ replay_files() {
     fi
 }
 
+echo "Tests output logs at: $RESULTS_DIR"
 replay_files $BASE/queries $PORT
 

@@ -15,19 +15,37 @@ pipeline {
                 }
             }
 
+            script {
+                println "----------------- Build Stage -----------------"
+            }
+
             steps {
-                sh "./build.sh --branch=$BRANCH"
+                // sh "./build.sh --branch=$BRANCH"
+                echo "Build"
             }
 
         }
 
         stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
+
+            script {
+                println "----------------- (Re)Start Stage -----------------"
+            }
+
+
             steps{
-                sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
+                // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
+                echo "(Re)Start"
             }
         }
 
         stage('Test') {
+
+            script {
+                println "----------------- Test Stage -----------------"
+            }
+
+
             steps{
                 // script {
                 //     // def date = new Date()
@@ -36,15 +54,17 @@ pipeline {
                 //     // TODO
                 //     // Do we need to record test timestamp?
                 // }
-                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
+                // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
+                echo "Test"
             }
         }
 
-        stage('Deploy') {
-            steps{
-                sh "./deploy.sh --buildid=${env.BUILD_ID}"
-            }
-        }
+        // // - Not implemented - 
+        // stage('Deploy') { // aka Release
+        //     steps{
+        //         sh "./deploy.sh --buildid=${env.BUILD_ID}"
+        //     }
+        // }
     }
 
 }
