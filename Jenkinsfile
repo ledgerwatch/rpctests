@@ -8,25 +8,22 @@ pipeline {
     stages {
         stage('Build') {
 
-            // input {
-            //     message "Please enter an Erigon branch you wish to test:"
-            //     parameters{
-            //         string(name: 'BRANCH', defaultValue: 'devel', description: 'Erigon branch name')
-            //     }
-            // }
+            input {
+                message "Please enter an Erigon branch you wish to test:"
+                parameters{
+                    string(name: 'BRANCH', defaultValue: 'devel', description: 'Erigon branch name')
+                }
+            }
 
             steps {
-                // sh "./build.sh --branch=$BRANCH"
-                echo "This is build stage"
+                sh "./build.sh --branch=$BRANCH"
             }
 
         }
 
         stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
             steps{
-                // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
-
-                echo "This is (re)start stage"
+                sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
             }
         }
 
@@ -39,17 +36,15 @@ pipeline {
                 //     // TODO
                 //     // Do we need to record test timestamp?
                 // }
-                // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
-                echo "This is (re)start stage"
-                sh "sudo ./run_tests.sh"
+                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
             }
         }
 
-        // stage('Deploy') {
-        //     steps{
-        //         sh "./deploy.sh --buildid=${env.BUILD_ID}"
-        //     }
-        // }
+        stage('Deploy') {
+            steps{
+                sh "./deploy.sh --buildid=${env.BUILD_ID}"
+            }
+        }
     }
 
 }

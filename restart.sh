@@ -6,8 +6,8 @@ ERIGON_DIR=$BASE/erigon_replay
 
 PORT=8548 # reserved rpcdaemon port
 
-# DATADIR="/mnt/nvme/data1" # chaindata dir
-DATADIR="/mnt/rd0_0/goerli" # chaindata dir
+DATADIR="/mnt/nvme/data1" # chaindata dir
+# DATADIR="/mnt/rd0_0/goerli" # chaindata dir
 
 LOGS_DIR="/home/kairat/erigon_logs"
 
