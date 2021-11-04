@@ -41,7 +41,7 @@ pipeline {
                 // }
                 // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
                 echo "This is (re)start stage"
-                sh "sudo ./run_test.sh"
+                sh "sudo ./run_tests.sh"
             }
         }
 
