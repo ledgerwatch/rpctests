@@ -35,23 +35,25 @@ replay_files() {
         for eachfile in *.txt; do
             echo "Replaying file $eachfile"
 
-            temp_file=$RESULTS_DIR/_temp.txt
 
-            # redirect output to temp file
-            nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile >$temp_file 2>$temp_file &
+            tail -n 20 $eachfile
+            # temp_file=$RESULTS_DIR/_temp.txt
 
-            wait $!      # wait untill last executed process finishes
-            exit_code=$? # grab the code
+            # # redirect output to temp file
+            # nohup $ERIGON_DIR/build/bin/rpctest replay --erigonUrl http://localhost:$2 --recordFile $eachfile >$temp_file 2>$temp_file &
 
-            tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile
+            # wait $!      # wait untill last executed process finishes
+            # exit_code=$? # grab the code
 
-            rm $temp_file
+            # tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile
 
-            if [ ! "$exit_code" = 0 ]; then 
-                echo "Unsuccessfull test result: for $eachfile."
-                echo "Check $RESULTS_DIR/$eachfile."
-                exit 1
-            fi
+            # rm $temp_file
+
+            # if [ ! "$exit_code" = 0 ]; then 
+            #     echo "Unsuccessfull test result: for $eachfile."
+            #     echo "Check $RESULTS_DIR/$eachfile."
+            #     exit 1
+            # fi
 
         done
 
