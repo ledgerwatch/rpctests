@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Add +x to every .sh file
+Add chmod +x to every .sh file
 """
 
 # import argparse

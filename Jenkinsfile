@@ -8,32 +8,40 @@ pipeline {
     stages {
         stage('Build') {
 
-            input {
-                message "Please enter an Erigon branch you wish to test:"
-                parameters{
-                    string(name: 'BRANCH', defaultValue: 'devel', description: 'Erigon branch name')
-                }
-            }
+            // input {
+            //     message "Please enter an Erigon branch you wish to test:"
+            //     parameters{
+            //         string(name: 'BRANCH', defaultValue: 'devel', description: 'Erigon branch name')
+            //     }
+            // }
 
             steps {
-                sh "./build.sh --branch=$BRANCH"
+                // sh "./build.sh --branch=$BRANCH"
+                echo "This is build stage"
             }
 
         }
 
-        stage('Restart') { // restart erigon and rpcdaemon if they are running
+        stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
             steps{
-                sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
+                // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
+
+                echo "This is (re)start stage"
             }
         }
 
         stage('Test') {
             steps{
-                script {
-                    def date = new Date()
-                    println date.format("yyMMdd_HHmmSS", TimeZone.getTimeZone('UTC'))
-                }
-                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
+                // script {
+                //     // def date = new Date()
+                //     // println date.format("yyMMdd_HHmmSS", TimeZone.getTimeZone('UTC'))
+
+                //     // TODO
+                //     // Do we need to record test timestamp?
+                // }
+                // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
+
+                echo "This is test stage"
             }
         }
 
