@@ -15,11 +15,12 @@ pipeline {
                 }
             }
 
-            script {
-                println "----------------- Build Stage -----------------"
-            }
-
             steps {
+                script {
+                    println "----------------- Build Stage -----------------"
+                }
+
+
                 // sh "./build.sh --branch=$BRANCH"
                 echo "Build"
             }
@@ -28,12 +29,11 @@ pipeline {
 
         stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
 
-            script {
-                println "----------------- (Re)Start Stage -----------------"
-            }
-
-
             steps{
+                script {
+                    println "----------------- (Re)Start Stage -----------------"
+                }
+
                 // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
                 echo "(Re)Start"
             }
@@ -41,12 +41,13 @@ pipeline {
 
         stage('Test') {
 
-            script {
-                println "----------------- Test Stage -----------------"
-            }
 
 
             steps{
+                script {
+                    println "----------------- Test Stage -----------------"
+                }
+
                 // script {
                 //     // def date = new Date()
                 //     // println date.format("yyMMdd_HHmmSS", TimeZone.getTimeZone('UTC'))
