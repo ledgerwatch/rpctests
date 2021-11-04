@@ -21,8 +21,7 @@ pipeline {
                 }
 
 
-                // sh "./build.sh --branch=$BRANCH"
-                echo "Build"
+                sh "./build.sh --branch=$BRANCH"
             }
 
         }
@@ -34,8 +33,7 @@ pipeline {
                     println "----------------- (Re)Start Stage -----------------"
                 }
 
-                // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
-                echo "(Re)Start"
+                sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
             }
         }
 
@@ -55,8 +53,7 @@ pipeline {
                 //     // TODO
                 //     // Do we need to record test timestamp?
                 // }
-                // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
-                echo "Test"
+                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
             }
         }
 
