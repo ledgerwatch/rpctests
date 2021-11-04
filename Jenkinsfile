@@ -60,10 +60,12 @@ pipeline {
 
 
         stage('CleanUp') {
-            script {
-                println "----------------- CleanUp Stage -----------------"
+            steps {
+                script {
+                    println "----------------- CleanUp Stage -----------------"
+                }
+                echo "JENKINS_URL=${env.JENKINS_URL}"
             }
-            echo "JENKINS_URL=${env.JENKINS_URL}"
         }
     }
 
