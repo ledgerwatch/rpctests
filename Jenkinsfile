@@ -19,10 +19,7 @@ pipeline {
                 script {
                     println "----------------- Build Stage -----------------"
                 }
-
-                echo "JENKINS_URL=${env.JENKINS_URL}"
-
-                // sh "./build.sh --branch=$BRANCH"
+                sh "./build.sh --branch=$BRANCH"
             }
 
         }
@@ -46,8 +43,7 @@ pipeline {
                 script {
                     println "----------------- Test Stage -----------------"
                 }
-                echo "JENKINS_URL=${env.JENKINS_URL}"
-                // sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
+                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
             }
         }
 

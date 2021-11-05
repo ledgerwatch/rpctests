@@ -23,8 +23,6 @@ done
 
 RESULTS_DIR=$LOGS_DIR/$BUILD_ID 
 
-date_time="$(date +%Y%m%d_%H%M%S)"
-
 replay_files() {
     # $1 - dir with files
     # $2 - port for geth or oe
