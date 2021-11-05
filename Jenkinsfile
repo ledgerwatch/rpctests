@@ -37,8 +37,6 @@ pipeline {
 
         stage('Test') {
 
-
-
             steps{
                 script {
                     println "----------------- Test Stage -----------------"
