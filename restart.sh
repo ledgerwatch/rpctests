@@ -120,7 +120,7 @@ cd $ERIGON_DIR
 ### start Erigon ###
 if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet
     echo "Starting Erigon..."
-    nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
+    nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "50") &
 elif [ $DATADIR = $DATADIR_LOCAL ]; then
     echo "Starting Erigon on goerli testnet..."
     nohup ./build/bin/erigon --datadir $DATADIR --chain goerli --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &

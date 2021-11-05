@@ -30,3 +30,5 @@ server_out.log
 
 qa_scripts/_rpctest_replay.sh
 rpctest_replay.out
+
+errors.txt
