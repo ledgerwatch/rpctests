@@ -33,8 +33,8 @@ pipeline {
                 script {
                     println "----------------- (Re)Start Stage -----------------"
                 }
-                echo "JENKINS_URL=${env.JENKINS_URL}"
-                // sh "sudo ./restart.sh --buildid=${env.BUILD_ID}" 
+
+                sh "sudo ./restart.sh --buildid=${env.BUILD_ID} --url=${env.JENKINS_URL}" 
             }
         }
 
@@ -64,7 +64,7 @@ pipeline {
                 script {
                     println "----------------- CleanUp Stage -----------------"
                 }
-                echo "JENKINS_URL=${env.JENKINS_URL}"
+                sh "sudo ./clean_up.sh --buildid=${env.BUILD_ID}"
             }
         }
     }
