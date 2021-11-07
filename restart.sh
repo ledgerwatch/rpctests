@@ -6,7 +6,9 @@ ERIGON_DIR=$BASE/erigon_replay
 
 PORT=8548 # reserved rpcdaemon port
 
-LOGS_DIR="/home/kairat/erigon_logs"
+LOGS_DIR="/var/log/erigon"
+
+mkdir -p $LOGS_DIR
 
 for i in "$@"; do
     case $i in
@@ -20,8 +22,6 @@ for i in "$@"; do
         ;;
     esac
 done
-
-RESULTS_DIR=$LOGS_DIR/$BUILD_ID
 
 DATADIR_REMOTE="/mnt/nvme/data1" # chaindata dir
 DATADIR_LOCAL="/mnt/rd0_0/goerli" # chaindata dir
@@ -86,13 +86,21 @@ else
     echo "There is no process listening on reserved port $PORT (rpcdaemon port)..."
 fi
 
+echo ""
+echo "Removing old log files..."
+cd $LOGS_DIR
+for eachfile in *.log; do
+    echo "Removing $eachfile..."
+    rm $eachfile
+done
+
 limit_lines() {
 
     # limits redirected output lines to arg $3
     # usage example:
     # command_that_continuously_outputs | limit_lines "file_to_write" "file_helper" "number_of_lines_limit"
 
-    file_name=$1
+    file_name=$1 
     file_out=$2
     limit=$3
 
@@ -113,17 +121,15 @@ limit_lines() {
     done
 }
 
-mkdir -p $RESULTS_DIR
-
 cd $ERIGON_DIR
 
 ### start Erigon ###
 if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet
     echo "Starting Erigon..."
-    nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "50") &
+    nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOG_DIR/erigon.log" "$LOG_DIR/_erigon.log" "50") &
 elif [ $DATADIR = $DATADIR_LOCAL ]; then
     echo "Starting Erigon on goerli testnet..."
-    nohup ./build/bin/erigon --datadir $DATADIR --chain goerli --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$RESULTS_DIR/erigon.log" "$RESULTS_DIR/_erigon.log" "20") &
+    nohup ./build/bin/erigon --datadir $DATADIR --chain goerli --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOG_DIR/erigon.log" "$LOG_DIR/_erigon.log" "50") &
 fi
 
 
@@ -137,18 +143,18 @@ until [ ! -z "$erigon_pid" ]; do
     count=`expr $count + 1`
 
     if [ $count -gt 30 ]; then 
-        echo "Erigon for some reason can't start. Check the logs in $RESULTS_DIR/erigon.log"
+        echo "Erigon for some reason can't start. Check the logs in $LOGS_DIR/erigon.log"
         echo "It took too long to start a process... exiting"
         exit 1 # entire build fails
     fi
 done
 echo ""
 echo "----- Erigon successfully started and running in the background. PID=$erigon_pid -----"
-echo "----- Erigon logs: $RESULTS_DIR/erigon.log -----"
+echo "----- Erigon logs: $LOGS_DIR/erigon.log -----"
 
 ### start RPCdaemon ###
 echo "Starting RPCdaemon..."
-nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$PORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$RESULTS_DIR/rpcdaemon.log" "$RESULTS_DIR/_rpcdaemon.log" "20") &
+nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$PORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$LOG_DIR/rpcdaemon.log" "$LOG_DIR/_rpcdaemon.log" "20") &
 
 rpcdaemon_pid=""
 count=0
@@ -160,12 +166,12 @@ until [ ! -z "$rpcdaemon_pid" ]; do
     count=`expr $count + 1`
 
     if [ $count -gt 30 ]; then 
-        echo "RPCdaemon for some reason can't start. Check the logs in $RESULTS_DIR/rpcdaemon.log"
+        echo "RPCdaemon for some reason can't start. Check the logs in $LOGS_DIR/rpcdaemon.log"
         echo "It took too long to start a process... exiting"
         exit 1 # entire build fails
     fi
 done
 echo ""
 echo "----- RPCdaemon successfully started and running in the background. PID=$rpcdaemon_pid -----"
-echo "----- RPCdaemon logs: $RESULTS_DIR/rpcdaemon.log -----"
+echo "----- RPCdaemon logs: $LOGS_DIR/rpcdaemon.log -----"
 echo ""

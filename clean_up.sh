@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-LOGS_DIR="/home/kairat/erigon_logs"
+LOGS_DIR="/var/log/rpctests"
 
 for i in "$@"; do
     case $i in
@@ -20,8 +20,6 @@ for dir in $LOGS_DIR/*; do
     if [ ! $dir = $LAST_BUILD_DIR ]; then 
         echo "Removing directory $dir..."
         rm -rf $dir
-    else 
-        echo "Diectory $LAST_BUILD_DIR is not touched..."
     fi
 
 done

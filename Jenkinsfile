@@ -31,7 +31,7 @@ pipeline {
                     println "----------------- (Re)Start Stage -----------------"
                 }
 
-                sh "sudo ./restart.sh --buildid=${env.BUILD_ID} --url=${env.JENKINS_URL}" 
+                sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
 

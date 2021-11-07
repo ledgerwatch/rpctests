@@ -6,7 +6,7 @@ ERIGON_DIR=$BASE/erigon_replay
 
 PORT=8548 # reserved rpcdaemon port
 
-LOGS_DIR="/home/kairat/erigon_logs"
+LOGS_DIR="/var/log/rpctests"
 
 for i in "$@"; do
     case $i in
@@ -14,14 +14,12 @@ for i in "$@"; do
         BUILD_ID="${i#*=}"
         shift
         ;;
-    -t=* | --timestamp=*) 
-        TIMESTAMP="${i#*=}"
-        shift
-        ;;
     esac
 done
 
 RESULTS_DIR=$LOGS_DIR/$BUILD_ID 
+
+mkdir -p $RESULTS_DIR
 
 replay_files() {
     # $1 - dir with files
