@@ -39,16 +39,15 @@ replay_files() {
             wait $!      # wait untill last executed process finishes
             exit_code=$? # grab the code
 
-            tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile
-
-            rm $temp_file
-
             if [ ! "$exit_code" = 0 ]; then 
+                tail -n 20 $temp_file >>$RESULTS_DIR/$eachfile # record only those tests that didn't pass
+                rm $temp_file
                 echo "Unsuccessfull test result: for $eachfile."
                 echo "Check $RESULTS_DIR/$eachfile."
                 exit 1
             fi
 
+            rm $temp_file
         done
 
     fi

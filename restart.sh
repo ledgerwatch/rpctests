@@ -154,7 +154,7 @@ echo "----- Erigon logs: $LOGS_DIR/erigon.log -----"
 
 ### start RPCdaemon ###
 echo "Starting RPCdaemon..."
-nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$PORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$LOG_DIRS/rpcdaemon.log" "$LOG_DIRS/_rpcdaemon.log" "20") &
+nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$PORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$LOGS_DIR/rpcdaemon.log" "$LOGS_DIR/_rpcdaemon.log" "20") &
 
 rpcdaemon_pid=""
 count=0
