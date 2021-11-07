@@ -94,6 +94,11 @@ for eachfile in *.log; do
     rm $eachfile
 done
 
+echo ""
+echo "Removing 'nodes' directory if exists"
+rm -rf $DATADIR/nodes
+
+
 limit_lines() {
 
     # limits redirected output lines to arg $3
@@ -122,6 +127,8 @@ limit_lines() {
 }
 
 cd $ERIGON_DIR
+
+echo ""
 
 ### start Erigon ###
 if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet

@@ -11,7 +11,7 @@ pipeline {
             input {
                 message "Please enter an Erigon branch you wish to test:"
                 parameters{
-                    string(name: 'BRANCH', defaultValue: 'devel', description: 'Erigon branch name')
+                    string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
                 }
             }
 
