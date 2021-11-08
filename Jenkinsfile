@@ -13,9 +13,9 @@ pipeline {
 
     parameters{
         choice(name: 'OPTION', choices: [
-            "$STOP_ONLY", 
-            "$RESTART", 
-            "$RESTART_NEW_BRANCH"], 
+            'stop only', 
+            'restart', 
+            'restart with new branch'], 
             description: 'What can I do for you?')
     }
 
