@@ -5,12 +5,11 @@ pipeline {
         go 'go-1.17.2'
     }
 
-    input {
-        message "What can I do for you?"
-        parameters{
-            choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-        }
+
+    parameters{
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
     }
+
 
     stages {
 
