@@ -26,38 +26,51 @@ pipeline {
                 script {
                     println "----------------- Stop Erigon and RPCdaemon -----------------"
                 }
-                sh "./build.sh"
+                sh "./start_stop.sh"
             }
         }
 
-        // stage('Build') {
+        stage('Build') {
 
-        //     input {
-        //         message "Please enter an Erigon branch you wish to test:"
-        //         parameters{
-        //             string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
-        //         }
-        //     }
+            steps {
+                echo "STOP=$STOP"
+            }
 
-        //     steps {
-        //         script {
-        //             println "----------------- Build Stage -----------------"
-        //         }
-        //         sh "./build.sh --branch=$BRANCH"
-        //     }
+            when {
+                expression {
+                    "$STOP" == 'no'
+                }
+            }
 
-        // }
+            input {
+                message "Please enter an Erigon branch you wish to test:"
+                parameters{
+                    string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
+                }
+            }
 
-        // stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
+            steps {
+                script {
+                    println "----------------- Build Stage -----------------"
+                }
+                // sh "./build.sh --branch=$BRANCH"
+            }
 
-        //     steps{
-        //         script {
-        //             println "----------------- (Re)Start Stage -----------------"
-        //         }
+        }
 
-        //         sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
-        //     }
-        // }
+        stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
+            steps {
+                echo "STOP=$STOP"
+            }
+
+            steps{
+                script {
+                    println "----------------- (Re)Start Stage -----------------"
+                }
+
+                // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
+            }
+        }
 
     }
 
