@@ -9,7 +9,7 @@ pipeline {
         choice(name: 'OPTION', choices: [
             'stop only', 
             'restart no pull',
-            'restart with pull' 
+            'restart with pull',
             'restart with new branch'], 
             description: 'What can I do for you?')
     }
