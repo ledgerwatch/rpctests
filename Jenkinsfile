@@ -12,7 +12,11 @@ pipeline {
     }
 
     parameters{
-        choice(name: 'OPTION', choices: [env.STOP_ONLY, env.RESTART, env.RESTART_NEW_B], description: 'What can I do for you?')
+        choice(name: 'OPTION', choices: [
+            "${env.STOP_ONLY}", 
+            "${env.RESTART}", 
+            "${env.RESTART_NEW_B}"], 
+            description: 'What can I do for you?')
     }
 
 
