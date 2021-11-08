@@ -28,7 +28,7 @@ pipeline {
                 script {
                     println "----------------- ${params.OPTION} -----------------"
                 }
-                sh "sudo ./start_stop.sh"
+                sh "sudo ./stop.sh"
             }
         }
 
