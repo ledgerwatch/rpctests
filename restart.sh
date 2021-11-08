@@ -24,7 +24,7 @@ for i in "$@"; do
 done
 
 DATADIR_REMOTE="/mnt/nvme/data1" # chaindata dir
-DATADIR_LOCAL="/mnt/rd0_0/goerli" # chaindata dir
+DATADIR_LOCAL="/mnt/rd0_0/ropsten" # chaindata dir
 
 if [ ! -z "$JENKINS_URL" ]; then
     if echo "$JENKINS_URL" | grep -q "erigon.dev"; then 
@@ -135,8 +135,8 @@ if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet
     echo "Starting Erigon..."
     nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 elif [ $DATADIR = $DATADIR_LOCAL ]; then
-    echo "Starting Erigon on goerli testnet..."
-    nohup ./build/bin/erigon --datadir $DATADIR --chain goerli --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
+    echo "Starting Erigon on ropsten testnet..."
+    nohup ./build/bin/erigon --datadir $DATADIR --chain ropsten --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 fi
 
 
@@ -155,10 +155,11 @@ until [ ! -z "$erigon_pid" ]; do
         exit 1 # entire build fails
     fi
 done
-echo ""
 echo "----- Erigon successfully started and running in the background. PID=$erigon_pid -----"
 echo "----- Erigon logs: $LOGS_DIR/erigon.log -----"
 
+
+echo ""
 ### start RPCdaemon ###
 echo "Starting RPCdaemon..."
 nohup ./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.port=$PORT --http.api=eth,erigon,web3,net,debug,trace,txpool --verbosity=4 --datadir "$DATADIR" 2>&1 | $(limit_lines "$LOGS_DIR/rpcdaemon.log" "$LOGS_DIR/_rpcdaemon.log" "20") &
@@ -178,7 +179,5 @@ until [ ! -z "$rpcdaemon_pid" ]; do
         exit 1 # entire build fails
     fi
 done
-echo ""
 echo "----- RPCdaemon successfully started and running in the background. PID=$rpcdaemon_pid -----"
 echo "----- RPCdaemon logs: $LOGS_DIR/rpcdaemon.log -----"
-echo ""

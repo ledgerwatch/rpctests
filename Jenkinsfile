@@ -6,61 +6,59 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+
+        stage('Stop Erigon and RPCdaemon') {
 
             input {
-                message "Please enter an Erigon branch you wish to test:"
+                message "Would you like to stop Erigon and RPCdaemon?"
                 parameters{
-                    string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
+                    string(name: 'STOP', defaultValue: 'yes', description: 'This will just stop Ergion and RPCdaemon')
+                }
+            }
+
+            when {
+                expression {
+                    "{$STOP}" == 'yes'
                 }
             }
 
             steps {
                 script {
-                    println "----------------- Build Stage -----------------"
+                    println "----------------- Stop Erigon and RPCdaemon -----------------"
                 }
-                sh "./build.sh --branch=$BRANCH"
-            }
-
-        }
-
-        stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
-
-            steps{
-                script {
-                    println "----------------- (Re)Start Stage -----------------"
-                }
-
-                sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
+                sh "./build.sh"
             }
         }
 
-        stage('Test') {
+        // stage('Build') {
 
-            steps{
-                script {
-                    println "----------------- Test Stage -----------------"
-                }
-                sh "sudo ./run_tests.sh --buildid=${env.BUILD_ID}"
-            }
-        }
+        //     input {
+        //         message "Please enter an Erigon branch you wish to test:"
+        //         parameters{
+        //             string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
+        //         }
+        //     }
 
-        // // - Not implemented - 
-        // stage('Deploy') { // aka Release
+        //     steps {
+        //         script {
+        //             println "----------------- Build Stage -----------------"
+        //         }
+        //         sh "./build.sh --branch=$BRANCH"
+        //     }
+
+        // }
+
+        // stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
+
         //     steps{
-        //         sh "./deploy.sh --buildid=${env.BUILD_ID}"
+        //         script {
+        //             println "----------------- (Re)Start Stage -----------------"
+        //         }
+
+        //         sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
         //     }
         // }
 
-
-        stage('CleanUp') {
-            steps {
-                script {
-                    println "----------------- CleanUp Stage -----------------"
-                }
-                sh "sudo ./clean_up.sh --buildid=${env.BUILD_ID}"
-            }
-        }
     }
 
 }
