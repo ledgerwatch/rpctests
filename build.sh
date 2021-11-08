@@ -21,6 +21,10 @@ for i in "$@"; do
         TIMESTAMP="${i#*=}"
         shift
         ;;
+    -p=* | --pull=*) 
+        PULL="${i#*=}"
+        shift
+        ;;
     esac
 done
 
@@ -60,10 +64,23 @@ checkout_branch() {
 }
 
 echo ""
-checkout_branch $ERIGONREPO $BRANCH $HASH $ERIGON_DIR
+if [ ! "$BRANCH" = "nobranch" ]; then 
+    checkout_branch $ERIGONREPO $BRANCH $HASH $ERIGON_DIR
+fi
 
 cd $ERIGON_DIR
+
+if [ "$BRANCH" = "nobranch" ]; then 
+    if [ "$PULL" = "0" ]; then 
+        echo "Not pulling changes from remote repository..."
+        echo "Erigon and RPCdaemon will start with existing build..."
+        exit 0
+    elif [ "$PULL" = "1" ]; then
+        git pull
+    fi
+fi
 
 make erigon
 make rpcdaemon
 make rpctest
+

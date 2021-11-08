@@ -95,7 +95,7 @@ for eachfile in *.log; do
 done
 
 echo ""
-echo "Removing 'nodes' directory if exists"
+echo "Removing 'nodes' directory if exists..."
 rm -rf $DATADIR/nodes
 
 

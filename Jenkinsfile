@@ -28,8 +28,7 @@ pipeline {
                 script {
                     println "----------------- ${params.OPTION} -----------------"
                 }
-                // sh "./start_stop.sh"
-                echo "Choice: ${params.OPTION}"
+                sh "sudo ./start_stop.sh"
             }
         }
 
@@ -52,8 +51,8 @@ pipeline {
                 script {
                     println "----------------- ${params.OPTION} -----------------"
                 }
-                // sh "./build.sh --branch=$BRANCH"
-                // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
+                sh "./build.sh --branch=$BRANCH"
+                sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
 
         }
@@ -80,7 +79,9 @@ pipeline {
                 }
 
                 echo "Choice: ${params.OPTION}, PULL: ${env.PULL}"
-                // sh "sudo ./restart.sh --url=${env.JENKINS_URL} --pull=${env.PULL}" 
+                // sh "sudo ./restart.sh --url=${env.JENKINS_URL} --pull=${env.PULL}"
+                sh "./build.sh --branch=nobranch --pull=${env.PULL}"
+                sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
 
