@@ -18,7 +18,7 @@ pipeline {
 
             when {
                 expression {
-                    "{$STOP}" == 'yes'
+                    "$STOP" == 'yes'
                 }
             }
 
