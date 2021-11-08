@@ -25,9 +25,10 @@ pipeline {
             steps {
                 script {
                     println "----------------- Stop Erigon and RPCdaemon -----------------"
+                    env.STOP = "$STOP"
                 }
                 sh "./start_stop.sh"
-                env.STOP = "$STOP"
+
             }
         }
 
