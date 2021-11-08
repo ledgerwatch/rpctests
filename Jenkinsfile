@@ -27,6 +27,7 @@ pipeline {
                     println "----------------- Stop Erigon and RPCdaemon -----------------"
                 }
                 sh "./start_stop.sh"
+                env.STOP = "$STOP"
             }
         }
 
@@ -50,7 +51,7 @@ pipeline {
                     println "----------------- Build Stage -----------------"
                 }
                 // sh "./build.sh --branch=$BRANCH"
-                echo "STOP=$STOP"
+                echo "STOP=$env.STOP"
             }
 
         }
@@ -61,7 +62,7 @@ pipeline {
                 script {
                     println "----------------- (Re)Start Stage -----------------"
                 }
-                echo "STOP=$STOP"
+                echo "STOP=$env.STOP"
                 // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
