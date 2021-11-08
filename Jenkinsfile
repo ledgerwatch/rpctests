@@ -32,15 +32,11 @@ pipeline {
 
         stage('Build') {
 
-            steps {
-                echo "STOP=$STOP"
-            }
-
-            when {
-                expression {
-                    "$STOP" == 'no'
-                }
-            }
+            // when {
+            //     expression {
+            //         "$STOP" == 'no'
+            //     }
+            // }
 
             input {
                 message "Please enter an Erigon branch you wish to test:"
@@ -54,20 +50,18 @@ pipeline {
                     println "----------------- Build Stage -----------------"
                 }
                 // sh "./build.sh --branch=$BRANCH"
+                echo "STOP=$STOP"
             }
 
         }
 
         stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
-            steps {
-                echo "STOP=$STOP"
-            }
 
             steps{
                 script {
                     println "----------------- (Re)Start Stage -----------------"
                 }
-
+                echo "STOP=$STOP"
                 // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
