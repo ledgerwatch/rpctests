@@ -5,54 +5,40 @@ pipeline {
         go 'go-1.17.2'
     }
 
+    parameters{
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
+
     stages {
 
         stage('Stop Erigon and RPCdaemon') {
 
-            input {
-                message "Would you like to stop Erigon and RPCdaemon?"
-                parameters{
-                    string(name: 'STOP', defaultValue: 'yes', description: 'This will just stop Ergion and RPCdaemon')
-                }
-            }
-
-            when {
-                expression {
-                    "$STOP" == 'yes'
-                }
-            }
 
             steps {
                 script {
                     println "----------------- Stop Erigon and RPCdaemon -----------------"
-                    env.STOP = "$STOP"
                 }
-                sh "./start_stop.sh"
-
+                // sh "./start_stop.sh"
+                echo "Choice: ${params.CHOICE}"
             }
         }
 
         stage('Build') {
-
-            // when {
-            //     expression {
-            //         "$STOP" == 'no'
-            //     }
-            // }
-
-            input {
-                message "Please enter an Erigon branch you wish to test:"
-                parameters{
-                    string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
-                }
-            }
 
             steps {
                 script {
                     println "----------------- Build Stage -----------------"
                 }
                 // sh "./build.sh --branch=$BRANCH"
-                echo "STOP=$env.STOP"
+                echo "Choice: ${params.CHOICE}"
             }
 
         }
@@ -63,7 +49,7 @@ pipeline {
                 script {
                     println "----------------- (Re)Start Stage -----------------"
                 }
-                echo "STOP=$env.STOP"
+                echo "Choice: ${params.CHOICE}"
                 // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
