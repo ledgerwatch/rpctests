@@ -5,20 +5,14 @@ pipeline {
         go 'go-1.17.2'
     }
 
-    environment {
-        STOP_ONLY = 'stop only'
-        RESTART = 'restart'
-        RESTART_NEW_BRANCH = 'restart with new branch'
-    }
-
     parameters{
         choice(name: 'OPTION', choices: [
             'stop only', 
-            'restart', 
+            'restart no pull',
+            'restart with pull' 
             'restart with new branch'], 
             description: 'What can I do for you?')
     }
-
 
     stages {
 
@@ -26,39 +20,67 @@ pipeline {
 
             when {
                 expression {
-                    "${params.OPTION}" == 'stop' 
+                    "${params.OPTION}" == 'stop only' 
                 }
             }
 
             steps {
                 script {
-                    println "----------------- Stop Erigon and RPCdaemon -----------------"
+                    println "----------------- ${params.OPTION} -----------------"
                 }
                 // sh "./start_stop.sh"
                 echo "Choice: ${params.OPTION}"
             }
         }
 
-        stage('Build') {
+        stage('Restart with new branch') {
+
+            when {
+                expression {
+                    "${params.OPTION}" == 'restart with new branch'
+                }
+            }
+
+            input {
+                message "Please enter an Erigon branch you wish to test:"
+                parameters{
+                    string(name: 'BRANCH', defaultValue: 'stable', description: 'Erigon branch name')
+                }
+            }
 
             steps {
                 script {
-                    println "----------------- Build Stage -----------------"
+                    println "----------------- ${params.OPTION} -----------------"
                 }
                 // sh "./build.sh --branch=$BRANCH"
-                echo "Choice: ${params.OPTION}"
+                // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
 
         }
 
         stage('(Re)Start') { // restart erigon and rpcdaemon if they are running
 
+            when {
+                expression {
+                    "${params.OPTION}" == "restart no pull" || 
+                        "${params.OPTION}" == "restart with pull"
+                }
+            }
+
             steps{
                 script {
-                    println "----------------- (Re)Start Stage -----------------"
+                    println "----------------- ${params.OPTION}  -----------------"
+
+                    if ("${params.OPTION}" == "restart no pull") {
+                        env.PULL = 0
+                    } else {
+                        env.PULL = 1
+                    }
+
                 }
-                echo "Choice: ${params.OPTION}"
-                // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
+
+                echo "Choice: ${params.OPTION}, PULL: ${env.PULL}"
+                // sh "sudo ./restart.sh --url=${env.JENKINS_URL} --pull=${env.PULL}" 
             }
         }
 
