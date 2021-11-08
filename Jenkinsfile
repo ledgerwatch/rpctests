@@ -8,14 +8,14 @@ pipeline {
     environment {
         STOP_ONLY = 'stop only'
         RESTART = 'restart'
-        RESTART_NEW_B = 'restart with new branch'
+        RESTART_NEW_BRANCH = 'restart with new branch'
     }
 
     parameters{
         choice(name: 'OPTION', choices: [
-            "${env.STOP_ONLY}", 
-            "${env.RESTART}", 
-            "${env.RESTART_NEW_B}"], 
+            "${STOP_ONLY}", 
+            "${RESTART}", 
+            "${RESTART_NEW_BRANCH}"], 
             description: 'What can I do for you?')
     }
 
