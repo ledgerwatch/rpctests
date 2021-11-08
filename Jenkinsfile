@@ -5,9 +5,14 @@ pipeline {
         go 'go-1.17.2'
     }
 
+    environment {
+        STOP_ONLY = 'stop only'
+        RESTART = 'restart'
+        RESTART_NEW_B = 'restart with new branch'
+    }
 
     parameters{
-        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        choice(name: 'OPTION', choices: [env.STOP_ONLY, env.RESTART, env.RESTART_NEW_B], description: 'What can I do for you?')
     }
 
 
@@ -15,13 +20,18 @@ pipeline {
 
         stage('Stop Erigon and RPCdaemon') {
 
+            when {
+                expression {
+                    "${params.OPTION}" == 'stop' 
+                }
+            }
 
             steps {
                 script {
                     println "----------------- Stop Erigon and RPCdaemon -----------------"
                 }
                 // sh "./start_stop.sh"
-                echo "Choice: ${params.CHOICE}"
+                echo "Choice: ${params.OPTION}"
             }
         }
 
@@ -32,7 +42,7 @@ pipeline {
                     println "----------------- Build Stage -----------------"
                 }
                 // sh "./build.sh --branch=$BRANCH"
-                echo "Choice: ${params.CHOICE}"
+                echo "Choice: ${params.OPTION}"
             }
 
         }
@@ -43,7 +53,7 @@ pipeline {
                 script {
                     println "----------------- (Re)Start Stage -----------------"
                 }
-                echo "Choice: ${params.CHOICE}"
+                echo "Choice: ${params.OPTION}"
                 // sh "sudo ./restart.sh --url=${env.JENKINS_URL}" 
             }
         }
