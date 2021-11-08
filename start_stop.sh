@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PORT=8548 # reserved rpcdaemon port
+
 echo "Checking if erigon is running..."
 erigon_pid=$(ps aux | grep ./build/bin/erigon | grep datadir | awk '{print $2}')
 # if erigon is running send SIGTERM

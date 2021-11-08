@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # jenkins workspace directory
-BASE=$(pwd) # /var/lib/jenkins/workspace/<project_name>
+BASE=/var/lib/jenkins/workspace/rpctests
 
 ERIGONREPO="https://github.com/ledgerwatch/erigon.git"
 ERIGON_DIR=$BASE/erigon_replay

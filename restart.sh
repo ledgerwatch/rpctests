@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # jenkins workspace directory
-BASE=$(pwd) # /var/lib/jenkins/workspace/<project_name>
+BASE=/var/lib/jenkins/workspace/rpctests # /var/lib/jenkins/workspace/<project_name>
 ERIGON_DIR=$BASE/erigon_replay
 
 PORT=8548 # reserved rpcdaemon port
