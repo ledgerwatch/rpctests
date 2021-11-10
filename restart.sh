@@ -26,17 +26,13 @@ done
 DATADIR_REMOTE="/mnt/nvme/data1" # chaindata dir
 DATADIR_LOCAL="/mnt/rd0_0/ropsten" # chaindata dir
 
+echo 
 if [ ! -z "$JENKINS_URL" ]; then
     if echo "$JENKINS_URL" | grep -q "erigon.dev"; then 
         echo "Determined machine type: Remote VM"
         DATADIR=$DATADIR_REMOTE
         echo "DATADIR is set to $DATADIR_REMOTE"
-
-    elif echo "$JENKINS_URL" | grep -q "localhost"; then 
-        echo "Determined machine type: Local machine"
-        DATADIR=$DATADIR_LOCAL
-        echo "DATADIR is set to $DATADIR_LOCAL"
-    elif echo "$JENKINS_URL" | grep -q "127.0.0.1"; then 
+    elif echo "$JENKINS_URL" | grep -q "localhost" || echo "$JENKINS_URL" | grep -q "127.0.0.1"; then 
         echo "Determined machine type: Local machine"
         DATADIR=$DATADIR_LOCAL
         echo "DATADIR is set to $DATADIR_LOCAL"
