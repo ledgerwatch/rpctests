@@ -24,7 +24,7 @@ for i in "$@"; do
 done
 
 DATADIR_REMOTE="/mnt/nvme/data1" # chaindata dir
-DATADIR_LOCAL="/mnt/rd0_0/goerli" # chaindata dir
+DATADIR_LOCAL="/mnt/rd0_0/ropsten" # chaindata dir
 
 if [ ! -z "$JENKINS_URL" ]; then
     if echo "$JENKINS_URL" | grep -q "erigon.dev"; then 
@@ -32,7 +32,7 @@ if [ ! -z "$JENKINS_URL" ]; then
         DATADIR=$DATADIR_REMOTE
         echo "DATADIR is set to $DATADIR_REMOTE"
 
-    elif echo "$JENKINS_URL" | grep -q "localhost"; then 
+    elif echo "$JENKINS_URL" | grep -q "localhost" || ; then 
         echo "Determined machine type: Local machine"
         DATADIR=$DATADIR_LOCAL
         echo "DATADIR is set to $DATADIR_LOCAL"
@@ -135,8 +135,8 @@ if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet
     echo "Starting Erigon..."
     nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 elif [ $DATADIR = $DATADIR_LOCAL ]; then
-    echo "Starting Erigon on goerli testnet..."
-    nohup ./build/bin/erigon --datadir $DATADIR --chain goerli --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
+    echo "Starting Erigon on ropsten testnet..."
+    nohup ./build/bin/erigon --datadir $DATADIR --chain ropsten --private.api.addr=localhost:9090 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 fi
 
 
