@@ -2,6 +2,8 @@
 
 PORT=8548 # reserved rpcdaemon port
 
+echo "Stop erigon and rpcdaemon"
+
 echo "Checking if erigon is running..."
 erigon_pid=$(ps aux | grep ./build/bin/erigon | grep datadir | awk '{print $2}')
 # if erigon is running send SIGTERM
@@ -41,3 +43,5 @@ if [ ! -z "$rpcdaemon_pid" ]; then
 else
     echo "There is no process listening on reserved port $PORT (rpcdaemon port)..."
 fi
+
+echo "Done..."
