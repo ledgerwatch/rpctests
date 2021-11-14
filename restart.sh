@@ -24,7 +24,7 @@ for i in "$@"; do
 done
 
 DATADIR_REMOTE="/mnt/nvme/data1" # chaindata dir
-DATADIR_LOCAL="/mnt/rd0_0/ropsten" # chaindata dir
+DATADIR_LOCAL="/mnt/evo_0/ropsten" # chaindata dir
 
 if [ ! -z "$JENKINS_URL" ]; then
     if echo "$JENKINS_URL" | grep -q "erigon.dev"; then 
