@@ -82,4 +82,4 @@ fi
 
 make erigon
 make rpcdaemon
-make rpctest
+# make rpctest
